@@ -6,7 +6,7 @@ require_relative 'include/text_colors.rb'
 # main ---------------------------------------------------
 
 repo_dir = File.expand_path(File.dirname(__FILE__)) + "/files/"
-home_dir = "/tmp/fake_home/"
+home_dir = Dir.home + "/"
 
 confirm_dirs(repo_dir, home_dir)
 
