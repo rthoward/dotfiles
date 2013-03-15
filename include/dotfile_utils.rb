@@ -1,15 +1,5 @@
 # Richard Howard, 2013
 
-# directory location --------------------------------------------
-
-def get_repo_dir
-   return File.expand_path(File.dirname(__FILE__)) + "/files/"
-end
-
-def get_home_dir
-   return "/tmp/fake_home/"
-end
-
 # file targets -----------------------------------------------
 
 def strip_unwanted_files(file_list)
