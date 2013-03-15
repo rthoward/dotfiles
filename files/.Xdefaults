@@ -1,0 +1,55 @@
+! Urxvt ---------------
+
+URxvt.urlLauncher:            /usr/bin/chromium
+URxvt.matcher.button:         1
+
+URxvt.borderColor:            #333631
+URxvt.internalBorder:         0
+
+URxvt*underlineColor:         #333333
+URxvt*highlightColor:         #ffffff
+URxvt*highlightTextColor:     #000000
+URxvt.cursorColor:            #5E468C
+URxvt.cursorBlink:            true
+
+URxvt.font:                   xft:dejavu sans mono:pixelsize=14
+URxvt.boldFont:               xft:mensch:pixelsize=14
+
+URxvt*buffered:               true
+
+URxvt*cursorBlink:            true
+URxvt*cursorUnderline:        false
+
+URxvt*geometry: 		         113x34
+
+URxvt*depth: 			         32
+URxvt.background:             #1A1A1A
+URxvt.foreground:             #999999
+URxvt*transparent:		      false
+URxvt*shading:			         10
+
+URxvt*scrollBar: 		         false
+URxvt*scrollBar_right:        false
+URxvt*scrollWithBuffer: 	   false
+URxvt*scrollTtyOutput: 		   true
+
+URxvt*pointerBlank: 		      true
+
+! colors
+#include                      "/home/richie/.colors/richie"
+
+#Xft.autohint:                0
+Xft.lcdfilter:                lcddefault
+Xft.hintstyle:                hintslight
+Xft.hinting:                  1
+Xft.antialias:                1
+Xft.dpi:                      96  
+Xft.rgba:                     rgba
+
+! xterm ----------------------------
+xterm*toolBar: false
+xterm*scrollBar: false
+xterm*rightScrollBar: false
+xterm*background: #1A1A1A
+xterm*foreground: #A9A9A9
+xterm*geometry: 80x30 

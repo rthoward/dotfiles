@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/usr/lib/ruby/1.8'
+let g:netrw_dirhist_2='/usr/share/doc'
+let g:netrw_dirhist_3='/usr/share/doc/libncurses-ruby1.8'
+let g:netrw_dirhist_4='/usr/share/doc/libncurses-ruby1.8/examples'
+let g:netrw_dirhist_5='/usr/share/doc/ruby1.8'
+let g:netrw_dirhist_6='/usr/share/doc'
+let g:netrw_dirhist_7='/usr/share/doc/libncurses-ruby1.8'
+let g:netrw_dirhist_8='/usr/share/doc/libncurses-ruby1.8/examples'
+let g:netrw_dirhist_9='/usr/lib/ruby/1.8'
