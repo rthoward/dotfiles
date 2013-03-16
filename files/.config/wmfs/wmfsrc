@@ -368,6 +368,11 @@
    # dmenu
    [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "/home/richie/.scripts/dmenu_bind.sh" [/key]
 
+   # volume up / down
+   [key] mod = {"Control", "Alt"} key = "Up" func = "spawn" cmd = "amixer set Master 1+" [/key]
+   [key] mod = {"Control", "Alt"} key = "Down" func = "spawn" cmd = "amixer set Master 1-" [/key]
+
+
    # select tag n
    [key] mod = {"Alt"} key = "1" func = "tag" cmd = "1" [/key]
    [key] mod = {"Alt"} key = "2" func = "tag" cmd = "2" [/key]
