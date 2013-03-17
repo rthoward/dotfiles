@@ -13,4 +13,5 @@ fi
 
 xset m 1 1
 compton -b
+~/.scripts/bg.sh
 exec wmfs
