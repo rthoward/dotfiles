@@ -17,8 +17,8 @@ filetype indent on
 let mapleader=','
 
 " backup and swap directories
-set backupdir=/home/richie/.vim/backup
-set directory=/home/richie/.vim/swap
+set backupdir=/home/richie/.backup/vim_backup
+set directory=/home/richie/.backup/vim_swap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
