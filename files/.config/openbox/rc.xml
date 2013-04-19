@@ -92,6 +92,9 @@
     </font>
     <font place="ActiveOnScreenDisplay">
       <name/>
+      <size>8</size>
+      <weight/>
+      <slant/>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Sans</name>
@@ -169,7 +172,9 @@
     <chainQuitKey>C-g</chainQuitKey>
     <!-- desktop switching -->
     <keybind key="A-1">
-      <action name="Desktop"/>
+      <action name="Desktop">
+        <desktop>1</desktop>
+      </action>
     </keybind>
     <keybind key="A-2">
       <action name="Desktop">
@@ -186,9 +191,7 @@
         <desktop>4</desktop>
       </action>
     </keybind>
-
     <!-- application bindings -->
-
     <keybind key="A-space">
       <action name="Execute">
         <command>/home/richie/.scripts/dmenu_bind.sh</command>
@@ -218,7 +221,7 @@
     </keybind>
     <keybind key="S-A-Return">
       <action name="Execute">
-        <command>urxvt</command>
+        <command>terminatort</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>terminal</name>
@@ -227,16 +230,14 @@
     </keybind>
     <keybind key="S-A-w">
       <action name="Execute">
-        <command>firefox</command>
+        <command>chromium</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>browser</name>
         </startupnotify>
       </action>
     </keybind>
-
     <!-- session management -->
-
     <keybind key="W-q">
       <action name="Execute">
         <command>xkill</command>
@@ -255,34 +256,37 @@
         </startupnotify>
       </action>
     </keybind>
-
     <!-- window management -->
-
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
           <action name="Unshade"/>
-       </finalactions>
+        </finalactions>
       </action>
     </keybind>
-
-   <!-- moving window to desktop n -->
-
-   <keybind key="A-S-1">
-      <action name="SendToDesktop"><to>1</to></action>
-   </keybind>
-   <keybind key="A-S-2">
-      <action name="SendToDesktop"><to>1</to></action>
-   </keybind>
-   <keybind key="A-S-3">
-      <action name="SendToDesktop"><to>1</to></action>
-   </keybind>
-   <keybind key="A-S-4">
-      <action name="SendToDesktop"><to>1</to></action>
-   </keybind>
-
+    <!-- moving window to desktop n -->
+    <keybind key="A-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="A-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="A-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="A-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
     <keybind key="A-S-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -716,7 +720,7 @@
         <monitor>1</monitor>
       </position>
       <focus>yes</focus>
-      <decor>no</decor>
+      <decor>yes</decor>
       <maximized>no</maximized>
     </application>
     <!--
