@@ -56,7 +56,7 @@
   </item>
 </menu>
 
-<menu id="apps-multimedia-menu" label="Multimedia">
+<menu id="apps-multimedia-menu" label="music">
   <item label="ncmpcpp">
     <action name="Execute">
       <command>terminator -e ncmpcpp</command>
