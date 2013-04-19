@@ -11,7 +11,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+mopidy &
 xset m 1 1
-compton -b
+compton -b &
 ~/.scripts/bg.sh
-exec wmfs
+docky &
+exec openbox
