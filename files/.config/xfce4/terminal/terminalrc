@@ -1,0 +1,24 @@
+[Configuration]
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBordersDefault=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=FALSE
+MiscMouseAutohide=FALSE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=TRUE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ColorCursor=#dd33dd00cc88
+ColorForeground=#dd33dd00cc88
+ColorBackground=#22dd22dd22dd
+ColorPalette=#22dd22dd22dd;#ff22777777aa;#9999cccc9999;#ffffcccc6666;#66669999cccc;#cccc9999cccc;#6666cccccccc;#dd33dd00cc88;#774477336699;#ff22777777aa;#9999cccc9999;#ffffcccc6666;#66669999cccc;#cccc9999cccc;#6666cccccccc;#ff22ff00eecc
+FontName=Mensch 10
+

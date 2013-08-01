@@ -194,7 +194,7 @@
     <!-- application bindings -->
     <keybind key="A-space">
       <action name="Execute">
-        <command>/home/richie/.scripts/dmenu_bind.sh</command>
+        <command>dmenu_run</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>dmenu</name>
@@ -203,7 +203,7 @@
     </keybind>
     <keybind key="A-p">
       <action name="Execute">
-        <command>/home/richie/.scripts/dmenu_bind.sh</command>
+        <command>dmenu_run</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>dmenu</name>
@@ -221,7 +221,7 @@
     </keybind>
     <keybind key="S-A-Return">
       <action name="Execute">
-        <command>terminator</command>
+        <command>xfce4-terminal</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>terminal</name>
@@ -237,9 +237,7 @@
         </startupnotify>
       </action>
     </keybind>
-
     <!-- session management -->
-
     <keybind key="W-q">
       <action name="Execute">
         <command>xkill</command>
@@ -258,9 +256,7 @@
         </startupnotify>
       </action>
     </keybind>
-
     <!-- window management -->
-
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -270,9 +266,7 @@
         </finalactions>
       </action>
     </keybind>
-
     <!-- moving window to desktop n -->
-
     <keybind key="A-S-1">
       <action name="SendToDesktop">
         <to>1</to>
@@ -302,9 +296,7 @@
     <keybind key="A-S-m">
       <action name="ToggleMaximizeFull"/>
     </keybind>
-
-   <!-- mpd control -->
-
+    <!-- mpd control -->
     <keybind key="S-A-F12">
       <action name="Execute">
         <command>mpc next</command>
@@ -325,7 +317,6 @@
         <command>mpc stop</command>
       </action>
     </keybind>
-
     <keybind key="S-A-Up">
       <action name="Execute">
         <command>amixer set Master 1+</command>
@@ -336,9 +327,7 @@
         <command>amixer set Master 1-</command>
       </action>
     </keybind>
-    
-   <!-- window movement -->
-
+    <!-- window movement -->
     <keybind key="W-Right">
       <action name="MoveToEdgeEast"/>
     </keybind>

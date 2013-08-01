@@ -17,8 +17,8 @@ filetype indent on
 let mapleader=','
 
 " backup and swap directories
-set backupdir=/home/richie/.backup/vim_backup
-set directory=/home/richie/.backup/vim_swap
+set backupdir=/home/rhoward/.backup/vim_backup
+set directory=/home/rhoward/.backup/vim_swap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -30,6 +30,8 @@ set wildmenu "Turn on WiLd menu
 set number " draw line numbers
 set cursorline
 set hid "Change buffer - without saving
+
+set laststatus=2
 
 " Set backspace config
 set backspace=eol,start,indent
@@ -54,9 +56,10 @@ set mat=2 "How many tenths of a second to blink
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme lucius
+set background=dark
 
 syntax on " enable syntax hilighting
+   colorscheme lucius
 
 set encoding=utf8
 set fenc=utf-8
@@ -64,13 +67,15 @@ set termencoding=utf-8
 
 if has("gui_running")
 
+colorscheme base16-default
+
    set guioptions-=m
    set guioptions-=T
    set guioptions-=r
 
 
    if has("gui_gtk2")
-      set guifont=Inconsolata\ 14
+      set guifont=mensch\ for\ powerline\ 11
    elseif has("gui_win32")
       set guifont=Consolas:h14:cANSI
    endif
@@ -192,7 +197,8 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
-"set guitablabel=%t
+let g:syntastic_cpp_checkers=['cpplint', 'gcc', 'ycm']
+let g:Powerline_symbols = 'fancy'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -206,7 +212,6 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc Leader Functions
