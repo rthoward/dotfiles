@@ -1,3 +1,4 @@
-files/.vim/backup
-files/.vim/swap
+files/.vim/_backup
+files/.vim/_swap
 files/.vimperator
+files/.vim/bundle/*
