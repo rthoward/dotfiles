@@ -126,7 +126,7 @@ colorscheme base16-default
 
 
    if has("gui_gtk2")
-      set guifont=mensch\ for\ powerline\ 11
+      set guifont=mensch\ for\ powerline\ 12
    elseif has("gui_win32")
       set guifont=Consolas:h14:cANSI
    endif
