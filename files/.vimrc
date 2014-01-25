@@ -4,6 +4,28 @@ set nocompatible
 set title 
 set autoread
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'chriskempson/base16'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'jnurmine/Zenburn'
+Bundle 'junegunn/seoul256.vim'
+
 filetype plugin on
 filetype indent on
 
@@ -53,6 +75,7 @@ set termencoding=utf-8
 if has("gui_running")
 
 colorscheme base16-default
+set guifont=Mensch\ for\ Powerline:h14
 
    set guioptions-=m
    set guioptions-=T
@@ -112,31 +135,12 @@ map 0 ^
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'chriskempson/base16'
-Bundle 'Lokaltog/vim-powerline'
-
-filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:syntastic_cpp_checkers=['cpplint', 'gcc', 'ycm']
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
+let g:syntastic_go_checkers=['go', 'gofmt', 'golint', 'gotype', 'govet']
 let g:Powerline_symbols = 'fancy'

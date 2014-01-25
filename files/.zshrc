@@ -7,8 +7,18 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
+# my aliases
+alias ls='ls -Gp'
+alias ll='ls -lth'
+alias lla='ll -a'
+alias grep='grep --color=auto'
+
 alias gits='git status'
+alias tma='tmux attach -d -t'
+alias git-tmux='tmux new -s $(basename $(pwd))'
+
+
+unsetopt correctall
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -16,7 +26,7 @@ alias gits='git status'
 # Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment to change how often before auto-updates occur? (in days)
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
@@ -25,16 +35,8 @@ alias gits='git status'
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want to disable command autocorrection
- DISABLE_CORRECTION="true"
-
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -44,4 +46,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl
+export GOPATH=/Users/richard/code/go
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
