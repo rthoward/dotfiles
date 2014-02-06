@@ -1,30 +1,11 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'chriskempson/base16-vim'
-Bundle 'Lokaltog/vim-powerline'
-
-filetype plugin indent on
-
 set history=700
 set hidden
 set nocompatible 
 set title 
 set autoread
+
+filetype plugin on
+filetype indent on
 
 let mapleader=','
 
@@ -56,6 +37,34 @@ set showmatch
 set mat=2
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+
+syntax on " enable syntax hilighting
+colorscheme lucius
+
+set encoding=utf8
+set fenc=utf-8
+set termencoding=utf-8
+
+if has("gui_running")
+
+colorscheme base16-default
+
+   set guioptions-=m
+   set guioptions-=T
+   set guioptions-=r
+
+
+   if has("gui_gtk2")
+      set guifont=mensch\ for\ powerline\ 11
+   elseif has("gui_win32")
+      set guifont=Consolas:h14:cANSI
+   endif
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -103,34 +112,27 @@ map 0 ^
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
+" => vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set background=dark
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-syntax on " enable syntax hilighting
+Bundle 'gmarik/vundle'
 
-set encoding=utf8
-set fenc=utf-8
-set termencoding=utf-8
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'chriskempson/base16'
+Bundle 'Lokaltog/vim-powerline'
 
-if has("gui_running")
-
-colorscheme base16-default
-
-   set guioptions-=m
-   set guioptions-=T
-   set guioptions-=r
-
-
-   if has("gui_gtk2")
-      set guifont=mensch\ for\ powerline\ 12
-   elseif has("gui_win32")
-      set guifont=Consolas:h14:cANSI
-   endif
-endif
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins
