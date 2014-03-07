@@ -1,0 +1,15 @@
+#! /bin/sh
+
+bspc monitor HDMI1 -d code term
+bspc monitor VGA1 -d web music
+
+bspc config border_width        2
+bspc config window_gap          12
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+
+bspc rule -a Gimp desktop=^8 follow=on floating=on
+bspc rule -a Chromium desktop=web
+
+bspwm_panel &
