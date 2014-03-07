@@ -22,7 +22,7 @@ clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
 
 case "$flavor" in
 	bar)
-		cat "$PANEL_FIFO" | bspwm_panel_bar | bar &
+		cat "$PANEL_FIFO" | /home/richie/.scripts/bspwm_panel_bar | bar &
 		;;
 	dzen2)
 		. panel_colors

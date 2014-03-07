@@ -12,4 +12,4 @@ bspc config gapless_monocle     true
 bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Chromium desktop=web
 
-bspwm_panel &
+/home/richie/.scripts/bspwm_panel &

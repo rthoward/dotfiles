@@ -7,7 +7,7 @@ while read -r line ; do
 		S*)
 			# clock output
 	      vol=$(amixer get Master | egrep -o "[0-9]+%")
-			sys_infos="\\br\\f7${vol} ${line#?}"
+			sys_infos="\\br\\f7⮞${vol} ${line#?}"
 			;;
 		T*)
 			# xtitle output
