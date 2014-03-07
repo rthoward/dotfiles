@@ -12,8 +12,10 @@ URxvt*highlightTextColor:     #000000
 URxvt.cursorColor:            #5E468C
 URxvt.cursorBlink:            true
 
-URxvt.font:                   xft:mensch\ for\ powerline:size=10
-URxvt.boldFont:               xft:mensch\ for\ powerline:size=10
+! URxvt.font:               xft:mensch\ for\ powerline:size=10
+! URxvt.boldFont:           xft:mensch\ for\ powerline:size=10
+URxvt.font:                 xft:Sauce Code Powerline:size=10
+URxvt.boldFont:             xft:Sauce Code Powerline:size=10
 
 URxvt*buffered:               true
 
