@@ -1,5 +1,9 @@
 # bspwm hotkeys ----------------------------------
 
+# resize node: alt + wasd
+# move focus:  alt + hjkl
+# rotate leaves: alt + shift + ,.
+# current window to largest space: alt + enter
 # exit bspwm
 super + q
 	bspc quit 1 && pkill bar
@@ -54,7 +58,7 @@ alt + Return
 alt + {comma,period}
 	bspc desktop -F {horizontal,vertical}
 
-# Rotate leaves of tree
+# rotate leaves of tree
 alt + shift + {comma,period}
 	bspc desktop -R {90,270}
 
@@ -66,9 +70,6 @@ alt + {p,n}
 alt + Escape
 	bspc window -t locked 
 
-# toggle monocle
-alt + space 
-	bspc desktop -l next
 
 # toggle pseudotiled (floating in tile)
 alt + shift + space 
@@ -124,6 +125,10 @@ alt + @button{1-3}
 # terminal
 alt + shift + Return
 	urxvt 
+   
+# dmenu
+alt + space 
+   dmenu_run -nb '#354449'
 
 alt + shift + w
 	chromium
@@ -133,7 +138,7 @@ alt + Tab
    bspc desktop -f next.occupied
 
 Print
-	scrot -q 100
+	scrot -q 80
 
 # audio keys -------------------------------------
 
@@ -142,6 +147,12 @@ alt + shift + Up
    amixer set Master 1+
 alt + shift + Down
    amixer set Master 1-
+alt + shift + F11
+   mpc toggle 
+alt + shift + F9
+   mpc prev
+alt + shift + F12
+   mpc next
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape
