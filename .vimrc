@@ -60,7 +60,7 @@ colorscheme base16-default
 
 
    if has("gui_gtk2")
-      set guifont=mensch\ for\ powerline\ 11
+      set guifont=Source\ Code\ Pro\ for\ Powerline:style=Medium
    elseif has("gui_win32")
       set guifont=Consolas:h14:cANSI
    endif

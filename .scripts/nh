@@ -1,0 +1,2 @@
+#!/bin/bash
+urxvt -fn 'xft:source code pro:size=24' -e nethack
