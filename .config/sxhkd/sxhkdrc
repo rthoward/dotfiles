@@ -9,7 +9,7 @@ super + q
 	bspc quit 1 && pkill bar
 
 # toggle monitor
-alt + w
+alt + q
 	bspc monitor -f next
 
 # close window
@@ -41,11 +41,11 @@ alt + {_,shift + }{h,j,k,l}
 	bspc window -{f,s} {left,down,up,right} || bspc window -f {prev, prev, next, next}
 
 # Resize nodes
-alt + {a,f}
-    S={+,-}; \
+alt + {a,d}
+    S={-,+}; \
     bspc window -e left $\{S\}20 || \
     bspc window -e right   $\{S\}20
-alt + {s,d}
+alt + {s,w}
     S={+,-}; \
     bspc window -e down $\{S\}20 || \
     bspc window -e up   $\{S\}20
