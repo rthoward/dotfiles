@@ -4,6 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/syntastic'
@@ -11,15 +12,15 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'chriskempson/base16'
-Bundle 'bling/vim-airline'
+Bundle 'bronson/vim-trailing-whitespace'
 
 " editor settings
 filetype plugin indent on
 set term=xterm-256color
 set history=700
 set hidden
-set nocompatible 
-set title 
+set nocompatible
+set title
 set autoread
 let mapleader=','
 set backupdir=~/.vim/backup
@@ -28,15 +29,15 @@ set so=7
 set wildmenu
 set number
 set cursorline
-set hid 
+set hid
 set laststatus=2
-set ignorecase 
+set ignorecase
 set smartcase
 set hlsearch "Highlight search things
-set incsearch 
+set incsearch
 set nolazyredraw
 :noremap <silent> <Space> :silent noh<Bar>echo<CR>
-set magic 
+set magic
 set showmatch
 set mat=2
 
@@ -84,7 +85,7 @@ map <C-l> <C-W>l
 map <right> :bn<cr>
 map <left> :bp<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=usetab
 catch
