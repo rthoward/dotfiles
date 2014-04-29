@@ -1,43 +1,33 @@
 ! Urxvt ---------------
 
+URxvt.termName:               xterm-256color
 URxvt.urlLauncher:            /usr/bin/chromium
 URxvt.matcher.button:         1
-
 URxvt.borderColor:            #333631
 URxvt.internalBorder:         0
-
 URxvt*underlineColor:         #333333
 URxvt*highlightColor:         #ffffff
 URxvt*highlightTextColor:     #000000
 URxvt.cursorColor:            #5E468C
 URxvt.cursorBlink:            true
-
-! URxvt.font:               xft:mensch\ for\ powerline:size=10
-! URxvt.boldFont:           xft:mensch\ for\ powerline:size=10
-URxvt.font:                 xft:Sauce Code Powerline:size=10
-URxvt.boldFont:             xft:Sauce Code Powerline:size=10
-
 URxvt*buffered:               true
-
 URxvt*cursorBlink:            true
 URxvt*cursorUnderline:        false
-
-URxvt*geometry: 		         90x34
-
+URxvt*geometry: 		         92x29
 URxvt*depth: 			         32
 URxvt.background:             #1A1A1A
 URxvt.foreground:             #999999
 URxvt*transparent:		      false
 URxvt*shading:			         10
-
 URxvt*scrollBar: 		         false
 URxvt*scrollBar_right:        false
 URxvt*scrollWithBuffer: 	   false
 URxvt*scrollTtyOutput: 		   true
-
 URxvt*pointerBlank: 		      true
 
-! colors
+! font and colors
+URxvt.font:                 xft:Sauce Code Powerline:size=10
+URxvt.boldFont:             xft:Sauce Code Powerline:size=10
 #include                      "/home/richie/.colors/richie"
 
 Xft.lcdfilter:                lcddefault
