@@ -42,6 +42,8 @@ set showmatch
 set mat=2
 
 " fonts and colors
+set t_Co=256
+let base16colorspace=256
 syntax on
 set background=dark
 " colorscheme for term
@@ -68,7 +70,6 @@ set smarttab
 set softtabstop=3
 set backspace=eol,start,indent
 set textwidth=80
-set t_Co=256
 set autoindent "Auto indent
 set smartindent "Smart indent
 autocmd FileType make setlocal noexpandtab
@@ -94,5 +95,8 @@ map 0 ^
 
 " plugin configs
 let g:syntastic_cpp_checkers=['cpplint', 'gcc', 'ycm']
+let g:syntastic_ruby_checkers =        ['rubylint', 'mri']
+let g:syntastic_javascript_checkers =  ['jshint', 'jslint']
+let g:syntastic_haskell_checkers =     ['ghc_mod']
 let g:airline_powerline_fonts = 1
 map <C-n> :NERDTreeToggle<CR>
