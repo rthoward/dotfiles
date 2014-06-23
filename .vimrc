@@ -4,22 +4,23 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'chriskempson/base16'
-Plugin 'bling/vim-airline'
+Bundle 'bronson/vim-trailing-whitespace'
 
 " editor settings
 filetype plugin indent on
-set term=xterm-256color
 set history=700
 set hidden
-set nocompatible 
-set title 
+set nocompatible
+set title
 set autoread
 let mapleader=','
 set backupdir=~/.vim/backup
@@ -28,23 +29,25 @@ set so=7
 set wildmenu
 set number
 set cursorline
-set hid 
+set hid
 set laststatus=2
-set ignorecase 
+set ignorecase
 set smartcase
 set hlsearch "Highlight search things
-set incsearch 
+set incsearch
 set nolazyredraw
 :noremap <silent> <Space> :silent noh<Bar>echo<CR>
-set magic 
+set magic
 set showmatch
 set mat=2
 
 " fonts and colors
+set t_Co=256
+set term=screen-256color
+let base16colorspace=256
 syntax on
 set background=dark
-" colorscheme for term
-colorscheme lucius
+colorscheme base16-tomorrow
 
 set encoding=utf8
 set fenc=utf-8
@@ -55,6 +58,7 @@ if has("gui_running")
    set guioptions-=m
    set guioptions-=T
    set guioptions-=r
+   set guioptions-=L
    set guifont=Source\ Code\ Pro\ Medium:h13
 endif
 
@@ -67,7 +71,6 @@ set smarttab
 set softtabstop=3
 set backspace=eol,start,indent
 set textwidth=80
-set t_Co=256
 set autoindent "Auto indent
 set smartindent "Smart indent
 autocmd FileType make setlocal noexpandtab
@@ -84,7 +87,7 @@ map <C-l> <C-W>l
 map <right> :bn<cr>
 map <left> :bp<cr>
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=usetab
 catch
@@ -92,6 +95,9 @@ endtry
 map 0 ^
 
 " plugin configs
-let g:syntastic_cpp_checkers=['cpplint', 'gcc', 'ycm']
-let g:airline_powerline_fonts = 1
+let g:syntastic_cpp_checkers =         ['cpplint', 'gcc', 'ycm']
+let g:syntastic_ruby_checkers =        ['rubylint', 'mri']
+let g:syntastic_javascript_checkers =  ['jshint', 'jslint']
+let g:syntastic_haskell_checkers =     ['ghc_mod']
+let g:airline_powerline_fonts =  1
 map <C-n> :NERDTreeToggle<CR>
