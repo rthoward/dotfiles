@@ -21,6 +21,10 @@ alias tml='tmux list-sessions'
 alias tmnew='tmux new-session'
 alias git-tmux='tmux new -s $(basename $(pwd))'
 
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/code/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -47,7 +51,7 @@ alias git-tmux='tmux new -s $(basename $(pwd))'
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -59,21 +63,5 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/richie/.gem/ruby/2.1.0/bin:/home/richie/.scripts"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/richie/.gem/ruby/2.1.0/bin:/home/richie/.scripts"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
