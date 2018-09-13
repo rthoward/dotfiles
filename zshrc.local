@@ -1,0 +1,24 @@
+unsetopt nomatch
+
+export EDITOR=nvim
+
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.scripts:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Put homebrew bin before /usr/bin
+export PATH="/usr/local/bin:$PATH"
+
+alias gits='git status'
+alias tmux='tmux -2'
+alias tma='tmux new-session -t'
+alias tmk='tmux kill-session -t'
+alias tml='tmux list-sessions'
+alias tmnew='tmux new-session'
+alias git-tmux='tmux new-session -t $(basename $(pwd))'
+alias vim='nvim'
+
+export PYTHONDONTWRITEBYTECODE=1
+
+. $HOME/.asdf/asdf.sh
