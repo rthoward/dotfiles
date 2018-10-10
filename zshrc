@@ -32,27 +32,20 @@ bindkey '^[[B' history-substring-search-down
 ########################
 
 # Set project paths for project jump
-PROJECT_PATHS=(~/code)
+# PROJECT_PATHS=(~/code)
 
 ########################
 # Aliases
 ########################
 
 alias vim=nvim
-#alias cat=bat
+alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # Open fzf file with vscode
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 # Git
-
-# grb () {
-#   git checkout "${1-master}"
-#   git pull
-#   git checkout -
-#   git rebase "${1-master}"
-# }
 
 git-clean-branches () {
   git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d
