@@ -1,0 +1,64 @@
+[push]
+  default = current
+[pull]
+  rebase = true
+[alias]
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+[credential]
+  helper = osxkeychain
+[rerere]
+  enabled = 1
+[color]
+  ui     = auto
+  diff   = auto
+  status = auto
+  branch = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+	excludesfile = /Users/richard/.gitignore_global
+  autocrlf     = input
+	editor = nvim
+[fetch]
+  prune = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[apply]
+  whitespace = nowarn
+[apply]
+  whitespace = nowarn
+[mergetool]
+  keepBackup = false
+[difftool]
+  prompt = false
+[help]
+  autocorrect = 1
+[grep]
+  linenumber = true
+
+# NEEDS TO BE LAST LINE IN THIS FILE
+[include]
+  path = .gitconfig.local
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	email = richard@howard.io
+	name = Richard Howard
