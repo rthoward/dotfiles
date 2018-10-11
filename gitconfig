@@ -59,6 +59,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	email = richard@howard.io
-	name = Richard Howard
