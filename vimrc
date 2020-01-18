@@ -111,11 +111,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Enable syntax highlighting
 syntax enable
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-
 " Enable true colors
 if has("nvim")
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -129,7 +124,7 @@ endif
 set background=dark
 
 try
-  colorscheme palenight
+  colorscheme gruvbox
 catch
 endtry
 
@@ -194,7 +189,7 @@ set wrap "Wrap lines
 nnoremap <leader>bb :Buffers<CR>
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bd :bd<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
@@ -310,7 +305,7 @@ nnoremap <leader>af :ALEFix<CR>
 let g:lightline = {}
 
 " Set the colorscheme
-let g:lightline.colorscheme = 'palenight'
+let g:lightline.colorscheme = 'seoul256'
 
 " Integrate with ALE
 let g:lightline.component_expand = {
@@ -330,6 +325,8 @@ let g:lightline.component_type = {
 let g:lightline.active = {
       \ 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]]
       \ }
+
+let g:ale_python_auto_pipenv = 1
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
