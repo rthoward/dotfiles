@@ -26,10 +26,12 @@ Plug 'tomtom/tcomment_vim'
 
 " Language support
 Plug 'sheerun/vim-polyglot'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'rust-lang/rust.vim'
 
 " Color scheme
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-wombat-scheme'
 
 " Linting
 Plug 'w0rp/ale'
