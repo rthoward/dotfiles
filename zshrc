@@ -24,8 +24,8 @@ antigen apply
 ########################
 
 # zsh-history-substring-search configuration
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 
 ########################
 # Environment
@@ -45,10 +45,15 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 # Open fzf file with vscode
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
-# Git
+git-clean-branches() {
+  merge_branch="${1:-master}"
+  echo "Purging all branches that have been merged into ${merge_branch}"
+  git branch --merged $merge_branch | egrep -v "(^\*|$merge_branch)" | xargs git branch -d
+}
 
-git-clean-branches () {
-  git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg -n --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg -n --ignore-case --pretty --context 10 '$1' {}"
 }
 
 ########################
@@ -61,3 +66,9 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+. $HOME/.poetry/env
+
+eval "$(direnv hook zsh)"
