@@ -2,13 +2,23 @@ unsetopt nomatch
 
 export EDITOR=nvim
 
+export ANDROID_HOME=~/Library/Android/sdk/
+export CONFLUENT_HOME="$HOME/code/urbn/utils/confluent-5.3.1"
+
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH:$ANDROID_HOME/platform-tools/"
+export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin/"
+export PATH="$PATH:$HOME/.emacs.d/bin"
+export PATH="$HOME/code/urbn/utils/confluent-5.3.1/bin:$PATH"
+export PATH="$PATH:$HOME/.asdf/shims"
 
 # Put homebrew bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
+
+export NOTES_FILE="$HOME/Dropbox/notes.md"
 
 alias gits='git status'
 alias tmux='tmux -2'
@@ -16,9 +26,52 @@ alias tma='tmux new-session -t'
 alias tmk='tmux kill-session -t'
 alias tml='tmux list-sessions'
 alias tmnew='tmux new-session'
+alias mux='tmuxinator'
 alias git-tmux='tmux new-session -t $(basename $(pwd))'
 alias vim='nvim'
+alias weather='curl wttr.in/19147'
+alias success='osascript $HOME/.scripts/success.scpt'
+alias cat='bat'
+alias hledger='hledger -f /Users/richard/code/finances/journal.ledger'
+alias ledger='ledger -f /Users/richard/code/finances/journal.ledger'
+
+PG_ARGS="-h localhost -U postgres"
+alias dropdb="dropdb $PG_ARGS"
+alias createdb="createdb $PG_ARGS"
+
+alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 export PYTHONDONTWRITEBYTECODE=1
 
-. $HOME/.asdf/asdf.sh
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/richard/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/richard/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/richard/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/richard/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+notes () {
+  case $1 in
+    new|n|add|a)
+      date "+%n# %A %m/%d/%y" >> $NOTES_FILE && $EDITOR $NOTES_FILE
+      ;;
+    edit|e|)
+      $EDITOR $NOTES_FILE
+      ;;
+    todo|t)
+      case $2 in
+        new|n|add|a)
+          echo "TODO: ${3}" >> $NOTES_FILE
+          ;;
+        show|s|)
+          grep "^TODO" $NOTES_FILE | sed s/TODO:/-/g
+          ;;
+        *)
+          echo "Unknown invocation: notes ${*}"
+          ;;
+      esac
+      ;;
+    *)
+      echo "Unknown invocation: notes ${*}"
+      ;;
+  esac
+}
