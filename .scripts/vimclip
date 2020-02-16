@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# TODO: Allow overridable file extension. Not easily doable
+#       without --suffix arg, which OSX mktemp does not support.
+tempfile=$(mktemp "/tmp/vimclip_XXXXXX")
+
+function cleanup {
+    if [ -f "$tempfile" ]; then
+        rm -f "$tempfile"
+    fi
+}
+trap cleanup EXIT
+
+nvim $tempfile
+vim_return=$?
+
+if [ "$vim_return" = "0" ] && [ -s "$tempfile" ]; then
+  echo "Copying to the clipboard:"
+  cat $tempfile
+  pbcopy < $tempfile
+else
+  echo "Aborted"
+fi
