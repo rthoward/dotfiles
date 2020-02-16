@@ -1,0 +1,14 @@
+# /Users/richard/.config/tmuxinator/urbn-cx-services.yml
+
+name: urbn-cx-services
+root: ~/code/urbn/cx/r15-services-customer
+
+windows:
+  - shell: confluent local start
+  - admin:
+      root: ~/code/urbn/cx/r15-services-admin
+  - customer:
+      root: ~/code/urbn/cx/r15-services-customer
+  - cm:
+      root: ~/code/urbn/cx/r15-cm/
+
