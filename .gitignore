@@ -1,4 +1,2 @@
-files/.vim/_backup/*
-files/.vim/_swap/*
-files/.vimperator
-files/.vim/bundle/*
+.vim/autoload
+.vim/plugged
