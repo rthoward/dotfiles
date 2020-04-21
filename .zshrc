@@ -64,7 +64,6 @@ if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . $HOME/.asdf/asdf.sh

@@ -4,7 +4,7 @@ name: urbn-cx-services
 root: ~/code/urbn/cx/r15-services-customer
 
 windows:
-  - shell: confluent local start
+  - shell:
   - admin:
       root: ~/code/urbn/cx/r15-services-admin
   - customer:

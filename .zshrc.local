@@ -19,6 +19,8 @@ export PATH="$PATH:$HOME/.asdf/shims"
 export PATH="/usr/local/bin:$PATH"
 
 export NOTES_FILE="$HOME/Dropbox/notes.md"
+export DOOMDIR="$HOME/.doom.emacs.d/"
+export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
 
 alias gits='git status'
 alias tmux='tmux -2'
@@ -62,7 +64,7 @@ notes () {
           echo "TODO: ${3}" >> $NOTES_FILE
           ;;
         show|s|)
-          grep "^TODO" $NOTES_FILE | sed s/TODO:/-/g
+          grep "^TODO" -A2 $NOTES_FILE | sed s/TODO:/-/g
           ;;
         *)
           echo "Unknown invocation: notes ${*}"
