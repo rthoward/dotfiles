@@ -35,6 +35,7 @@ alias weather='curl wttr.in/19147'
 alias cat='bat'
 alias hledger='hledger -f /Users/richard/code/finances/journal.ledger'
 alias ledger='ledger -f /Users/richard/code/finances/journal.ledger'
+alias rbbe="bundle exec"
 
 PG_ARGS="-h localhost -U postgres"
 alias dropdb="dropdb $PG_ARGS"

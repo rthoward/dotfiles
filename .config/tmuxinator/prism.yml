@@ -37,7 +37,8 @@ startup_window: server
 # startup_pane: 1
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
-# attach: false
+attach: false
+on_project_exit: tmux -CC attach
 
 windows:
   - shell:  sleep 5 && bundle exec rake db:reset
