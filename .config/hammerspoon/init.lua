@@ -6,14 +6,14 @@ hs.alert.defaultStyle.strokeColor = { white = 1, alpha = 0 }
 -- state
 
 editors = {
-  { name = 'vscode', path = '/Applications/Visual Studio Code.app' },
+  { name = 'Code', path = '/Applications/Visual Studio Code.app' },
   { name = 'intellij', path = '/Applications/IntelliJ IDEA CE.app' },
   { name = 'spacemacs', path = '/Applications/Emacs.app' },
 }
 editor_index = 1
 terminals = {
-  { name = 'Alacritty', path = '/Applications/Alacritty.app' },
   { name = 'iTerm2', path = '/Applications/iTerm.app' },
+  { name = 'Alacritty', path = '/Applications/Alacritty.app' },
 }
 terminal_index = 1
 slack_shortcut_enabled = true
@@ -75,12 +75,12 @@ end)
 
 -- layout hotkeys
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", function ()
-  local screen = "P2715Q"
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "p", function ()
+  local screen = "DELL P2715Q"
   local devLayout = {
     {current_editor().name,     nil,    screen,     hs.layout.left60,     nil,    nil},
     {current_terminal().name,   nil,    screen,     hs.layout.right60,    nil,    nil},
-    {"Firefox",                 nil,    screen,     hs.layout.right60,    nil,    nil},
+    {"Firefox",                 nil,    screen,     hs.layout.left60,    nil,    nil},
   }
   hs.layout.apply(devLayout)
 end)
