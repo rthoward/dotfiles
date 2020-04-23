@@ -1,2 +1,6 @@
+**/.envrc
+
 .vim/autoload
 .vim/plugged
+
+.config/wtf/*.json

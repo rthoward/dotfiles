@@ -36,6 +36,7 @@ alias cat='bat'
 alias hledger='hledger -f /Users/richard/code/finances/journal.ledger'
 alias ledger='ledger -f /Users/richard/code/finances/journal.ledger'
 alias rbbe="bundle exec"
+alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 
 PG_ARGS="-h localhost -U postgres"
 alias dropdb="dropdb $PG_ARGS"
