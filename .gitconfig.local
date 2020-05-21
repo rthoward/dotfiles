@@ -12,3 +12,6 @@
   dlc = diff --cached HEAD^
   dc = diff --cached
   ap = add -p
+
+[core]
+  pager = delta --theme='Monokai Extended'
