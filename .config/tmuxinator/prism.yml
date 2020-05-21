@@ -41,6 +41,10 @@ attach: false
 on_project_exit: tmux -CC attach
 
 windows:
-  - shell:  sleep 5 && bundle exec rake db:reset
+  - shell:
   - server: sleep 5 && bundle exec rails s
-  - services: docker-compose up --force-recreate
+  - services: >
+      mailcatcher start;
+      brew services start elasticsearch;
+      brew services start mysql@5.7;
+      docker-compose up --force-recreate

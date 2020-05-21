@@ -92,7 +92,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "h", function()
 
   f.x = max.x
   f.y = max.y
-  f.w = max.w / 2
+  f.w = max.w * 0.55
   f.h = max.h
   win:setFrame(f)
 end)
@@ -104,7 +104,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", function()
 
   f.x = max.x + (max.w / 2)
   f.y = max.y
-  f.w = max.w / 2
+  f.w = max.w * 0.45
   f.h = max.h
   win:setFrame(f)
 end)

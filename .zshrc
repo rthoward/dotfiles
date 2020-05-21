@@ -42,6 +42,8 @@ alias vim=nvim
 alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # Open fzf file with vscode
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
@@ -71,3 +73,4 @@ fi
 . $HOME/.poetry/env
 
 eval "$(direnv hook zsh)"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
