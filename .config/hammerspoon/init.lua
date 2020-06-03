@@ -12,8 +12,8 @@ editors = {
 }
 editor_index = 1
 terminals = {
-  { name = 'iTerm2', path = '/Applications/iTerm.app' },
   { name = 'Alacritty', path = '/Applications/Alacritty.app' },
+  { name = 'iTerm2', path = '/Applications/iTerm.app' },
 }
 terminal_index = 1
 slack_shortcut_enabled = true
