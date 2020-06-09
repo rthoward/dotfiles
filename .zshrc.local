@@ -21,6 +21,8 @@ export PATH="/usr/local/bin:$PATH"
 export NOTES_FILE="$HOME/Dropbox/shared/notes.md"
 export DOOMDIR="$HOME/.doom.emacs.d/"
 export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
+export BASE16_COLORS_DIR="$HOME/.base16_colors"
+export BASE16_COLOR_SCHEME="gruvbox-dark-hard"
 
 alias gits='git status'
 alias tmux='tmux -2'
@@ -41,6 +43,10 @@ alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 # PG_ARGS="-h localhost -U postgres"
 # alias dropdb="dropdb $PG_ARGS"
 # alias createdb="createdb $PG_ARGS"
+
+if [ "${BASE16_COLOR_SCHEME}" ]; then
+  source "${BASE16_COLORS_DIR}/scripts/base16-${BASE16_COLOR_SCHEME}.sh"
+fi
 
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
