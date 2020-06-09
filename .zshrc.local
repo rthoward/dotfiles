@@ -18,7 +18,7 @@ export PATH="$PATH:$HOME/.asdf/shims"
 # Put homebrew bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
 
-export NOTES_FILE="$HOME/Dropbox/notes.md"
+export NOTES_FILE="$HOME/Dropbox/shared/notes.md"
 export DOOMDIR="$HOME/.doom.emacs.d/"
 export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
 
