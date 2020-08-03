@@ -33,6 +33,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-wombat-scheme'
+Plug 'chriskempson/base16-vim'
 
 " Linting
 Plug 'w0rp/ale'

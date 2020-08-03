@@ -22,7 +22,7 @@ export NOTES_FILE="$HOME/Dropbox/shared/notes.md"
 export DOOMDIR="$HOME/.doom.emacs.d/"
 export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
 export BASE16_COLORS_DIR="$HOME/.base16_colors"
-export BASE16_COLOR_SCHEME="gruvbox-dark-hard"
+export BASE16_COLOR_SCHEME="ocean"
 
 alias gits='git status'
 alias tmux='tmux -2'

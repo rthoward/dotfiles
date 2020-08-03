@@ -111,20 +111,22 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Enable syntax highlighting
 syntax enable
 
+let base16colorspace=256
+
 " Enable true colors
 if has("nvim")
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-
-if has("termguicolors")
-  set termguicolors
-endif
+"
+" if has("termguicolors")
+"   set termguicolors
+" endif
 
 " Configure theme
 set background=dark
 
 try
-  colorscheme gruvbox
+  colorscheme base16-ocean
 catch
 endtry
 
