@@ -19,7 +19,7 @@ export PATH="$PATH:$HOME/.asdf/shims"
 export PATH="/usr/local/bin:$PATH"
 
 export NOTES_FILE="$HOME/Dropbox/shared/notes.md"
-export DOOMDIR="$HOME/.doom.emacs.d/"
+export DOOMDIR="$HOME/.config/doom.emacs.d/"
 export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
 export BASE16_COLORS_DIR="$HOME/.base16_colors"
 export BASE16_COLOR_SCHEME="darktooth"
