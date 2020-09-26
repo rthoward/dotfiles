@@ -47,4 +47,4 @@ windows:
       mailcatcher start;
       brew services start elasticsearch;
       brew services start mysql@5.7;
-      docker-compose up --force-recreate
+      docker-compose -f docker-compose-richard.yml up --force-recreate
