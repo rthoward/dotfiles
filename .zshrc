@@ -69,7 +69,6 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 . $HOME/.poetry/env
 
 eval "$(direnv hook zsh)"

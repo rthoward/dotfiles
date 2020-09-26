@@ -87,3 +87,8 @@ notes () {
       ;;
   esac
 }
+
+stopall-docker() {
+  docker ps -q | xargs docker stop
+}
+
