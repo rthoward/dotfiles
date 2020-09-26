@@ -156,7 +156,7 @@ set noswapfile
 
 nmap <Leader>F :NERDTreeToggle<CR>
 
-nmap <Leader>t :Files<CR>
+nmap <Leader>t :GFiles<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>R :source ~/.vimrc<CR>
 
