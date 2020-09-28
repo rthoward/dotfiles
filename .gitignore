@@ -4,4 +4,6 @@
 .vim/plugged
 
 .config/wtf/*.json
+
 .config/pgcli/log
+.config/pgcli/history
