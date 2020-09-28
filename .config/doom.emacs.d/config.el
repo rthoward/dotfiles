@@ -57,3 +57,63 @@
 
 (add-hook! python-mode
            poetry-tracking-mode)
+
+(defvar +richard/project-path
+  "~/code"
+  "Directory of projects")
+
+(defun +richard/add-known-projects ()
+  (if (file-directory-p +richard/project-path)
+      (cl-loop for project-name in (directory-files +richard/project-path)
+               do (projectile-add-known-project (expand-file-name project-name +richard/project-path)))
+
+(map! (:localleader
+   (:map elixir-mode-map)
+      (:prefix "c"
+        :desc "Expand macro once (line)" :nv "m" #'alchemist-macroexpand-once-current-line
+        :desc "Expand macro once (region)" :nv "M" #'alchemist-macroexpand-once-current-region
+        :desc "Compile" :nv "c" #'alchemist-compile
+        :desc "Compile current file" :nv "f" #'alchemist-compile-file
+        :desc "Compile current buffer" :nv "b" #'alchemist-compile-this-buffer)
+      (:prefix "f"
+        :desc "Toggle between file/tests" :nv "t" #'alchemist-project-toggle-file-and-tests
+        :desc "Create file in project" :nv "c" #'alchemist-project-create-file)
+      (:prefix "h"
+        :desc "Search hex" :nv "s" #'alchemist-hex-search
+        :desc "List dependencies" :nv "l" #'alchemist-hex-all-dependencies)
+      (:prefix "i"
+        :desc "iex" :nv "i" #'alchemist-iex-run
+        :desc "iex -S mix" :nv "p" #'alchemist-iex-project-run
+        :desc "Compile buffer in IEx" :nv "b" #'alchemist-iex-compile-this-buffer-and-go
+        :desc "Compile region in IEx" :nv "r" #'alchemist-iex-send-region-and-go)
+      (:prefix "m"
+        :desc "mix" :nv "x" #'alchemist-mix
+        :desc "mix compile" :nv "c" #'alchemist-mix-compile
+        :desc "mix run" :nv "r" #'alchemist-mix-run)
+      (:prefix "p"
+        :desc "Find test" :nv "f" #'alchemist-project-find-test)
+      (:prefix "t"
+        :nv "" nil
+        :desc "mix test" :nv "a" #'alchemist-mix-test
+        :desc "Toggle report" :nv "d" #'alchemist-test-toggle-test-report-display
+        :desc "List tests" :nv "t" #'alchemist-test-mode-list-tests
+        :desc "Run test at point" :nv "." #'alchemist-mix-test-at-point
+        :desc "Rerun last test" :nv "r" #'alchemist-mix-rerun-last-test
+        :desc "Run stale tests" :nv "s" #'alchemist-mix-test-stale
+        :desc "Test current buffer" :nv "b" #'alchemist-mix-test-this-buffer
+        :desc "Test file" :nv "f" #'alchemist-mix-test-file
+        :desc "Run tests for current file" :nv "F" #'alchemist-project-run-tests-for-current-file
+        :desc "Jump to previous test" :nv "[" #'alchemist-test-mode-jump-to-previous-test
+        :desc "Jump to next test" :nv "]" #'alchemist-test-mode-jump-to-next-test
+        :desc "Interrupt test process" :nv "k" #'alchemist-report-interrupt-current-process))     (warn! "Project path '%s' has not been created!" (file-relative-name +richard/project-path "~")))))
+
+(setq lsp-clients-elixir-server-executable
+      "/home/richard/.lsp/elixir/language_server.sh")
+
+(setq lsp-clojure-server-command
+      "/home/richard/.lsp/clojure/clojure-lsp")
+
+(after! projectile
+  (+richard/add-known-projects))
+
+(direnv-mode)

@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! poetry)
+(package! direnv)
