@@ -36,6 +36,7 @@ screens = {
 apps = {
   sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
   vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
+  emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
   alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
   iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
   firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
@@ -49,7 +50,7 @@ layout_mod = {"cmd", "alt", "ctrl"}
 
 -- state
 
-editors = { apps.vscode, apps.sublime }
+editors = { apps.vscode, apps.sublime, apps.emacs }
 editor_index = 1
 terminals = { apps.iterm2, apps.alacritty }
 terminal_index = 1
