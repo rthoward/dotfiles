@@ -1,33 +1,19 @@
 {
-  "[elm]": {
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2
-  },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 4
-  },
-  "[ruby]": {
-    "editor.tabSize": 2
-  },
-  "[typescript-react]": {
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "breadcrumbs.enabled": true,
   "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnEnter": "on",
   "editor.fontFamily": "Dank Mono",
@@ -42,10 +28,7 @@
   "explorer.confirmDelete": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "git.autofetch": true,
   "gitlens.codeLens.enabled": false,
-  "gitlens.views.repositories.files.layout": "tree",
-  "liveshare.featureSet": "insiders",
   "markdown-pdf.styles": [
     "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
   ],
@@ -85,11 +68,10 @@
     {
       "before": [
         "<leader>",
-        "p",
-        "f"
+        "."
       ],
       "commands": [
-        "workbench.action.quickOpen"
+        "workbench.action.terminal.focus"
       ]
     },
     {
@@ -106,7 +88,7 @@
       "before": [
         "<leader>",
         "w",
-        ","
+        "/"
       ],
       "commands": [
         "workbench.action.splitEditorRight"
@@ -185,26 +167,6 @@
     {
       "before": [
         "<leader>",
-        "."
-      ],
-      "commands": [
-        "workbench.action.terminal.focus"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m",
-        "s",
-        "p"
-      ],
-      "commands": [
-        "workbench.actions.view.problems"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
         "m",
         "t",
         "t"
@@ -223,11 +185,20 @@
       "commands": [
         "python.runFailedTests"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "m",
+        "s",
+        "p"
+      ],
+      "commands": [
+        "workbench.actions.view.problems"
+      ]
     }
   ],
-  "window.zoomLevel": 0,
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#3c3836"
-  },
-  "workbench.colorTheme": "Afterglow Remastered"
+  "window.menuBarVisibility": "default",
+  "workbench.colorTheme": "Remedy - Dark (Straight)",
+  "workbench.settings.editor": "json",
 }
