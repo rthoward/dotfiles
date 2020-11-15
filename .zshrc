@@ -10,7 +10,6 @@ source ~/antigen.zsh
 ########################
 
 antigen use oh-my-zsh
-antigen bundle asdf
 antigen bundle vi-mode
 antigen bundle web-search
 antigen bundle zsh-users/zsh-syntax-highlighting
