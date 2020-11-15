@@ -146,12 +146,12 @@ end)
 
 -- move window to left 2/3 of screen
 hs.hotkey.bind(layout_mod, "h", function()
-  hs.window.focusedWindow():moveToUnit(positions.left66)
+  hs.window.focusedWindow():moveToUnit(positions.left55)
 end)
 
 -- move window to right 2/3 of screen
 hs.hotkey.bind(layout_mod, "l", function()
-  hs.window.focusedWindow():moveToUnit(positions.right66)
+  hs.window.focusedWindow():moveToUnit(positions.right45)
 end)
 
 hs.hotkey.bind(layout_mod, "up", function()
@@ -160,6 +160,7 @@ end)
 
 hs.hotkey.bind(layout_mod, "down", function()
   hs.window.focusedWindow():moveOneScreenSouth(false, true)
+  hs.window.focusedWindow():maximize(0)
 end)
 
 -- mode hotkeys
