@@ -51,3 +51,5 @@
 
 (package! poetry)
 (package! direnv)
+(package! tide)
+(package! highlight-indent-guides)

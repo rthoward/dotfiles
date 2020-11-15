@@ -22,6 +22,7 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 ;;
 (setq doom-font (font-spec :family "Fira Code" :size 18))
+(setq line-spacing 4)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -81,6 +82,8 @@
   :desc "Create file in project" :nv "c" #'alchemist-project-create-file)
  (:prefix ("h" . "help")
   :desc "Search hex" :nv "s" #'alchemist-hex-search
+  :desc "search help" :nv "h" #'alchemist-help
+  :desc "search help at exp" :nv "e" #'alchemist-help--search-at-point
   :desc "List dependencies" :nv "l" #'alchemist-hex-all-dependencies)
  (:prefix ("r" . "repl")
   :desc "iex" :nv "i" #'alchemist-iex-run
@@ -90,9 +93,11 @@
  (:prefix ("m" . "mix")
   :desc "mix" :nv "x" #'alchemist-mix
   :desc "mix compile" :nv "c" #'alchemist-mix-compile
-  :desc "mix run" :nv "r" #'alchemist-mix-run)
+  :desc "mix run" :nv "r" #'alchemist-mix-run
+  :desc "rerun last" :nv "l" #'alchemist-mix-rerun-last-task)
  (:prefix ("p" . "project")
-  :desc "Find test" :nv "f" #'alchemist-project-find-test)
+  :desc "Find test" :nv "f" #'alchemist-project-find-test
+  :desc "Toggle test" :nv "t" #'alchemist-project-toggle-file-and-tests-other-window)
  (:prefix ("t" . "test")
   :nv "" nil
   :desc "mix test" :nv "a" #'alchemist-mix-test
@@ -116,3 +121,26 @@
   (+richard/add-known-projects))
 
 (direnv-mode)
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(setq highlight-indent-guides-method 'character)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
