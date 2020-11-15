@@ -1,22 +1,63 @@
 {
-  "editor.fontFamily": "Dank Mono",
-  "editor.fontSize": 16,
-  "editor.renderWhitespace": "none",
-  "editor.fontLigatures": true,
-  "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
-  "window.zoomLevel": 0,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "terminal.integrated.fontSize": 14,
-  "gitlens.codeLens.enabled": false,
+  "[elm]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[ruby]": {
+    "editor.tabSize": 2
+  },
+  "[typescript-react]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
-  "vim.disableExtension": false,
-  "explorer.confirmDelete": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "HTML (Eex)": "html"
   },
-  "editor.acceptSuggestionOnEnter": "on",
+  "explorer.confirmDelete": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.views.repositories.files.layout": "tree",
+  "liveshare.featureSet": "insiders",
+  "markdown-pdf.styles": [
+    "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
+  ],
+  "ruby.format": "rubocop",
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html"
+  },
+  "tailwindCSS.validate": true,
+  "terminal.integrated.fontSize": 14,
+  "vim.disableExtension": false,
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -144,7 +185,7 @@
     {
       "before": [
         "<leader>",
-        ".",
+        "."
       ],
       "commands": [
         "workbench.action.terminal.focus"
@@ -155,7 +196,7 @@
         "<leader>",
         "m",
         "s",
-        "p",
+        "p"
       ],
       "commands": [
         "workbench.actions.view.problems"
@@ -166,7 +207,7 @@
         "<leader>",
         "m",
         "t",
-        "t",
+        "t"
       ],
       "commands": [
         "python.runtests"
@@ -177,57 +218,16 @@
         "<leader>",
         "m",
         "t",
-        "l",
+        "l"
       ],
       "commands": [
         "python.runFailedTests"
       ]
-    },
+    }
   ],
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[python]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 4
-  },
-  "[ruby]": {
-    "editor.tabSize": 2
-  },
-  "[elm]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  },
-  "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript-react]": {
-    "editor.tabSize": 2
-  },
-  "liveshare.featureSet": "insiders",
+  "window.zoomLevel": 0,
   "workbench.colorCustomizations": {
     "statusBar.background": "#3c3836"
   },
-  "workbench.colorTheme": "Afterglow Remastered",
-  "ruby.useBundler": true,
-  "ruby.useLanguageServer": true,
-  "gitlens.views.repositories.files.layout": "tree",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "ruby.format": "rubocop",
-  "tailwindCSS.includeLanguages": {
-    "typescriptreact": "html"
-  },
-  "tailwindCSS.validate": true,
-  "diffEditor.renderSideBySide": false,
-  "markdown-pdf.styles": [
-    "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
-  ],
-  "git.autofetch": true
+  "workbench.colorTheme": "Afterglow Remastered"
 }
