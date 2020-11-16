@@ -47,4 +47,4 @@ root: ~/code/scte_cms/
 windows:
   - shell: bin/activate
   - server: bin/serve
-  - db: docker run --rm --name scte-pg -p 5432:5432 -v /tmp/scte-pg.bk:/var/lib/postgresql/data --env POSTGRES_USER=postgres --env POSTGRES_PASSWORD=postgres --env POSTGRES_DB=scte_cms postgres:13
+    # - db: docker run --rm --name scte-pg -p 5432:5432 -v /tmp/scte-pg.bk:/var/lib/postgresql/data --env POSTGRES_USER=postgres --env POSTGRES_PASSWORD=postgres --env POSTGRES_DB=scte_cms postgres:13
