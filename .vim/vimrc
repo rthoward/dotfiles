@@ -336,19 +336,6 @@ let g:lightline.active = {
 
 let g:ale_python_auto_pipenv = 1
 
-let g:deoplete#enable_at_startup = 1
-let g:ale_rust_cargo_use_check = 1
-let g:rustfmt_autosave = 1
-let g:racer_cmd = "/Users/richard/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
-augroup no_deoplete
-  autocmd!
-  autocmd FileType ledger,gitcommit,markdown 
-  \ call deoplete#custom#buffer_option('auto_complete', v:false)
-augroup END
-
-
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 

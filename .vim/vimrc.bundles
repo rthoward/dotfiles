@@ -26,8 +26,6 @@ Plug 'tomtom/tcomment_vim'
 
 " Language support
 Plug 'sheerun/vim-polyglot'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 " Color scheme
 Plug 'drewtempelmeyer/palenight.vim'
@@ -43,12 +41,6 @@ Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'ledger/vim-ledger'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-endif
 
 call plug#end()
 
