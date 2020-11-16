@@ -6,7 +6,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -200,4 +201,6 @@
   ],
   "workbench.colorTheme": "Remedy - Dark (Straight)",
   "workbench.settings.editor": "json",
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
 }
