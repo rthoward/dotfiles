@@ -81,7 +81,7 @@ hs.hotkey.bind(app_mod, "W", function()
 end)
 
 hs.hotkey.bind(app_mod, "space", function()
-    hs.application.launchOrFocus(terminals[terminal_index].path)
+    hs.application.launchOrFocus(current_terminal().path)
 end)
 
 hs.hotkey.bind(app_mod, "s", function()
@@ -104,9 +104,9 @@ end)
 
 -- focus current terminal and run last command
 hs.hotkey.bind(app_mod, "return", function()
-  local term_window = hs.window.find(terminals[terminal_index].name)
+  local term_window = hs.window.find(current_terminal().name)
   if term_window then
-    hs.window.focus(term_window)
+    term_window:focus()
     hs.eventtap.keyStroke({"ctrl"}, "p")
     hs.eventtap.keyStroke({}, "return")
   end
