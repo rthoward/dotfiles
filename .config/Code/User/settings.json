@@ -191,6 +191,17 @@
       "before": [
         "<leader>",
         "m",
+        "t",
+        "f"
+      ],
+      "commands": [
+        "python.runCurrentTestFile"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "m",
         "s",
         "p"
       ],
