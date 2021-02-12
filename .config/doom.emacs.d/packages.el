@@ -49,6 +49,11 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(disable-packages! anaconda-mode
+                   lsp-python-ms
+                   pyimport
+                   pyenv)
+
 (package! poetry)
 (package! direnv)
 (package! tide)

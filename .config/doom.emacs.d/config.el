@@ -21,7 +21,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 ;;
-(setq doom-font (font-spec :family "Fira Code" :size 18))
+(setq doom-font (font-spec :family "Dank Mono" :size 18))
 (setq line-spacing 4)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
