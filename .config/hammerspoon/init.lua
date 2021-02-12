@@ -99,7 +99,7 @@ hs.hotkey.bind(app_mod, "m", function()
 end)
 
 hs.hotkey.bind(app_mod, "z", function()
-    hs.application.launchOrFocus(apps.zoom.path)
+    hs.application.get("zoom.us"):activate()
 end)
 
 -- focus current terminal and run last command
