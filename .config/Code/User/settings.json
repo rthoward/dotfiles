@@ -1,12 +1,12 @@
 {
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[python]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "ms-python.python",
     "editor.tabSize": 4
   },
   "[typescript]": {
@@ -214,4 +214,13 @@
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.terminal.launchArgs": [
+    "-m",
+    "IPython",
+    "--no-autoindent",
+    "-c",
+    "print('foo')"
+  ],
+  "workbench.sideBar.location": "left",
 }
