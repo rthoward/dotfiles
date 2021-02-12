@@ -105,10 +105,13 @@ end)
 -- focus current terminal and run last command
 hs.hotkey.bind(app_mod, "return", function()
   local term_window = hs.window.find(current_terminal().name)
+
   if term_window then
+    local current_window = hs.window.focusedWindow()
     term_window:focus()
     hs.eventtap.keyStroke({"ctrl"}, "p")
     hs.eventtap.keyStroke({}, "return")
+    current_window:focus()
   end
 end)
 
