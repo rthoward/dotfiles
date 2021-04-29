@@ -58,3 +58,4 @@
 (package! direnv)
 (package! tide)
 (package! highlight-indent-guides)
+(package! elpy)

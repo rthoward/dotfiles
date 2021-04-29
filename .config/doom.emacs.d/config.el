@@ -144,3 +144,13 @@
 
 (setq highlight-indent-guides-method 'character)
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+
+(use-package! elpy
+  :config
+  (elpy-enable)
+  (map! :map elpy-mode-map
+        :localleader
+        :n "t" #'elpy-test
+        :n "z" #'elpy-shell-switch-to-shell
+        :n "," #'elpy-shell-send-region-or-buffer
+        :n "rr" #'elpy-refactor-rename))
