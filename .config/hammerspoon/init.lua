@@ -126,15 +126,15 @@ hs.hotkey.bind(layout_mod, "p", function ()
     {current_editor().name,     nil,    ext_screen,   positions.left55,     nil,    nil},
     {current_terminal().name,   nil,    ext_screen,   positions.right45,    nil,    nil},
 
-    {apps.slack.name,           nil,    mac_screen,   positions.maximized,  nil,    nil},
-    {apps.spotify.name,         nil,    mac_screen,   positions.maximized,  nil,    nil},
+    {apps.slack.name,           nil,    mac_screen,   positions.centered,  nil,    nil},
+    {apps.spotify.name,         nil,    mac_screen,   positions.centered,  nil,    nil},
   }
 
   one_monitor_layout = {
     {current_editor().name,     nil,    mac_screen,   positions.maximized,  nil,    nil},
     {current_terminal().name,   nil,    mac_screen,   positions.maximized,  nil,    nil},
-    {apps.slack.name,           nil,    mac_screen,   positions.maximized,  nil,    nil},
-    {apps.spotify.name,         nil,    mac_screen,   positions.maximized,  nil,    nil},
+    {apps.slack.name,           nil,    mac_screen,   positions.centered,  nil,    nil},
+    {apps.spotify.name,         nil,    mac_screen,   positions.centered,  nil,    nil},
   }
 
   local layout_to_use = nil
