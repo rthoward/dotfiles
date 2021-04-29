@@ -32,11 +32,10 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-wombat-scheme'
 Plug 'chriskempson/base16-vim'
-
+Plug 'junegunn/seoul256.vim'
 " Linting
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
-
 " Version control
 Plug 'airblade/vim-gitgutter'
 

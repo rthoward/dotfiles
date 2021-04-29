@@ -27,7 +27,7 @@ root: ~/code/scte_cms/
 # on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window: source bin/activate
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -45,6 +45,6 @@ root: ~/code/scte_cms/
 # attach: false
 
 windows:
-  - shell: bin/activate
+  - shell:
   - server: bin/serve
-    # - db: docker run --rm --name scte-pg -p 5432:5432 -v /tmp/scte-pg.bk:/var/lib/postgresql/data --env POSTGRES_USER=postgres --env POSTGRES_PASSWORD=postgres --env POSTGRES_DB=scte_cms postgres:13
+  - mysql: docker-compose up

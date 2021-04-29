@@ -40,7 +40,7 @@
     "typescriptreact": "html"
   },
   "tailwindCSS.validate": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -173,7 +173,10 @@
         "t"
       ],
       "commands": [
-        "python.runtests"
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": "test"
+        }
       ]
     },
     {
@@ -210,7 +213,7 @@
       ]
     }
   ],
-  "workbench.colorTheme": "Remedy - Dark (Straight)",
+  "workbench.colorTheme": "Gruvbox Material Dark",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -219,8 +222,16 @@
     "-m",
     "IPython",
     "--no-autoindent",
-    "-c",
-    "print('foo')"
   ],
-  "workbench.sideBar.location": "left",
+  "python.testing.autoTestDiscoverOnSaveEnabled": false,
+  "editor.codeLens": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "extensions.ignoreRecommendations": true,
+  "gruvboxMaterial.darkContrast": "soft",
+  "gruvboxMaterial.darkPalette": "mix"
 }

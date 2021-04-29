@@ -126,7 +126,7 @@ endif
 set background=dark
 
 try
-  colorscheme base16-ocean
+  colorscheme seoul256
 catch
 endtry
 
