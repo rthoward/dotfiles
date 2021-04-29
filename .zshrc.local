@@ -55,6 +55,10 @@ fi
 
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
+gc() {
+ git checkout $(git branch | fzf | tr -d ‘[:space:]*’)
+}
+
 export PYTHONDONTWRITEBYTECODE=1
 
 # This is set by tmuxinator and it can cause gems to be installed to /usr/local/Cellar/tmuxinator
