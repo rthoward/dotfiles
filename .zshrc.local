@@ -22,9 +22,11 @@ export NOTES_FILE="$HOME/Dropbox/shared/notes.md"
 export DOOMDIR="$HOME/.config/doom.emacs.d/"
 export WORKON_HOME="$HOME/Library/Caches/pypoetry/virtualenvs/"
 export BASE16_COLORS_DIR="$HOME/.base16_colors"
-export BASE16_COLOR_SCHEME="darktooth"
+# export BASE16_COLOR_SCHEME="darktooth"
 export ELIXIR_EDITOR="code"
 export ERL_AFLAGS="-kernel shell_history enabled"
+export GH_PAGER="bat -p"
+export PYTHONBREAKPOINT="IPython.embed"
 
 alias gits='git status'
 alias tmux='tmux -2'

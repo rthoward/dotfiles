@@ -18,6 +18,14 @@ antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen apply
 
+
+########################
+# Options
+########################
+
+autoload -U compinit
+compinit -i
+
 ########################
 # Keybindings
 ########################
@@ -49,7 +57,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 git-clean-branches() {
-  merge_branch="${1:-master}"
+  merge_branch="${1:-main}"
   echo "Purging all branches that have been merged into ${merge_branch}"
   git branch --merged $merge_branch | egrep -v "(^\*|$merge_branch)" | xargs git branch -d
 }
