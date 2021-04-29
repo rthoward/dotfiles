@@ -53,5 +53,3 @@
 # NEEDS TO BE LAST LINE IN THIS FILE
 [include]
   path = .gitconfig.local
-[init]
-	defaultbrainch = main
