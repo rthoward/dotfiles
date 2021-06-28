@@ -41,6 +41,8 @@ bindkey '^[OB' history-substring-search-down
 # Set project paths for project jump
 # PROJECT_PATHS=(~/code)
 
+export FZF_EDITOR="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
 ########################
 # Aliases
 ########################
@@ -54,7 +56,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Open fzf file with vscode
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
 
 git-clean-branches() {
   merge_branch="${1:-main}"

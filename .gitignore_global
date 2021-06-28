@@ -7,5 +7,9 @@
 .idea/vcs.xml
 .idea/encodings.xml
 
+*.sublime-project
+
 .envrc
 my_notes/*
+
+pyrightconfig.json

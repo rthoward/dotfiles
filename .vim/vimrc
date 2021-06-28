@@ -126,7 +126,7 @@ endif
 set background=dark
 
 try
-  colorscheme seoul256
+  colorscheme gruvbox
 catch
 endtry
 

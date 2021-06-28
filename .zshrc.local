@@ -12,8 +12,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:$ANDROID_HOME/platform-tools/"
 export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin/"
 export PATH="$PATH:$HOME/.emacs.d/bin"
-export PATH="$HOME/code/urbn/utils/confluent-5.3.1/bin:$PATH"
 export PATH="$PATH:$HOME/.asdf/shims"
+export PATH="$PATH:/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/"
 
 # Put homebrew bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
@@ -44,6 +44,7 @@ alias ledger='ledger -f /Users/richard/code/finances/journal.ledger'
 alias rbbe="bundle exec"
 alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 alias emacs="open /Applications/Emacs.app/"
+alias ls="exa"
 
 # PG_ARGS="-h localhost -U postgres"
 # alias dropdb="dropdb $PG_ARGS"

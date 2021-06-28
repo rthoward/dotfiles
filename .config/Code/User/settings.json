@@ -225,13 +225,16 @@
   ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "editor.codeLens": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "extensions.ignoreRecommendations": true,
   "gruvboxMaterial.darkContrast": "soft",
-  "gruvboxMaterial.darkPalette": "mix"
+  "gruvboxMaterial.darkPalette": "mix",
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off"
 }
