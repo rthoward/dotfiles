@@ -50,9 +50,9 @@ layout_mod = {"cmd", "alt", "ctrl"}
 
 -- state
 
-editors = { apps.vscode, apps.sublime, apps.emacs }
+editors = { apps.sublime, apps.vscode, apps.emacs }
 editor_index = 1
-terminals = { apps.iterm2, apps.alacritty }
+terminals = { apps.alacritty, apps.iterm2  }
 terminal_index = 1
 slack_shortcut_enabled = true
 
