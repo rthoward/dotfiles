@@ -5,8 +5,6 @@ vim.o.completeopt = "menuone,noselect"
 require("compe").setup({
   enabled = true,
   autocomplete = true,
-  debug = false,
-  min_length = 1,
   preselect = "always", -- changed to "enable" to prevent auto select
   throttle_time = 80,
   source_timeout = 200,
@@ -33,6 +31,7 @@ require("compe").setup({
 })
 
 util.inoremap("<C-Space>", "compe#complete()", { expr = true })
+util.inoremap("<CR>", "compe#confirm('<CR>')", { expr = true })
 util.inoremap("<C-e>", "compe#close('<C-e>')", { expr = true })
 
 local function complete()

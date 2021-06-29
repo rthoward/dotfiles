@@ -64,9 +64,11 @@ wk.setup({
 wk.register({
   ["<space>"] = {"<cmd>Telescope find_files<cr>", "search"},
 
+  t = {":ToggleTerm<cr>", "toggle terminal"},
+
   m = {
     name = "major",
-    s = {"<cmd>builtin.lsp_workspace_symbols<cr>", "search workspace symbols"},
+    s = {"<cmd>lua require'telescope.builtin'.workspace_symbols{}<cr>", "search workspace symbols"},
     e = {"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "next error"},
     E = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "prev error"},
     a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "code action"},
@@ -79,11 +81,19 @@ wk.register({
   h = {
     name = "help",
     h = {"<cmd>Telescope help_tags<cr>", "help tags"},
+    p = {
+      name = "+packer",
+      p = { "<cmd>PackerSync<cr>", "Sync" },
+      s = { "<cmd>PackerStatus<cr>", "Status" },
+      i = { "<cmd>PackerInstall<cr>", "Install" },
+      c = { "<cmd>PackerCompile<cr>", "Compile" },
+    },
   },
 
   g = {
     name = "git",
-    g = {":Neogit<cr>", "git"}
+    g = {":Neogit<cr>", "git"},
+    d = { "<cmd>DiffviewOpen<cr>", "DiffView" },
   },
 
   b = {
@@ -91,6 +101,8 @@ wk.register({
     b = {"<cmd>Telescope buffers<cr>", "Buffer search"},
     n = {":bnext<cr>", "Next"},
     p = {":bprev<cr>", "Previous"},
+    d = {":bd<cr>", "Delete buffer"},
+    g = { "<cmd>:BufferLinePick<CR>", "Goto Buffer" },
   },
 
   w = {
@@ -106,28 +118,31 @@ wk.register({
 
   f = {
     name = "files",
+    d = "dotfiles",
     t = {":NvimTreeToggle<cr>", "toggle tree"},
     c = {
       name = "config",
-      e = {
-        name = "edit config",
-        w = {":e ~/.config/nvim/lua/config/whichkey.lua<cr>", "which-key"},
-        p = {":e ~/.config/nvim/lua/plugins.lua<cr>", "plugins"},
-      },
       r = {":source ~/.config/nvim/init.lua<cr>", "reload config"},
     },
-    p = {
-      name = "plugins",
-      i = {":PackerInstall<cr>", "install"},
-      u = {":PackerUpdate<cr>", "update"},
-      c = {":PackerClean<cr>", "clean"},
-      C = {":PackerCompile<cr>", "compile"},
-    }
   },
 
   p = {
     name = "project",
-    f = {"<cmd>Telescope find_files", "search for project file"},
-    g = {"<cmd>Telescope live_grep", "grep in project"},
-  }
+    f = {"<cmd>Telescope find_files<cr>", "search for project file"},
+    g = {"<cmd>Telescope live_grep<cr>", "grep in project"},
+  },
+
+  ["1"] = "which_key_ignore",
+  ["2"] = "which_key_ignore",
+  ["3"] = "which_key_ignore",
+  ["4"] = "which_key_ignore",
+  ["5"] = "which_key_ignore",
+  ["6"] = "which_key_ignore",
+  ["7"] = "which_key_ignore",
+  ["8"] = "which_key_ignore",
+  ["9"] = "which_key_ignore",
+  ["0"] = "which_key_ignore",
+
+  ["0-9"] = {"select buffer"},
+
 }, { prefix = "<leader>" })

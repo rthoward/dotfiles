@@ -44,3 +44,5 @@ else
 end
 
 require("lspconfig").pyright.setup{}
+require("lspconfig").tsserver.setup{}
+require("lsp_signature").on_attach()

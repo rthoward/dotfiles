@@ -98,24 +98,13 @@ return require("packer").startup({
         require("config.telescope")
       end,
       cmd = { "Telescope" },
-      keys = { "<leader><space>", "<leader>fz", "<leader>pp" },
       wants = {
         "plenary.nvim",
         "popup.nvim",
-        "telescope-z.nvim",
-        -- "telescope-frecency.nvim",
-        "telescope-fzy-native.nvim",
-        "telescope-project.nvim",
-        "telescope-symbols.nvim",
       },
       requires = {
-        "nvim-telescope/telescope-z.nvim",
-        "nvim-telescope/telescope-project.nvim",
         "nvim-lua/popup.nvim",
         "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-symbols.nvim",
-        "nvim-telescope/telescope-fzy-native.nvim",
-        -- { "nvim-telescope/telescope-frecency.nvim", requires = "tami5/sql.nvim" }
       },
     })
 
@@ -151,8 +140,19 @@ return require("packer").startup({
     use({
       "TimUntersberger/neogit",
       cmd = "Neogit",
+      requires = { 
+        "nvim-lua/plenary.nvim",
+      },
       config = function()
         require("config.neogit")
+      end,
+    })
+
+    use({
+      "sindrets/diffview.nvim",
+      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+      config = function()
+        require("config.diffview")
       end,
     })
 
@@ -178,6 +178,30 @@ return require("packer").startup({
     })
 
     use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
+
+    use({
+      "ray-x/lsp_signature.nvim",
+    })
+
+
+    use({
+      'glepnir/galaxyline.nvim',
+      branch = 'main',
+      config = function()
+        require("config.galaxyline")
+      end,
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    })
+
+    use({
+      "akinsho/nvim-toggleterm.lua",
+      opt = true,
+      cmd = { "ToggleTerm", "TermExec" },
+      config = function()
+        require("config.toggleterm")
+      end
+    })
+
   end,
   config = config,
 })
