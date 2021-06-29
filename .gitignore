@@ -9,3 +9,4 @@
 .config/pgcli/history
 
 .config/nvim/plugins/packer_compiled.vim
+.config/nvim/plugin/packer_compiled.vim

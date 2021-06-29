@@ -76,6 +76,15 @@ wk.register({
     f = {"<cmd>lua vim.lsp.buf.formatting()()<cr>", "formatting"},
     h = {"<cmd>lua vim.lsp.buf.hover()<cr>", "hover"},
     r = {"<cmd>lua vim.lsp.buf.references()<cr>", "references"},
+
+    x = {
+      name = "+errors",
+      x = { "<cmd>TroubleToggle<cr>", "Trouble" },
+      w = { "<cmd>TroubleWorkspaceToggle<cr>", "Workspace Trouble" },
+      d = { "<cmd>TroubleDocumentToggle<cr>", "Document Trouble" },
+      l = { "<cmd>lopen<cr>", "Open Location List" },
+      q = { "<cmd>copen<cr>", "Open Quickfix List" },
+    },
   },
 
   h = {

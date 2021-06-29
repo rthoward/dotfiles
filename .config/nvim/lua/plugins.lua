@@ -183,16 +183,6 @@ return require("packer").startup({
       "ray-x/lsp_signature.nvim",
     })
 
-
-    use({
-      'glepnir/galaxyline.nvim',
-      branch = 'main',
-      config = function()
-        require("config.galaxyline")
-      end,
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    })
-
     use({
       "akinsho/nvim-toggleterm.lua",
       opt = true,
@@ -200,6 +190,25 @@ return require("packer").startup({
       config = function()
         require("config.toggleterm")
       end
+    })
+
+     use({
+      "folke/trouble.nvim",
+      event = "BufReadPre",
+      wants = "nvim-web-devicons",
+      cmd = { "TroubleToggle", "Trouble" },
+      config = function()
+        require("trouble").setup({ auto_open = false })
+      end,
+    })
+
+    use({
+      "hoob3rt/lualine.nvim",
+      event = "VimEnter",
+      config = function()
+        require("config.lualine")
+      end,
+      wants = "nvim-web-devicons",
     })
 
   end,

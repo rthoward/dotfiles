@@ -12,7 +12,7 @@ neogit.setup {
     hunk = { "", "" },
   },
   integrations = {
-    diffview = true  
+    diffview = true
   },
   -- override/add mappings
   mappings = {

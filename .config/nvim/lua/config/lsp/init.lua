@@ -43,6 +43,54 @@ else
   require("config.lsp.kind").setup()
 end
 
-require("lspconfig").pyright.setup{}
-require("lspconfig").tsserver.setup{}
-require("lsp_signature").on_attach()
+local function on_attach(client, bufnr)
+  --[[ require("config.lsp.formatting").setup(client, bufnr)
+  require("config.lsp.keys").setup(client, bufnr)
+  require("config.lsp.completion").setup(client, bufnr)
+  require("config.lsp.highlighting").setup(client) ]]
+
+  require("lsp_signature").on_attach()
+
+  -- TypeScript specific stuff
+  if client.name == "typescript" or client.name == "tsserver" then
+    require("config.lsp.ts-utils").setup(client)
+  end
+end
+
+--[[ local lua_cmd = {
+  "/Users/folke/projects/lua-language-server/bin/macOS/lua-language-server",
+  "-E",
+  "-e",
+  "LANG=en",
+  "/Users/folke/projects/lua-language-server/main.lua",
+}
+lua_cmd = { "lua-language-server" } ]]
+
+local servers = {
+  pyright = {},
+  tsserver = {},
+  -- cssls = { cmd = { "css-languageserver", "--stdio" } },
+  -- tailwindcss = {},
+  --[[ sumneko_lua = require("lua-dev").setup({
+    lspconfig = { cmd = lua_cmd },
+  }), ]]
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = { "documentation", "detail", "additionalTextEdits" },
+}
+
+for server, config in pairs(servers) do
+  lspconfig[server].setup(vim.tbl_deep_extend("force", {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }, config))
+  local cfg = lspconfig[server]
+  if not (cfg and cfg.cmd and vim.fn.executable(cfg.cmd[1]) == 1) then
+    vim.notify(server .. ": cmd not found: " .. vim.inspect(cfg.cmd))
+  end
+end
+
+-- util.nnoremap("<D-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<cr>")
