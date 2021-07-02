@@ -2,11 +2,6 @@ local util = require("util")
 local cmd = vim.cmd
 local indent = 2
 
---[[ vim.bo.expandtab = true -- Use spaces instead of tabs
-vim.bo.shiftwidth = indent -- Size of an indent
-vim.bo.smartindent = true -- Insert indents automatically
-vim.bo.undofile = true ]]
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.opt.autowrite = true -- enable auto write
@@ -48,7 +43,7 @@ vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.updatetime = 200 -- save swap file and trigger CursorHold
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
-vim.opt.wrap = false -- Disable line wrap
+vim.opt.wrap = true
 vim.opt.so = 7
 vim.opt.backup = false
 vim.opt.wb = false
@@ -75,6 +70,11 @@ cmd([[
 
 -- Highlight on yank
 cmd("au TextYankPost * lua vim.highlight.on_yank {}")
+
+-- Toggle terminal off on <Esc>
+cmd([[
+	tnoremap <Esc> <C-\><C-n>:ToggleTerm<CR>
+]])
 
 require("config.markdown")
 
