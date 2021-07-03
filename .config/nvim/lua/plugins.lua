@@ -12,7 +12,10 @@ return require("packer").startup({
     -- Packer can manage itself as an optional plugin
     use({ "wbthomason/packer.nvim", opt = true })
 
-    use({ "kyazdani42/nvim-tree.lua" })
+    use({
+      "kyazdani42/nvim-tree.lua",
+      cmd = { "NvimTreeToggle", "NvimTreeClose" },
+    })
 
     use({
       "folke/which-key.nvim",
@@ -23,6 +26,8 @@ return require("packer").startup({
 
     use({
       "neovim/nvim-lspconfig",
+      opt = true,
+      event = "BufReadPre",
       config = function()
         require("config.lsp")
       end,
@@ -30,6 +35,8 @@ return require("packer").startup({
 
     use({
       "hrsh7th/nvim-compe",
+      event = "InsertEnter",
+      opt = true,
       config = function()
         require("config.compe")
       end,
@@ -53,19 +60,21 @@ return require("packer").startup({
 
     use({
       "nvim-treesitter/nvim-treesitter",
+      opt = true,
+      event = "BufRead",
       run = ":TSUpdate",
       requires = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-textobjects" },
       config = [[require('config.treesitter')]],
     })
 
     use({
-      "shaunsingh/nord.nvim",
+      --[[ "shaunsingh/nord.nvim",
       "shaunsingh/moonlight.nvim",
-      "joshdick/onedark.vim",
       { "marko-cerovac/material.nvim" },
       "folke/tokyonight.nvim",
       "sainnhe/sonokai",
-      "morhetz/gruvbox",
+      "morhetz/gruvbox", ]]
+      "joshdick/onedark.vim",
     })
 
     -- Theme: icons

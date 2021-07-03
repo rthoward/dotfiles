@@ -71,10 +71,5 @@ cmd([[
 -- Highlight on yank
 cmd("au TextYankPost * lua vim.highlight.on_yank {}")
 
--- Toggle terminal off on <Esc>
-cmd([[
-	tnoremap <Esc> <C-\><C-n>:ToggleTerm<CR>
-]])
-
 require("config.markdown")
 

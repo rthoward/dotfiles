@@ -36,7 +36,8 @@ telescope.setup({
     -- shorten_path = true,
     winblend = 10,
 		layout_config = {
-			width = 0.7,
+			width = 0.9,
+      preview_width = 0.6
 		},
     -- preview_cutoff = 120,
     -- results_height = 1,
@@ -61,7 +62,7 @@ telescope.setup({
 
 local util = require("util")
 
-util.nnoremap("<Leader>fd", function()
+util.nnoremap("<Leader>hd", function()
   require("telescope.builtin").find_files({ search_dirs = {"~/.config/nvim/"} })
 end)
 

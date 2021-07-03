@@ -1,5 +1,13 @@
 local wk = require("which-key")
 
+vim.o.timeoutlen = 300
+
+-- Toggle terminal off on <Esc>
+vim.cmd([[
+	tnoremap <Esc> <C-\><C-n>
+]])
+
+
 wk.setup({
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -11,13 +19,12 @@ wk.setup({
       suggestions = 20, -- how many suggestions should be shown in the list?
     },
     presets = {
-      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = true, -- adds help for motions
-      text_objects = true, -- help for text objects triggered after entering an operator
-      windows = true, -- default bindings on <c-w>
-      nav = true, -- misc bindings to work with windows
-      z = true, -- bindings for folds, spelling and others prefixed with z
-      g = true, -- bindings for prefixed with g
+      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = false, -- adds help for motions
+      text_objects = false, -- help for text objects triggered after entering an operator windows = true, -- default bindings on <c-w>
+      nav = false, -- misc bindings to work with windows
+      z = false, -- bindings for folds, spelling and others prefixed with z
+      g = false, -- bindings for prefixed with g
     },
   },
   -- add operators that will trigger motion and text object completion
@@ -68,7 +75,6 @@ wk.register({
 
   m = {
     name = "major",
-    s = {"<cmd>lua require'telescope.builtin'.workspace_symbols{}<cr>", "search workspace symbols"},
     e = {"<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", "next error"},
     E = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "prev error"},
     a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "code action"},
@@ -89,6 +95,7 @@ wk.register({
 
   h = {
     name = "help",
+    d = "edit dotfiles",
     h = {"<cmd>Telescope help_tags<cr>", "help tags"},
     p = {
       name = "+packer",
@@ -97,6 +104,7 @@ wk.register({
       i = { "<cmd>PackerInstall<cr>", "Install" },
       c = { "<cmd>PackerCompile<cr>", "Compile" },
     },
+    r = {":source ~/.config/nvim/init.lua<cr>", "reload config"},
   },
 
   g = {
@@ -107,39 +115,41 @@ wk.register({
 
   b = {
     name = "buffers",
-    b = {"<cmd>Telescope buffers<cr>", "Buffer search"},
-    n = {":bnext<cr>", "Next"},
-    p = {":bprev<cr>", "Previous"},
-    d = {":bd<cr>", "Delete buffer"},
-    g = { "<cmd>:BufferLinePick<CR>", "Goto Buffer" },
+    ["b"] = { "<cmd>:e #<cr>", "other buffer" },
+    ["p"] = { "<cmd>:BufferLineCyclePrev<CR>", "previous buffer" },
+    ["["] = { "<cmd>:BufferLineCyclePrev<CR>", "previous buffer" },
+    ["n"] = { "<cmd>:BufferLineCycleNext<CR>", "next buffer" },
+    ["]"] = { "<cmd>:BufferLineCycleNext<CR>", "next buffer" },
+    ["d"] = { "<cmd>:bd<CR>", "delete buffer" },
+    ["g"] = { "<cmd>:BufferLinePick<CR>", "goto buffer" },
   },
 
-  w = {
+  ["w"] = {
     name = "windows",
-    j = {"<C-W><C-J>", "down"},
-    k = {"<C-W><C-K>", "up"},
-    l = {"<C-W><C-L>", "right"},
-    h = {"<C-W><C-H>", "left"},
-    [","] = {"<C-W>v", "split right"},
-    ["."] = {"<C-W>s", "split down"},
-    d = {":close<CR>", "delete window"}
+    ["w"] = { "<C-W>p", "other-window" },
+    ["d"] = { "<C-W>c", "delete-window" },
+    [","] = {"<C-W>v", "split-window-right"},
+    ["."] = {"<C-W>s", "split-window-down"},
+    ["2"] = { "<C-W>v", "layout-double-columns" },
+    ["h"] = { "<C-W>h", "window-left" },
+    ["j"] = { "<C-W>j", "window-below" },
+    ["l"] = { "<C-W>l", "window-right" },
+    ["k"] = { "<C-W>k", "window-up" },
+    ["H"] = { "<C-W>5<", "expand-window-left" },
+    ["J"] = { ":resize +5", "expand-window-below" },
+    ["L"] = { "<C-W>5>", "expand-window-right" },
+    ["K"] = { ":resize -5", "expand-window-up" },
+    ["="] = { "<C-W>=", "balance-window" },
+    ["s"] = { "<C-W>s", "split-window-below" },
+    ["v"] = { "<C-W>v", "split-window-right" },
   },
 
   f = {
     name = "files",
-    d = "dotfiles",
     t = {":NvimTreeToggle<cr>", "toggle tree"},
-    c = {
-      name = "config",
-      r = {":source ~/.config/nvim/init.lua<cr>", "reload config"},
-    },
   },
 
-  p = {
-    name = "project",
-    f = {"<cmd>Telescope find_files<cr>", "search for project file"},
-    g = {"<cmd>Telescope live_grep<cr>", "grep in project"},
-  },
+  ["/"] = {"<cmd>Telescope live_grep<cr>", "grep"},
 
   ["1"] = "which_key_ignore",
   ["2"] = "which_key_ignore",
@@ -152,6 +162,6 @@ wk.register({
   ["9"] = "which_key_ignore",
   ["0"] = "which_key_ignore",
 
-  ["0-9"] = {"select buffer"},
+  ["0-9"] = "select buffer",
 
 }, { prefix = "<leader>" })
