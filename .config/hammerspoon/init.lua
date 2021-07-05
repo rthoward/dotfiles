@@ -147,6 +147,11 @@ hs.hotkey.bind(layout_mod, "p", function ()
   hs.layout.apply(layout_to_use)
 end)
 
+-- maximize window
+hs.hotkey.bind(layout_mod, "m", function()
+  hs.window.focusedWindow():maximize()
+end)
+
 -- move window to left 2/3 of screen
 hs.hotkey.bind(layout_mod, "h", function()
   hs.window.focusedWindow():moveToUnit(positions.left55)
