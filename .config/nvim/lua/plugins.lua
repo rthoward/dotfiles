@@ -220,6 +220,17 @@ return require("packer").startup({
       wants = "nvim-web-devicons",
     })
 
+    use({
+      "psf/black",
+      branch = "stable",
+      cmd = {"Black"}
+    })
+
+    use({
+      "vim-test/vim-test",
+      cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" }
+    })
+
   end,
   config = config,
 })

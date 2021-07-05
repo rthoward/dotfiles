@@ -71,5 +71,9 @@ cmd([[
 -- Highlight on yank
 cmd("au TextYankPost * lua vim.highlight.on_yank {}")
 
+cmd([[
+  autocmd VimEnter,DirChanged * if filereadable("./.workspace.lua") | source ./.workspace.lua | endif
+]])
+
 require("config.markdown")
 

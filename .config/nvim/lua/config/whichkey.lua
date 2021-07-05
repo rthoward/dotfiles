@@ -7,6 +7,9 @@ vim.cmd([[
 	tnoremap <Esc> <C-\><C-n>
 ]])
 
+vim.cmd([[
+  command Bdelete bp | sp | bn | bd
+]])
 
 wk.setup({
   plugins = {
@@ -82,6 +85,7 @@ wk.register({
     f = {"<cmd>lua vim.lsp.buf.formatting()()<cr>", "formatting"},
     h = {"<cmd>lua vim.lsp.buf.hover()<cr>", "hover"},
     r = {"<cmd>lua vim.lsp.buf.references()<cr>", "references"},
+    t = "test",
 
     x = {
       name = "+errors",
@@ -111,6 +115,15 @@ wk.register({
     name = "git",
     g = {":Neogit<cr>", "git"},
     d = { "<cmd>DiffviewOpen<cr>", "DiffView" },
+    h = {
+      name = "hunk",
+      s = "stage hunk",
+      u = "unstage hunk",
+      r = "reset hunk",
+      p = "preview hunk",
+      b = "blame line",
+    },
+    r = {"<cmd>Gitsigns refresh<CR>", "refresh"},
   },
 
   b = {
@@ -120,7 +133,7 @@ wk.register({
     ["["] = { "<cmd>:BufferLineCyclePrev<CR>", "previous buffer" },
     ["n"] = { "<cmd>:BufferLineCycleNext<CR>", "next buffer" },
     ["]"] = { "<cmd>:BufferLineCycleNext<CR>", "next buffer" },
-    ["d"] = { "<cmd>:bd<CR>", "delete buffer" },
+    ["d"] = { "<cmd>:Bdelete<CR>", "delete buffer" },
     ["g"] = { "<cmd>:BufferLinePick<CR>", "goto buffer" },
   },
 
@@ -150,6 +163,7 @@ wk.register({
   },
 
   ["/"] = {"<cmd>Telescope live_grep<cr>", "grep"},
+  [":"] = {"<cmd>Telescope commands<cr>", "search commands"},
 
   ["1"] = "which_key_ignore",
   ["2"] = "which_key_ignore",
@@ -163,5 +177,8 @@ wk.register({
   ["0"] = "which_key_ignore",
 
   ["0-9"] = "select buffer",
+
+  ["<LeftMouse>"] = {"<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>", "go to definition"},
+  ["<Tab>"] = {"<C-W><C-P><CR>", "last window"},
 
 }, { prefix = "<leader>" })

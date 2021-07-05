@@ -1,10 +1,10 @@
 require("bufferline").setup({
   options = {
     mappings = true,
-    show_close_icon = true,
+    show_close_icon = false,
     diagnostics = "nvim_lsp",
     always_show_bufferline = false,
-    separator_style = "slant",
+    separator_style = "thin",
     diagnostics_indicator = function(_, _, diagnostics_dict)
       local s = " "
       for e, n in pairs(diagnostics_dict) do
