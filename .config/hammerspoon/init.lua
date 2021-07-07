@@ -37,6 +37,7 @@ apps = {
   sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
   vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
   emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
+  neovim = { name = "neovim", path = "/Users/richard/Applications/Neovim.app" },
   alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
   iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
   firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
@@ -50,7 +51,7 @@ layout_mod = {"cmd", "alt", "ctrl"}
 
 -- state
 
-editors = { apps.sublime, apps.vscode, apps.emacs }
+editors = { apps.neovim, apps.sublime, apps.vscode, apps.emacs }
 editor_index = 1
 terminals = { apps.alacritty, apps.iterm2  }
 terminal_index = 1
@@ -91,7 +92,7 @@ hs.hotkey.bind(app_mod, "s", function()
 end)
 
 hs.hotkey.bind(app_mod, "e", function()
-    hs.application.launchOrFocus(editors[editor_index].path)
+  hs.application.launchOrFocus(editors[editor_index].path)
 end)
 
 hs.hotkey.bind(app_mod, "m", function()
