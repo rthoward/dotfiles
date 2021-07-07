@@ -82,9 +82,10 @@ wk.register({
     E = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "prev error"},
     a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "code action"},
     d = {"<cmd>lua vim.lsp.buf.definition()<cr>", "go to definition"},
-    f = {"<cmd>lua vim.lsp.buf.formatting()()<cr>", "formatting"},
+    f = "format",
     h = {"<cmd>lua vim.lsp.buf.hover()<cr>", "hover"},
     r = {"<cmd>lua vim.lsp.buf.references()<cr>", "references"},
+    R = {"<cmd>lua vim.lsp.buf.rename()<cr>", "rename"},
     t = "test",
 
     x = {
@@ -122,6 +123,10 @@ wk.register({
       r = "reset hunk",
       p = "preview hunk",
       b = "blame line",
+    },
+    f = {
+      name = "file",
+      R = "reset file",
     },
     r = {"<cmd>Gitsigns refresh<CR>", "refresh"},
   },

@@ -150,18 +150,11 @@ return require("packer").startup({
       "TimUntersberger/neogit",
       cmd = "Neogit",
       requires = { 
-        "nvim-lua/plenary.nvim",
+        {"nvim-lua/plenary.nvim"},
+        {"sindrets/diffview.nvim"},
       },
       config = function()
         require("config.neogit")
-      end,
-    })
-
-    use({
-      "sindrets/diffview.nvim",
-      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-      config = function()
-        require("config.diffview")
       end,
     })
 

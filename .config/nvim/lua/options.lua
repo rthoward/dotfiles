@@ -72,7 +72,7 @@ cmd([[
 cmd("au TextYankPost * lua vim.highlight.on_yank {}")
 
 cmd([[
-  autocmd VimEnter,DirChanged * if filereadable("./.workspace.lua") | source ./.workspace.lua | endif
+  autocmd VimEnter,DirChanged * if filereadable("./.workspace.lua") | echo "loading ./.workspace.lua" | source ./.workspace.lua | endif
 ]])
 
 require("config.markdown")

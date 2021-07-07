@@ -52,9 +52,9 @@ local function on_attach(client, bufnr)
   require("lsp_signature").on_attach()
 
   -- TypeScript specific stuff
-  if client.name == "typescript" or client.name == "tsserver" then
+  --[[ if client.name == "typescript" or client.name == "tsserver" then
     require("config.lsp.ts-utils").setup(client)
-  end
+  end ]]
 end
 
 --[[ local lua_cmd = {
@@ -69,6 +69,7 @@ lua_cmd = { "lua-language-server" } ]]
 local servers = {
   pyright = {},
   tsserver = {},
+  solargraph = {},
   -- cssls = { cmd = { "css-languageserver", "--stdio" } },
   -- tailwindcss = {},
   --[[ sumneko_lua = require("lua-dev").setup({
