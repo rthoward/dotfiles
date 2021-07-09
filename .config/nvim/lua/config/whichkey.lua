@@ -71,9 +71,7 @@ wk.setup({
   }
 })
 
-wk.register({
-  ["<space>"] = {"<cmd>Telescope find_files<cr>", "search"},
-
+local leader = {
   t = {":ToggleTerm<cr>", "toggle terminal"},
 
   m = {
@@ -127,8 +125,10 @@ wk.register({
     f = {
       name = "file",
       R = "reset file",
+      b = {"<cmd>!smerge blame %<cr>", "blame file"},
     },
     r = {"<cmd>Gitsigns refresh<CR>", "refresh"},
+    s = {"<cmd>!smerge<cr>", "open sublime merge"},
   },
 
   b = {
@@ -165,25 +165,24 @@ wk.register({
   f = {
     name = "files",
     t = {":NvimTreeToggle<cr>", "toggle tree"},
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    n = { "<cmd>enew<cr>", "New File" },
+    f = "find file in tree",
   },
 
   ["/"] = {"<cmd>Telescope live_grep<cr>", "grep"},
   [":"] = {"<cmd>Telescope commands<cr>", "search commands"},
-
-  ["1"] = "which_key_ignore",
-  ["2"] = "which_key_ignore",
-  ["3"] = "which_key_ignore",
-  ["4"] = "which_key_ignore",
-  ["5"] = "which_key_ignore",
-  ["6"] = "which_key_ignore",
-  ["7"] = "which_key_ignore",
-  ["8"] = "which_key_ignore",
-  ["9"] = "which_key_ignore",
-  ["0"] = "which_key_ignore",
-
-  ["0-9"] = "select buffer",
+  [","] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
+  ["<space>"] = {"<cmd>Telescope find_files<cr>", "search"},
 
   ["<LeftMouse>"] = {"<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>", "go to definition"},
   ["<Tab>"] = {"<C-W><C-P><CR>", "last window"},
 
-}, { prefix = "<leader>" })
+  ["0-9"] = "select buffer",
+}
+
+for i = 0, 10 do
+  leader[tostring(i)] = "which_key_ignore"
+end
+
+wk.register(leader, { prefix = "<leader>" })
