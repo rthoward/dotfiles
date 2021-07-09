@@ -92,7 +92,7 @@ hs.hotkey.bind(app_mod, "s", function()
 end)
 
 hs.hotkey.bind(app_mod, "e", function()
-  hs.application.launchOrFocus(editors[editor_index].path)
+  hs.application.launchOrFocus(current_editor().path)
 end)
 
 hs.hotkey.bind(app_mod, "m", function()
