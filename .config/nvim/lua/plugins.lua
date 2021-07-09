@@ -114,6 +114,7 @@ return require("packer").startup({
       requires = {
         "nvim-lua/popup.nvim",
         "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-symbols.nvim",
       },
     })
 
