@@ -72,9 +72,9 @@ return require("packer").startup({
       "shaunsingh/moonlight.nvim",
       { "marko-cerovac/material.nvim" },
       "folke/tokyonight.nvim",
+      "morhetz/gruvbox",
+      "joshdick/onedark.vim", ]]
       "sainnhe/sonokai",
-      "morhetz/gruvbox", ]]
-      "joshdick/onedark.vim",
     })
 
     -- Theme: icons
