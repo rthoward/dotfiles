@@ -1,5 +1,6 @@
 require("bufferline").setup({
   options = {
+    numbers = "ordinal",
     mappings = true,
     show_close_icon = false,
     diagnostics = "nvim_lsp",
