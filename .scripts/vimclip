@@ -1,5 +1,7 @@
 #!/bin/bash
 
+filetype=${1:-markdown}
+
 # TODO: Allow overridable file extension. Not easily doable
 #       without --suffix arg, which OSX mktemp does not support.
 tempfile=$(mktemp "/tmp/vimclip_XXXXXX")
@@ -11,7 +13,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
-nvim $tempfile
+nvim $tempfile --cmd "set filetype=${filetype}"
 vim_return=$?
 
 if [ "$vim_return" = "0" ] && [ -s "$tempfile" ]; then
