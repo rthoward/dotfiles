@@ -49,6 +49,8 @@ local function on_attach(client, bufnr)
   require("config.lsp.completion").setup(client, bufnr)
   require("config.lsp.highlighting").setup(client) ]]
 
+  vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()')
+
   require("lsp_signature").on_attach()
 
   -- TypeScript specific stuff
@@ -87,11 +89,20 @@ for server, config in pairs(servers) do
   lspconfig[server].setup(vim.tbl_deep_extend("force", {
     on_attach = on_attach,
     capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 300,
+    },
+    handlers = {
+       ["textDocument/publishDiagnostics"] = vim.lsp.with(
+         vim.lsp.diagnostic.on_publish_diagnostics, {
+           -- Disable virtual_text
+           virtual_text = false
+         }
+       ),
+     }
   }, config))
   local cfg = lspconfig[server]
   if not (cfg and cfg.cmd and vim.fn.executable(cfg.cmd[1]) == 1) then
     vim.notify(server .. ": cmd not found: " .. vim.inspect(cfg.cmd))
   end
 end
-
--- util.nnoremap("<D-LeftMouse>", "<cmd>lua vim.lsp.buf.definition()<cr>")
