@@ -201,7 +201,7 @@ return require("packer").startup({
       wants = "nvim-web-devicons",
       cmd = { "TroubleToggle", "Trouble" },
       config = function()
-        require("trouble").setup({ auto_open = false })
+        require("config.trouble")
       end,
     })
 
