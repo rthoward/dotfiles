@@ -507,7 +507,7 @@ schemes:
       cyan: "#f08d71"
       white: "#e4e3e1"
 
-colors: *sonokai_andromeda
+colors: *sonokai_maia
 
 # Visual Bell
 #
