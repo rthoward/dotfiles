@@ -59,24 +59,41 @@ local function on_attach(client, bufnr)
   end ]]
 end
 
---[[ local lua_cmd = {
-  "/Users/folke/projects/lua-language-server/bin/macOS/lua-language-server",
+local lua_lsp_dir = vim.env.HOME .. "/code/tools/lua-language-server/"
+local lua_cmd = {
+  lua_lsp_dir .. "bin/macOS/lua-language-server",
   "-E",
   "-e",
   "LANG=en",
-  "/Users/folke/projects/lua-language-server/main.lua",
+  lua_lsp_dir .. "main.lua",
 }
-lua_cmd = { "lua-language-server" } ]]
 
 local servers = {
   pyright = {},
   tsserver = {},
   solargraph = {},
+  sumneko_lua = {
+    cmd = lua_cmd,
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+          path = vim.split(package.path, ";"),
+        },
+        diagnostics = {
+          globals = {"vim"}
+        },
+        workspace = {
+          library = {
+            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+          }
+        }
+      }
+    }
+  },
   -- cssls = { cmd = { "css-languageserver", "--stdio" } },
   -- tailwindcss = {},
-  --[[ sumneko_lua = require("lua-dev").setup({
-    lspconfig = { cmd = lua_cmd },
-  }), ]]
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
