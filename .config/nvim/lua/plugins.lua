@@ -215,12 +215,6 @@ return require("packer").startup({
     })
 
     use({
-      "psf/black",
-      branch = "stable",
-      cmd = {"Black"}
-    })
-
-    use({
       "vim-test/vim-test",
       cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" }
     })
