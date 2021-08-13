@@ -14,3 +14,4 @@ my_notes/*
 
 pyrightconfig.json
 .workspace.lua
+.solargraph.yml
