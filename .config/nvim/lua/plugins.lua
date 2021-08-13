@@ -40,6 +40,25 @@ return require("packer").startup({
       config = function()
         require("config.compe")
       end,
+      requires = {
+        {
+          "windwp/nvim-autopairs",
+          config = function()
+            require("config.autopairs")
+          end,
+        },
+        "liuchengxu/vista.vim",
+        "ray-x/lsp_signature.nvim",
+        {
+          "RRethy/vim-illuminate",
+          opt = true,
+          event = "CursorHold",
+          module = "illuminate",
+          config = function()
+            vim.g.Illuminate_delay = 1000
+          end,
+        }
+      }
     })
 
     use({
@@ -61,7 +80,8 @@ return require("packer").startup({
     use({
       "nvim-treesitter/nvim-treesitter",
       opt = true,
-      event = "BufRead",
+      event = "BufReadPre",
+      branch = '0.5-compat',
       run = ":TSUpdate",
       requires = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-textobjects" },
       config = [[require('config.treesitter')]],
@@ -70,10 +90,10 @@ return require("packer").startup({
     use({
       --[[ "shaunsingh/nord.nvim",
       "shaunsingh/moonlight.nvim",
-      { "marko-cerovac/material.nvim" },
-      "folke/tokyonight.nvim",
+      { "marko-cerovac/material.nvim" }, ]] --
       "morhetz/gruvbox",
-      "joshdick/onedark.vim", ]]
+      "folke/tokyonight.nvim",
+      "joshdick/onedark.vim",
       "sainnhe/sonokai",
     })
 
@@ -116,24 +136,6 @@ return require("packer").startup({
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-symbols.nvim",
       },
-    })
-
-    -- Indent Guides and rainbow brackets
-    use({
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
-      branch = "lua",
-      config = function()
-        require("config.blankline")
-      end,
-    })
-
-    -- Smooth Scrolling
-    use({
-      "karb94/neoscroll.nvim",
-      config = function()
-        require("config.scroll")
-      end,
     })
 
     -- Git Gutter
@@ -181,10 +183,6 @@ return require("packer").startup({
     })
 
     use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
-
-    use({
-      "ray-x/lsp_signature.nvim",
-    })
 
     use({
       "akinsho/nvim-toggleterm.lua",

@@ -49,7 +49,7 @@ local function on_attach(client, bufnr)
   require("config.lsp.completion").setup(client, bufnr)
   require("config.lsp.highlighting").setup(client) ]]
 
-  vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()')
+  -- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()')
 
   require("lsp_signature").on_attach()
 
@@ -92,8 +92,8 @@ local servers = {
       }
     }
   },
+  tailwindcss = {},
   -- cssls = { cmd = { "css-languageserver", "--stdio" } },
-  -- tailwindcss = {},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -110,12 +110,12 @@ for server, config in pairs(servers) do
       debounce_text_changes = 300,
     },
     handlers = {
-       ["textDocument/publishDiagnostics"] = vim.lsp.with(
+       --[[ ["textDocument/publishDiagnostics"] = vim.lsp.with(
          vim.lsp.diagnostic.on_publish_diagnostics, {
            -- Disable virtual_text
            virtual_text = false
          }
-       ),
+       ), ]]
      }
   }, config))
   local cfg = lspconfig[server]

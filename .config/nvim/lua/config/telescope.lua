@@ -66,5 +66,3 @@ util.nnoremap("<Leader>hd", function()
   require("telescope.builtin").find_files({ search_dirs = {"~/.config/nvim/"} })
 end)
 
-return M
-

@@ -80,11 +80,12 @@ local leader = {
     E = {"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "prev error"},
     a = {"<cmd>lua vim.lsp.buf.code_action()<cr>", "code action"},
     d = {"<cmd>lua vim.lsp.buf.definition()<cr>", "go to definition"},
-    f = "format",
+    f = {"<cmd>lua vim.lsp.buf.formatting()", "format"},
     h = {"<cmd>lua vim.lsp.buf.hover()<cr>", "hover"},
     r = {"<cmd>lua vim.lsp.buf.references()<cr>", "references"},
     R = {"<cmd>lua vim.lsp.buf.rename()<cr>", "rename"},
     t = "test",
+    v = {"<cmd>Vista!!<cr>", "vista"},
 
     x = {
       name = "+errors",
