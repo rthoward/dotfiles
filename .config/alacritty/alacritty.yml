@@ -80,7 +80,7 @@ scrolling:
   multiplier: 3
 
 # Font configuration (changes require restart)
-font_family: &font_family DankMono Nerd Font
+font_family: &font_family Iosevka Curly Slab
 font:
   # Normal (roman) font face
   normal:
@@ -93,7 +93,7 @@ font:
     family: *font_family
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Light
 
   # Bold font face
   bold:
