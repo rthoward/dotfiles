@@ -47,8 +47,6 @@ return require("packer").startup({
             require("config.autopairs")
           end,
         },
-        "liuchengxu/vista.vim",
-        "ray-x/lsp_signature.nvim",
         {
           "RRethy/vim-illuminate",
           opt = true,
@@ -57,7 +55,7 @@ return require("packer").startup({
           config = function()
             vim.g.Illuminate_delay = 1000
           end,
-        }
+        },
       }
     })
 
@@ -87,6 +85,7 @@ return require("packer").startup({
       config = [[require('config.treesitter')]],
     })
 
+    -- colorschemes
     use({
       --[[ "shaunsingh/nord.nvim",
       "shaunsingh/moonlight.nvim",
@@ -95,6 +94,7 @@ return require("packer").startup({
       "folke/tokyonight.nvim",
       "joshdick/onedark.vim",
       "sainnhe/sonokai",
+      "mcchrish/zenbones.nvim",
     })
 
     -- Theme: icons
@@ -138,7 +138,6 @@ return require("packer").startup({
       },
     })
 
-    -- Git Gutter
     use({
       "lewis6991/gitsigns.nvim",
       event = "BufReadPre",

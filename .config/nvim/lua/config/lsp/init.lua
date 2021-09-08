@@ -51,8 +51,6 @@ local function on_attach(client, bufnr)
 
   -- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()')
 
-  require("lsp_signature").on_attach()
-
   -- TypeScript specific stuff
   --[[ if client.name == "typescript" or client.name == "tsserver" then
     require("config.lsp.ts-utils").setup(client)

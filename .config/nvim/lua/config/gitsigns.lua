@@ -46,7 +46,7 @@ require("gitsigns").setup({
   },
 })
 
-cmd([[
+vim.cmd([[
   autocmd VimResume * lua require'gitsigns'.refresh {}
 ]])
 
