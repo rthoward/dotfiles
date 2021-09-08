@@ -22,11 +22,14 @@
 [delta]
     features = line-numbers decorations
     whitespace-error-style = 22 reverse
+    syntax-theme = GitHub
 
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+    plus-style = normal "#dde6cd"
+    minus-style = normal "#e9cace"
 
 [init]
 	defaultBranch = main
