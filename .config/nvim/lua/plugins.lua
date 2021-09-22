@@ -78,7 +78,7 @@ return require("packer").startup({
     use({
       "nvim-treesitter/nvim-treesitter",
       opt = true,
-      event = "BufReadPre",
+      event = "BufRead",
       branch = '0.5-compat',
       run = ":TSUpdate",
       requires = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-textobjects" },
