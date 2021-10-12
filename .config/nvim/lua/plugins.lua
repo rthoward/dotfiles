@@ -95,6 +95,7 @@ return require("packer").startup({
       "joshdick/onedark.vim",
       "sainnhe/sonokai",
       "mcchrish/zenbones.nvim",
+      "iandwelker/rose-pine-vim",
     })
 
     -- Theme: icons
