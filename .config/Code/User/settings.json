@@ -17,11 +17,10 @@
   },
   "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnEnter": "on",
-  "editor.fontFamily": "Dank Mono",
+  "editor.fontFamily": "Iosevka Curly Slab Light",
   "editor.fontLigatures": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "HTML (Eex)": "html"
@@ -30,12 +29,10 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "gitlens.codeLens.enabled": false,
+  "gitlens.advanced.externalDiffTool": "smerge",
   "markdown-pdf.styles": [
     "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
   ],
-  "ruby.format": "rubocop",
-  "ruby.useBundler": true,
-  "ruby.useLanguageServer": true,
   "tailwindCSS.includeLanguages": {
     "typescriptreact": "html"
   },
@@ -43,177 +40,7 @@
   "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "d",
-        "h"
-      ],
-      "commands": [
-        "editor.action.revealDefinitionAside"
-      ],
-      "when": "editorTextFocus"
-    },
-    {
-      "before": [
-        "<leader>",
-        "d",
-        "g"
-      ],
-      "commands": [
-        "editor.action.revealDefinition"
-      ],
-      "when": "editorTextFocus"
-    },
-    {
-      "before": [
-        "<leader>",
-        "."
-      ],
-      "commands": [
-        "workbench.action.terminal.focus"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "."
-      ],
-      "commands": [
-        "workbench.action.splitEditorDown"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "/"
-      ],
-      "commands": [
-        "workbench.action.splitEditorRight"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "d"
-      ],
-      "commands": [
-        "workbench.action.closeActiveEditor"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "l"
-      ],
-      "commands": [
-        "workbench.action.focusRightGroup"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "h"
-      ],
-      "commands": [
-        "workbench.action.focusLeftGroup"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "j"
-      ],
-      "commands": [
-        "workbench.action.focusBelowGroup"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.focusAboveGroup"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "e",
-        "j"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "e",
-        "k"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m",
-        "t",
-        "t"
-      ],
-      "commands": [
-        {
-          "command": "workbench.action.tasks.runTask",
-          "args": "test"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m",
-        "t",
-        "l"
-      ],
-      "commands": [
-        "python.runFailedTests"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m",
-        "t",
-        "f"
-      ],
-      "commands": [
-        "python.runCurrentTestFile"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m",
-        "s",
-        "p"
-      ],
-      "commands": [
-        "workbench.actions.view.problems"
-      ]
-    }
-  ],
-  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -226,15 +53,95 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "editor.codeLens": true,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
+  "files.associations": {"*.jbuilder": "ruby"},
   "extensions.ignoreRecommendations": true,
   "gruvboxMaterial.darkContrast": "soft",
   "gruvboxMaterial.darkPalette": "mix",
   "workbench.editor.untitled.hint": "hidden",
   "editor.cursorStyle": "line",
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off"
+  "editor.wordWrap": "off",
+  "editor.guides.bracketPairs": true,
+  "python.defaultInterpreterPath": "/Users/richard/.asdf/shims/python3.9",
+  "solargraph.commandPath": "/Users/richard/.asdf/shims/solargraph",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
+    }
+  ],
+  "whichkey.delay": 500,
+  "whichkey.bindingOverrides": [
+    {
+      "keys": ":",
+      "name": "Commands",
+      "type": "command",
+      "command":"workbench.action.quickOpen",
+    },
+    {
+      "keys": "w..",
+      "name": "Split window down",
+      "type": "command",
+      "command":"workbench.action.splitEditorDown",
+    },
+    {
+      "keys": "w.,",
+      "name": "Split window right",
+      "type": "command",
+      "command":"workbench.action.splitEditorRight",
+    },
+    {
+      "keys": "f.f",
+      "name": "Format",
+      "type": "command",
+      "command":"editor.action.formatDocument",
+    },
+    {
+      "keys": "g",
+      "name": "+Git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "Blame",
+          "type": "command",
+          "command":"gitlens.toggleLineBlame",
+        },
+        {
+          "key": "n",
+          "name": "Next change",
+          "type": "command",
+          "command":"workbench.action.editor.nextChange",
+        },
+        {
+          "key": "p",
+          "name": "Previous change",
+          "type": "command",
+          "command":"workbench.action.editor.previousChange",
+        },
+        {
+          "key": "D",
+          "name": "Discard file",
+          "type": "command",
+          "command":"git.clean",
+        },
+      ]
+    }
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "window.zoomLevel": 1
 }
