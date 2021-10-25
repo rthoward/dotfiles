@@ -31,6 +31,7 @@ positions = {
 screens = {
 	macbook = "Color LCD",
 	home_external = "DELL",
+  work_external = "LG Ultra HD",
 }
 
 apps = {
@@ -120,7 +121,7 @@ end)
 -- layout hotkeys
 
 hs.hotkey.bind(layout_mod, "p", function ()
-  local ext_screen = hs.screen.find(screens.home_external)
+  local ext_screen = hs.screen.find(screens.home_external) or hs.screen.find(screens.work_external)
   local mac_screen = hs.screen.find(screens.macbook)
 
   two_monitor_layout = {
