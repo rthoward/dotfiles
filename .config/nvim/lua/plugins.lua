@@ -33,6 +33,9 @@ return require("packer").startup({
       end,
     })
 
+  use({"jose-elias-alvarez/null-ls.nvim"})
+  use({"jose-elias-alvarez/nvim-lsp-ts-utils"})
+
     use({
       "hrsh7th/nvim-compe",
       event = "InsertEnter",
@@ -84,6 +87,8 @@ return require("packer").startup({
       requires = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-textobjects" },
       config = [[require('config.treesitter')]],
     })
+
+    use({"rktjmp/lush.nvim"})
 
     -- colorschemes
     use({

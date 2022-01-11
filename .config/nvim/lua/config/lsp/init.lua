@@ -52,9 +52,11 @@ local function on_attach(client, bufnr)
   -- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics()')
 
   -- TypeScript specific stuff
-  --[[ if client.name == "typescript" or client.name == "tsserver" then
+  if client.name == "typescript" or client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
     require("config.lsp.ts-utils").setup(client)
-  end ]]
+  end
 end
 
 local lua_lsp_dir = vim.env.HOME .. "/code/tools/lua-language-server/"
@@ -91,7 +93,6 @@ local servers = {
     }
   },
   tailwindcss = {},
-  -- cssls = { cmd = { "css-languageserver", "--stdio" } },
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -100,24 +101,20 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = { "documentation", "detail", "additionalTextEdits" },
 }
 
+local options = {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  },
+}
+
 for server, config in pairs(servers) do
-  lspconfig[server].setup(vim.tbl_deep_extend("force", {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = {
-      debounce_text_changes = 300,
-    },
-    handlers = {
-       --[[ ["textDocument/publishDiagnostics"] = vim.lsp.with(
-         vim.lsp.diagnostic.on_publish_diagnostics, {
-           -- Disable virtual_text
-           virtual_text = false
-         }
-       ), ]]
-     }
-  }, config))
+  lspconfig[server].setup(vim.tbl_deep_extend("force", options, config))
   local cfg = lspconfig[server]
   if not (cfg and cfg.cmd and vim.fn.executable(cfg.cmd[1]) == 1) then
     vim.notify(server .. ": cmd not found: " .. vim.inspect(cfg.cmd))
   end
 end
+
+require("config.lsp.null-ls").setup(options)
