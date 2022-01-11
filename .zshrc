@@ -43,6 +43,10 @@ bindkey '^[OB' history-substring-search-down
 
 export FZF_EDITOR="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
+function zshaddhistory() {
+	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
+}
+
 ########################
 # Aliases
 ########################

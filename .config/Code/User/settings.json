@@ -90,6 +90,12 @@
       "command":"workbench.action.quickOpen",
     },
     {
+      "keys": "h",
+      "name": "Show hover",
+      "type": "command",
+      "command":"editor.action.showHover",
+    },
+    {
       "keys": "w..",
       "name": "Split window down",
       "type": "command",
