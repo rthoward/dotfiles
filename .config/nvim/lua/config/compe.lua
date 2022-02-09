@@ -27,6 +27,8 @@ require("compe").setup({
     treesitter = false,
     emoji = false,
     spell = false,
+    orgmode = true,
+    -- neorg = true,
   },
 })
 

@@ -8,6 +8,7 @@ vim.opt.autowrite = true -- enable auto write
 vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
 vim.opt.encoding = "UTF-8"
 vim.opt.conceallevel = 2 -- Hide * markup for bold and italic
+vim.opt.concealcursor = 'nc'
 vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.expandtab = true -- Use spaces instead of tabs

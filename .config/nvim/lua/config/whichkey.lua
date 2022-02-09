@@ -1,6 +1,31 @@
 local wk = require("which-key")
+local util = require("util")
 
 vim.o.timeoutlen = 300
+
+-- Clear search with <esc>
+util.map("", "<esc>", ":noh<cr>")
+
+-- Move to window using the <ctrl> movement keys
+util.nnoremap("<C-J>", "<C-W><C-J>")
+util.nnoremap("<C-K>", "<C-W><C-K>")
+util.nnoremap("<C-L>", "<C-W><C-L>")
+util.nnoremap("<C-H>", "<C-W><C-H>")
+
+-- Resize window using <ctrl> arrow keys
+util.nnoremap("<S-Up>", ":resize +2<CR>")
+util.nnoremap("<S-Down>", ":resize -2<CR>")
+util.nnoremap("<S-Left>", ":vertical resize -2<CR>")
+util.nnoremap("<S-Right>", ":vertical resize +2<CR>")
+
+-- Easier pasting
+util.nnoremap("[p", ":pu!<cr>")
+util.nnoremap("]p", ":pu<cr>")
+
+-- Clear search with <esc>
+util.map("", "<esc>", ":noh<cr>")
+util.nnoremap("gw", "*N")
+util.xnoremap("gw", "*N")
 
 -- Toggle terminal off on <Esc>
 vim.cmd([[
@@ -59,7 +84,7 @@ wk.setup({
   },
   ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
-  show_help = true, -- show help message on the command line when the popup is visible
+  show_help = false, -- show help message on the command line when the popup is visible
   triggers = "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
   triggers_blacklist = {
@@ -85,16 +110,6 @@ local leader = {
     r = {"<cmd>lua vim.lsp.buf.references()<cr>", "references"},
     R = {"<cmd>lua vim.lsp.buf.rename()<cr>", "rename"},
     t = "test",
-    v = {"<cmd>Vista!!<cr>", "vista"},
-
-    x = {
-      name = "+errors",
-      x = { "<cmd>TroubleToggle<cr>", "Trouble" },
-      w = { "<cmd>TroubleWorkspaceToggle<cr>", "Workspace Trouble" },
-      d = { "<cmd>TroubleDocumentToggle<cr>", "Document Trouble" },
-      l = { "<cmd>lopen<cr>", "Open Location List" },
-      q = { "<cmd>copen<cr>", "Open Quickfix List" },
-    },
   },
 
   h = {
@@ -108,25 +123,35 @@ local leader = {
       i = { "<cmd>PackerInstall<cr>", "Install" },
       c = { "<cmd>PackerCompile<cr>", "Compile" },
     },
-    r = {":source ~/.config/nvim/init.lua<cr>", "reload config"},
   },
 
   g = {
     name = "git",
-    g = {":Neogit<cr>", "git"},
+    g = {"<cmd>Neogit kind=split<cr>", "NeoGit"},
     d = { "<cmd>DiffviewOpen<cr>", "DiffView" },
+    L = {
+      function()
+        require("util").float_terminal("lazygit")
+      end,
+      "LazyGit",
+    },
+    l = {
+      name = "line",
+      b = "blame line",
+    },
+    c = { "<Cmd>Telescope git_commits<CR>", "commits" },
+    b = { "<Cmd>Telescope git_branches<CR>", "branches" },
     h = {
       name = "hunk",
       s = "stage hunk",
       u = "unstage hunk",
       r = "reset hunk",
       p = "preview hunk",
-      b = "blame line",
     },
     f = {
       name = "file",
-      R = "reset file",
-      b = {"<cmd>!smerge blame %<cr>", "blame file"},
+      R = "reset file changes",
+      b = {"<cmd>!smerge blame %<cr>", "blame file in sublime merge"},
     },
     r = {"<cmd>Gitsigns refresh<CR>", "refresh"},
     s = {"<cmd>!smerge<cr>", "open sublime merge"},
@@ -165,15 +190,27 @@ local leader = {
 
   f = {
     name = "files",
-    t = {":NvimTreeToggle<cr>", "toggle tree"},
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    f = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "format"},
     n = { "<cmd>enew<cr>", "New File" },
-    f = "find file in tree",
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    t = {":NvimTreeToggle<cr>", "toggle tree"},
+  },
+
+  x = {
+    name = "+errors",
+    x = { "<cmd>TroubleToggle<cr>", "Trouble" },
+    w = { "<cmd>TroubleWorkspaceToggle<cr>", "Workspace Trouble" },
+    d = { "<cmd>TroubleDocumentToggle<cr>", "Document Trouble" },
+    t = { "<cmd>TodoTrouble<cr>", "Todo Trouble" },
+    T = { "<cmd>TodoTelescope<cr>", "Todo Telescope" },
+    l = { "<cmd>lopen<cr>", "Open Location List" },
+    q = { "<cmd>copen<cr>", "Open Quickfix List" },
   },
 
   ["/"] = {"<cmd>Telescope live_grep<cr>", "grep"},
   [":"] = {"<cmd>Telescope commands<cr>", "search commands"},
   [","] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
+  ["."] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
   ["<space>"] = {"<cmd>Telescope find_files<cr>", "search"},
 
   ["<LeftMouse>"] = {"<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>", "go to definition"},

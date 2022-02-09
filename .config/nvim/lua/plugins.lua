@@ -1,5 +1,3 @@
-local util = require("util")
-
 local config = {
   profile = {
     enable = true,
@@ -15,6 +13,9 @@ return require("packer").startup({
     use({
       "kyazdani42/nvim-tree.lua",
       cmd = { "NvimTreeToggle", "NvimTreeClose" },
+      config = function()
+        require("config.tree")
+      end,
     })
 
     use({
@@ -82,7 +83,6 @@ return require("packer").startup({
       "nvim-treesitter/nvim-treesitter",
       opt = true,
       event = "BufRead",
-      branch = '0.5-compat',
       run = ":TSUpdate",
       requires = { "nvim-treesitter/playground", "nvim-treesitter/nvim-treesitter-textobjects" },
       config = [[require('config.treesitter')]],
@@ -117,7 +117,7 @@ return require("packer").startup({
     use({
       "akinsho/nvim-bufferline.lua",
       event = "BufReadPre",
-      requires = "kyazdani42/nvim-web-devicons",
+      requires = "nvim-web-devicons",
       config = function()
         require("config.bufferline")
       end,
@@ -145,6 +145,14 @@ return require("packer").startup({
     })
 
     use({
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPre",
+    config = function()
+      require("config.blankline")
+    end,
+  })
+
+    use({
       "lewis6991/gitsigns.nvim",
       event = "BufReadPre",
       wants = "plenary.nvim",
@@ -157,7 +165,7 @@ return require("packer").startup({
     use({
       "TimUntersberger/neogit",
       cmd = "Neogit",
-      requires = { 
+      requires = {
         {"nvim-lua/plenary.nvim"},
         {"sindrets/diffview.nvim"},
       },
@@ -218,8 +226,40 @@ return require("packer").startup({
     })
 
     use({
+      "Xuyuanp/scrollbar.nvim",
+      config = function()
+        require("config.scrollbar")
+      end
+    })
+
+    --[[ use({
+      "karb94/neoscroll.nvim",
+      keys = { "<C-u>", "<C-d>", "gg", "G" },
+      config = function()
+        require("config.scroll")
+      end,
+    }) ]]
+
+    use({
       "vim-test/vim-test",
       cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" }
+    })
+
+    --[[ use({
+      "nvim-neorg/neorg",
+      config = function()
+        require("config.neorg")
+      end,
+      requires = "nvim-lua/plenary.nvim",
+      after = {"nvim-treesitter"}
+    }) ]]
+
+    use({
+      "nvim-orgmode/orgmode",
+      ft = {'org'},
+      config = function()
+        require("config.org")
+      end
     })
 
   end,

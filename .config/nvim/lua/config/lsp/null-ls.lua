@@ -8,9 +8,10 @@ function M.setup(options)
     sources = {
       nls.builtins.formatting.prettierd,
       nls.builtins.formatting.eslint_d,
+      nls.builtins.diagnostics.eslint_d,
       nls.builtins.code_actions.gitsigns,
-      --[[ nls.builtins.formatting.fixjson.with({ filetypes = { "jsonc" } }),
       nls.builtins.formatting.stylua,
+      --[[ nls.builtins.formatting.fixjson.with({ filetypes = { "jsonc" } }),
       nls.builtins.formatting.fish_indent,
       nls.builtins.diagnostics.shellcheck,
       nls.builtins.diagnostics.markdownlint,
