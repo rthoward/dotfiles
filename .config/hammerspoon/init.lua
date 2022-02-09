@@ -45,6 +45,7 @@ apps = {
   slack = { name = "Slack", path = "/Applications/Slack.app" },
   spotify = { name = "Spotify", path = "/Applications/Spotify.app" },
   zoom = { name = "Zoom", path = "/Applications/zoom.us.app" },
+  obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app"}
 }
 
 app_mod = {"cmd", "shift"}
@@ -99,6 +100,10 @@ end)
 
 hs.hotkey.bind(app_mod, "m", function()
     hs.application.launchOrFocus(apps.spotify.path)
+end)
+
+hs.hotkey.bind(app_mod, "n", function()
+    hs.application.launchOrFocus(apps.obsidian.path)
 end)
 
 hs.hotkey.bind(app_mod, "z", function()
