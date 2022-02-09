@@ -73,6 +73,14 @@
     {
       "before": ["<space>"],
       "commands": ["whichkey.show"]
+    },
+    {
+      "before": ["]", "g"],
+      "commands": ["workbench.action.editor.nextChange"],
+    },
+    {
+      "before": ["[", "g"],
+      "commands": ["workbench.action.editor.previousChange"],
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -81,13 +89,19 @@
       "commands": ["whichkey.show"]
     }
   ],
-  "whichkey.delay": 500,
+  "whichkey.delay": 300,
   "whichkey.bindingOverrides": [
+    {
+      "keys": " ",
+      "name": "Files",
+      "type": "command",
+      "command":"workbench.action.quickOpen",
+    },
     {
       "keys": ":",
       "name": "Commands",
       "type": "command",
-      "command":"workbench.action.quickOpen",
+      "command":"workbench.action.showCommands",
     },
     {
       "keys": "h",
@@ -148,5 +162,6 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "explorer.confirmDragAndDrop": false,
 }
