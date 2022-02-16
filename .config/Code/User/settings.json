@@ -17,7 +17,7 @@
   },
   "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnEnter": "on",
-  "editor.fontFamily": "Iosevka Curly Slab Light",
+  "editor.fontFamily": "Iosevka Curly Slab",
   "editor.fontLigatures": true,
   "editor.fontSize": 17,
   "editor.minimap.enabled": false,
@@ -40,22 +40,18 @@
   "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
-  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.diagnosticMode": "openFilesOnly",
-  "python.terminal.launchArgs": [
-    "-m",
-    "IPython",
-    "--no-autoindent",
-  ],
+  "python.terminal.launchArgs": ["-m", "IPython", "--no-autoindent"],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "editor.codeLens": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "files.associations": {"*.jbuilder": "ruby"},
+  "files.associations": { "*.jbuilder": "ruby" },
   "extensions.ignoreRecommendations": true,
   "gruvboxMaterial.darkContrast": "soft",
   "gruvboxMaterial.darkPalette": "mix",
@@ -76,11 +72,11 @@
     },
     {
       "before": ["]", "g"],
-      "commands": ["workbench.action.editor.nextChange"],
+      "commands": ["workbench.action.editor.nextChange"]
     },
     {
       "before": ["[", "g"],
-      "commands": ["workbench.action.editor.previousChange"],
+      "commands": ["workbench.action.editor.previousChange"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -95,37 +91,37 @@
       "keys": " ",
       "name": "Files",
       "type": "command",
-      "command":"workbench.action.quickOpen",
+      "command": "workbench.action.quickOpen"
     },
     {
       "keys": ":",
       "name": "Commands",
       "type": "command",
-      "command":"workbench.action.showCommands",
+      "command": "workbench.action.showCommands"
     },
     {
       "keys": "h",
       "name": "Show hover",
       "type": "command",
-      "command":"editor.action.showHover",
+      "command": "editor.action.showHover"
     },
     {
       "keys": "w..",
       "name": "Split window down",
       "type": "command",
-      "command":"workbench.action.splitEditorDown",
+      "command": "workbench.action.splitEditorDown"
     },
     {
       "keys": "w.,",
       "name": "Split window right",
       "type": "command",
-      "command":"workbench.action.splitEditorRight",
+      "command": "workbench.action.splitEditorRight"
     },
     {
       "keys": "f.f",
       "name": "Format",
       "type": "command",
-      "command":"editor.action.formatDocument",
+      "command": "editor.action.formatDocument"
     },
     {
       "keys": "g",
@@ -136,26 +132,26 @@
           "key": "b",
           "name": "Blame",
           "type": "command",
-          "command":"gitlens.toggleLineBlame",
+          "command": "gitlens.toggleLineBlame"
         },
         {
           "key": "n",
           "name": "Next change",
           "type": "command",
-          "command":"workbench.action.editor.nextChange",
+          "command": "workbench.action.editor.nextChange"
         },
         {
           "key": "p",
           "name": "Previous change",
           "type": "command",
-          "command":"workbench.action.editor.previousChange",
+          "command": "workbench.action.editor.previousChange"
         },
         {
           "key": "D",
           "name": "Discard file",
           "type": "command",
-          "command":"git.clean",
-        },
+          "command": "git.clean"
+        }
       ]
     }
   ],
@@ -163,5 +159,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.bracketPairColorization.enabled": true,
-  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDragAndDrop": false
 }
