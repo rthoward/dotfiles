@@ -29,6 +29,7 @@ export GH_PAGER="bat -p"
 export PYTHONBREAKPOINT="ipdb.set_trace"
 export BAT_THEME="ansi"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=light"
+export SWIFT_DIR=/usr/lib/swift
 
 alias gits='git status'
 alias tmux='tmux -2'

@@ -1,22 +1,24 @@
-if [ ! -e ~/antigen.zsh  ]; then
-  echo "Installing antigen..."
-  curl -L git.io/antigen > ~/antigen.zsh
+########################
+# Package Manager
+########################
+
+if [ ! -f ~/.zsh/znap/znap.zsh ]; then
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh/znap
 fi
 
-source ~/antigen.zsh
+source ~/.zsh/znap/znap.zsh
 
 ########################
 # Packages
 ########################
 
-antigen use oh-my-zsh
-antigen bundle vi-mode
-antigen bundle web-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-antigen apply
+znap prompt sindresorhus/pure
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-history-substring-search
+znap source rupa/z
+znap source ohmyzsh/ohmyzsh plugins/asdf
+znap source ohmyzsh/ohmyzsh plugins/vi-mode
 
 
 ########################
@@ -29,6 +31,8 @@ compinit -i
 ########################
 # Keybindings
 ########################
+
+VI_MODE_SET_CURSOR=true
 
 # zsh-history-substring-search configuration
 bindkey '^[OA' history-substring-search-up
