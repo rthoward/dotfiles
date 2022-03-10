@@ -40,6 +40,7 @@ apps = {
   emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
   neovim = { name = "neovim", path = "/Users/richard/Applications/Neovim.app" },
   alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
+  kitty = { name = "kitty", path = "/Applications/kitty.app" },
   iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
   firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
   slack = { name = "Slack", path = "/Applications/Slack.app" },
@@ -52,7 +53,7 @@ app_mod = {"cmd", "shift"}
 layout_mod = {"cmd", "alt", "ctrl"}
 
 editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs }
-terminals = { apps.alacritty, apps.iterm2  }
+terminals = { apps.kitty, apps.alacritty, apps.iterm2  }
 
 -- state
 
