@@ -159,5 +159,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.bracketPairColorization.enabled": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 1
 }

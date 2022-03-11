@@ -87,8 +87,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.poetry/env
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.poetry/env
 
 eval "$(direnv hook zsh)"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
