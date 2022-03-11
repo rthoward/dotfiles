@@ -13,7 +13,6 @@ source ~/.zsh/znap/znap.zsh
 ########################
 
 znap prompt sindresorhus/pure
-znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
 znap source rupa/z
