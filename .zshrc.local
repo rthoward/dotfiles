@@ -49,6 +49,7 @@ alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 alias emacs="open /Applications/Emacs.app/"
 alias pr="gh pr view -c"
 alias theme="$HOME/code/theme/bin/run"
+alias ls="exa"
 
 # PG_ARGS="-h localhost -U postgres"
 # alias dropdb="dropdb $PG_ARGS"
