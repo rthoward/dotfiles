@@ -72,7 +72,7 @@ local servers = {
   pyright = {},
   tsserver = {},
   solargraph = {},
-  sumneko_lua = {
+  --[[ sumneko_lua = {
     cmd = lua_cmd,
     settings = {
       Lua = {
@@ -91,8 +91,8 @@ local servers = {
         }
       }
     }
-  },
-  tailwindcss = {},
+  }, ]]
+  --tailwindcss = {},
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
