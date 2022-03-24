@@ -94,6 +94,25 @@
       "command": "workbench.action.quickOpen"
     },
     {
+      "keys": ["."],
+      "name": "Definition+",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": ".",
+          "name": "Go to definition",
+          "type": "command",
+          "command": "editor.action.revealDefinition"
+        },
+        {
+          "key": ",",
+          "name": "Go to definition (aside)",
+          "type": "command",
+          "command": "editor.action.revealDefinitionAside"
+        }
+      ]
+    },
+    {
       "keys": ":",
       "name": "Commands",
       "type": "command",
@@ -132,7 +151,7 @@
           "key": "b",
           "name": "Blame",
           "type": "command",
-          "command": "gitlens.toggleLineBlame"
+          "command": "gitlens.toggleFileBlame"
         },
         {
           "key": "n",
@@ -151,7 +170,14 @@
           "name": "Discard file",
           "type": "command",
           "command": "git.clean"
-        }
+        },
+        {
+          "key": "d",
+          "name": "Discard hunk",
+          "type": "command",
+          "command": "git.revertSelectedRanges"
+        },
+
       ]
     }
   ],
