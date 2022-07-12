@@ -145,7 +145,7 @@ local leader = {
       name = "hunk",
       s = "stage hunk",
       u = "unstage hunk",
-      r = "reset hunk",
+      d = "discard hunk",
       p = "preview hunk",
     },
     f = {

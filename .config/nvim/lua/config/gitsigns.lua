@@ -34,7 +34,7 @@ require("gitsigns").setup({
     ["n [c"] = { expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'" },
     ["n <leader>ghs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
     ["n <leader>ghu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-    ["n <leader>ghr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+    ["n <leader>ghd"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
     ["n <leader>ghp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
     ["n <leader>glb"] = '<cmd>lua require"gitsigns".blame_line()<CR>',
 
