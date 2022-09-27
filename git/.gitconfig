@@ -22,7 +22,7 @@
 [core]
   excludesfile = /Users/richard/.gitignore_global
   autocrlf     = input
-  editor = nvim
+  editor       = nvim
 
 [fetch]
   prune = true
@@ -59,7 +59,7 @@
 
 [user]
   name = Richard Howard
-  email = richard@promptworks.com
+  email = richard.howard@wonderschool.com
 
 # NEEDS TO BE LAST LINE IN THIS FILE
 [include]
