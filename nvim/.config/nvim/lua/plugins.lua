@@ -144,13 +144,13 @@ return require("packer").startup({
       },
     })
 
-    use({
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre",
-    config = function()
-      require("config.blankline")
-    end,
-  })
+    --[[ use({
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufReadPre",
+      config = function()
+        require("config.blankline")
+      end,
+    }) ]]
 
     use({
       "lewis6991/gitsigns.nvim",

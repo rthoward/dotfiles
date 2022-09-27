@@ -69,9 +69,9 @@ local lua_cmd = {
 }
 
 local servers = {
-  pyright = {},
-  tsserver = {},
-  solargraph = {},
+  -- pyright = {},
+  -- tsserver = {},
+  -- solargraph = {},
   --[[ sumneko_lua = {
     cmd = lua_cmd,
     settings = {
