@@ -1,6 +1,5 @@
 dotfiles
 ========
-# dotfiles
 
 Install homebrew:
 
