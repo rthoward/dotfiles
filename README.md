@@ -17,3 +17,8 @@ Run the following command in whichever directory you usually keep your source co
     $ brew bundle
     $ make install
 
+MacOS Setup:
+
+    $ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+    $ defaults write NSGlobalDomain KeyRepeat -int 2
+    $ defaults write NSGlobalDomain InitialKeyRepeat -int 25
