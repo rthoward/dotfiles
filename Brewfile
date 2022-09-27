@@ -18,7 +18,7 @@ brew "exa"
 brew "gh"
 brew "jq"
 brew "gnupg"
-brew "delta"
+brew "git-delta"
 brew "direnv"
 
 cask "firefox"
