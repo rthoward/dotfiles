@@ -1,11 +1,7 @@
-**/.envrc
+Brewfile.lock.json
 
-.vim/autoload
-.vim/plugged
+nvim/.config/nvim/plugin
 
-.config/wtf/*.json
+Code/Library/Application Support/Code/
+!Code/Library/Application Support/Code/User
 
-.config/pgcli/log
-.config/pgcli/history
-
-.config/nvim/plugin/
