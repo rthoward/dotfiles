@@ -1,0 +1,28 @@
+# vi:set ft=ruby
+
+tap "homebrew/cask"
+
+brew "nvim"
+brew "ripgrep"
+brew "zsh"
+brew "bat"
+brew "fzf"
+brew "tldr"
+brew "htop"
+brew "fd"
+brew "wget"
+brew "entr"
+brew "coreutils"
+brew "exa"
+brew "gh"
+brew "jq"
+brew "gnupg"
+brew "delta"
+
+cask "firefox"
+cask "docker"
+cask "kitty"
+cask "vlc"
+cask "visual-studio-code"
+cask "slack"
+cask "spotify"
