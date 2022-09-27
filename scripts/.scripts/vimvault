@@ -1,0 +1,19 @@
+#!/bin/bash
+
+file_path=${1}
+
+if [ -z "$file_path" ]; then
+  echo "Usage: vimvault <file_path>"
+  exit 1
+fi
+
+file=$(basename $file_path)
+file_extension=$(echo ${file} | rev | cut -d. -f2 | rev)
+
+uuid=$(cat /dev/urandom | LC_CTYPE=C  tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+decrypted_file_path="/tmp/${uuid}.${file_extension}"
+
+openssl des3 -d -in $file_path -out $decrypted_file_path && \
+  vim $decrypted_file_path && \
+  openssl des3 -in $decrypted_file_path -out $file_path && \
+  shred -uz $decrypted_file_path
