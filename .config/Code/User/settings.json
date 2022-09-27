@@ -40,7 +40,7 @@
   "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Tokyo Night Light",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -186,5 +186,10 @@
   },
   "editor.bracketPairColorization.enabled": true,
   "explorer.confirmDragAndDrop": false,
-  "window.zoomLevel": 1
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
