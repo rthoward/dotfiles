@@ -1,7 +1,7 @@
 .PHONY: install
 install:
-	stow -n --verbose --target=$(HOME) */
+	stow --verbose --target=$(HOME) */
 
 .PHONY: uninstall
 uninstall:
-	stow -n --verbose --target=$(HOME) --delete */
+	stow --verbose --target=$(HOME) --delete */
