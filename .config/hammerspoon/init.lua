@@ -39,6 +39,7 @@ apps = {
   vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
   emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
   neovim = { name = "neovim", path = "/Users/richard/Applications/Neovim.app" },
+  xcode = { name = "xcode", path = "/Applications/Xcode.app" },
   alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
   kitty = { name = "kitty", path = "/Applications/kitty.app" },
   iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
@@ -52,7 +53,7 @@ apps = {
 app_mod = {"cmd", "shift"}
 layout_mod = {"cmd", "alt", "ctrl"}
 
-editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs }
+editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs, apps.xcode }
 terminals = { apps.kitty, apps.alacritty, apps.iterm2  }
 
 -- state
