@@ -47,7 +47,9 @@ apps = {
   slack = { name = "Slack", path = "/Applications/Slack.app" },
   spotify = { name = "Spotify", path = "/Applications/Spotify.app" },
   zoom = { name = "Zoom", path = "/Applications/zoom.us.app" },
-  obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app"}
+  obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app"},
+  postico = { name = "Postico", path = "/Applications/Postico.app"},
+  tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app"},
 }
 
 app_mod = {"cmd", "shift"}
@@ -55,11 +57,13 @@ layout_mod = {"cmd", "alt", "ctrl"}
 
 editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs, apps.xcode }
 terminals = { apps.kitty, apps.alacritty, apps.iterm2  }
+db_tools = { apps.tableplus, apps.postico }
 
 -- state
 
 editor_index = 1
 terminal_index = 1
+db_tool_index = 1
 slack_shortcut_enabled = true
 
 -- helpers
@@ -72,12 +76,20 @@ function current_terminal()
   return terminals[terminal_index]
 end
 
-function cycleEditor ()
+function current_db_tool()
+  return db_tools[db_tool_index]
+end
+
+function cycle_editor ()
   editor_index = (editor_index % #editors) + 1
 end
 
-function cycleTerminal ()
+function cycle_terminal ()
   terminal_index = (terminal_index % #terminals) + 1
+end
+
+function cycle_db_tool ()
+  db_tool_index = (db_tool_index % #db_tools) + 1
 end
 
 -- application hotkeys
@@ -98,6 +110,10 @@ end)
 
 hs.hotkey.bind(app_mod, "e", function()
   hs.application.launchOrFocus(current_editor().path)
+end)
+
+hs.hotkey.bind(app_mod, "d", function()
+  hs.application.launchOrFocus(current_db_tool().path)
 end)
 
 hs.hotkey.bind(app_mod, "m", function()
@@ -199,7 +215,7 @@ end)
 
 meta_mode:bind(app_mod, 'e', 'Cycle Editor', function ()
   hs.alert.closeAll()
-  cycleEditor()
+  cycle_editor()
   hs.alert("Editor is now " .. current_editor().name)
 end)
 
@@ -211,10 +227,16 @@ meta_mode:bind(app_mod, 's', 'Toggle slack shortcut', function ()
   hs.alert("Slack shortcut is now " .. state_text)
 end)
 
-meta_mode:bind(app_mod, 'space', 'Toggle Terminal', function ()
+meta_mode:bind(app_mod, 'space', 'Cycle terminal', function ()
   hs.alert.closeAll()
-  cycleTerminal()
+  cycle_terminal()
   hs.alert("Terminal is now " .. current_terminal().name)
+end)
+
+meta_mode:bind(app_mod, 'd', 'Cycle database tool', function ()
+  hs.alert.closeAll()
+  cycle_db_tool()
+  hs.alert("Database tool is now " .. current_db_tool().name)
 end)
 
 function changeVolume(diff)
