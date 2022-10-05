@@ -53,8 +53,6 @@
   },
   "files.associations": { "*.jbuilder": "ruby" },
   "extensions.ignoreRecommendations": true,
-  "gruvboxMaterial.darkContrast": "soft",
-  "gruvboxMaterial.darkPalette": "mix",
   "workbench.editor.untitled.hint": "hidden",
   "editor.cursorStyle": "line",
   "editor.insertSpaces": true,
@@ -63,7 +61,6 @@
   "editor.wordWrap": "off",
   "editor.guides.bracketPairs": true,
   "python.defaultInterpreterPath": "/Users/richard/.asdf/shims/python3.9",
-  "solargraph.commandPath": "/Users/richard/.asdf/shims/solargraph",
 
   "vim.normalModeKeyBindingsNonRecursive": [
     {
