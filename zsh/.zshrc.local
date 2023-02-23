@@ -48,7 +48,7 @@ alias rbbe="bundle exec"
 alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 alias emacs="open /Applications/Emacs.app/"
 alias pr="gh pr view -c"
-alias theme="$HOME/code/theme/bin/run"
+alias theme="vim ~/.config/kitty/kitty.conf ~/.config/nvim/lua/config/theme.lua ~/.gitconfig.local"
 alias ls="exa"
 
 # PG_ARGS="-h localhost -U postgres"
