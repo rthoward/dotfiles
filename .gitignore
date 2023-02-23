@@ -5,4 +5,4 @@ nvim/.config/nvim/plugin
 Code/Library/Application Support/Code/
 !Code/Library/Application Support/Code/User
 
-lvim/plugin
+lvim/.config/lvim/plugin
