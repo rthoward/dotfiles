@@ -23,7 +23,7 @@
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
-    "HTML (Eex)": "html"
+    "phoenix-heex": "html"
   },
   "explorer.confirmDelete": false,
   "files.insertFinalNewline": true,
@@ -34,24 +34,32 @@
     "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
   ],
   "tailwindCSS.includeLanguages": {
-    "typescriptreact": "html"
+    "typescriptreact": "html",
+    "phoenix-heex": "html"
   },
   "tailwindCSS.validate": true,
   "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
-  "workbench.colorTheme": "Tokyo Night Light",
+  "workbench.colorTheme": "doom-one",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.diagnosticMode": "openFilesOnly",
-  "python.terminal.launchArgs": ["-m", "IPython", "--no-autoindent"],
+  "python.terminal.launchArgs": [
+    "-m",
+    "IPython",
+    "--no-autoindent"
+  ],
   "python.testing.autoTestDiscoverOnSaveEnabled": false,
   "editor.codeLens": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "files.associations": { "*.jbuilder": "ruby" },
+  "files.associations": {
+    "*.jbuilder": "ruby",
+    "*.heex": "html-eex"
+  },
   "extensions.ignoreRecommendations": true,
   "workbench.editor.untitled.hint": "hidden",
   "editor.cursorStyle": "line",
@@ -61,25 +69,42 @@
   "editor.wordWrap": "off",
   "editor.guides.bracketPairs": true,
   "python.defaultInterpreterPath": "/Users/richard/.asdf/shims/python3.9",
-
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["whichkey.show"]
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
     },
     {
-      "before": ["]", "g"],
-      "commands": ["workbench.action.editor.nextChange"]
+      "before": [
+        "]",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.editor.nextChange"
+      ]
     },
     {
-      "before": ["[", "g"],
-      "commands": ["workbench.action.editor.previousChange"]
+      "before": [
+        "[",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.editor.previousChange"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["whichkey.show"]
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
     }
   ],
   "whichkey.delay": 300,
@@ -91,21 +116,29 @@
       "command": "workbench.action.quickOpen"
     },
     {
-      "keys": ["."],
-      "name": "Definition+",
+      "keys": [
+        "r"
+      ],
+      "name": "+REPL",
       "type": "bindings",
       "bindings": [
         {
-          "key": ".",
-          "name": "Go to definition",
+          "key": "<enter>",
+          "name": "Send selection to repl",
           "type": "command",
-          "command": "editor.action.revealDefinition"
+          "command": "workbench.action.terminal.runSelectedText"
         },
         {
-          "key": ",",
-          "name": "Go to definition (aside)",
+          "key": "r",
+          "name": "Send selection to repl",
           "type": "command",
-          "command": "editor.action.revealDefinitionAside"
+          "command": "workbench.action.terminal.runSelectedText"
+        },
+        {
+          "key": "f",
+          "name": "Send file to repl",
+          "type": "command",
+          "command": "workbench.action.terminal.runActiveFile"
         }
       ]
     },
@@ -174,7 +207,6 @@
           "type": "command",
           "command": "git.revertSelectedRanges"
         },
-
       ]
     }
   ],
@@ -189,4 +221,15 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "git.autofetch": true,
+  "githubPullRequests.pullBranch": "never",
+  "git.mergeEditor": false,
+  "terminal.integrated.scrollback": 10000,
+  "[phoenix-heex]": {
+    "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
+},
+"[html-eex]": {
+  "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
+},
+"window.zoomLevel": 2,
 }
