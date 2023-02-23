@@ -5,7 +5,7 @@ hs.alert.defaultStyle.strokeColor = { white = 1, alpha = 0 }
 
 positions = {
   maximized = hs.layout.maximized,
-  centered = {x=0.05, y=0.05, w=0.9, h=0.9},
+  centered = {x=0.0125, y=0.0125, w=0.975, h=0.975},
 
   left34 = {x=0, y=0, w=0.34, h=1},
   left50 = hs.layout.left50,
@@ -50,6 +50,7 @@ apps = {
   obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app"},
   postico = { name = "Postico", path = "/Applications/Postico.app"},
   tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app"},
+  insomnia = { name = "Insomnia", path = "/Applications/Insomnia.app"},
 }
 
 app_mod = {"cmd", "shift"}
@@ -124,6 +125,10 @@ hs.hotkey.bind(app_mod, "n", function()
     hs.application.launchOrFocus(apps.obsidian.path)
 end)
 
+hs.hotkey.bind(app_mod, "i", function()
+    hs.application.launchOrFocus(apps.insomnia.path)
+end)
+
 hs.hotkey.bind(app_mod, "z", function()
     hs.application.get("zoom.us"):activate()
 end)
@@ -176,6 +181,11 @@ end)
 -- maximize window
 hs.hotkey.bind(layout_mod, "m", function()
   hs.window.focusedWindow():maximize()
+end)
+
+-- center window
+hs.hotkey.bind(layout_mod, "c", function()
+  hs.window.focusedWindow():moveToUnit(positions.centered)
 end)
 
 -- move window to left 2/3 of screen
