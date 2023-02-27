@@ -207,6 +207,12 @@
           "type": "command",
           "command": "git.revertSelectedRanges"
         },
+        {
+          "key": "g",
+          "name": "Magit status",
+          "type": "command",
+          "command": "magit.status"
+        },
       ]
     }
   ],
