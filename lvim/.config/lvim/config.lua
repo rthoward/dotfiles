@@ -17,6 +17,7 @@ lvim.format_on_save.enabled = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
+
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
@@ -57,7 +58,7 @@ vim.o.timeoutlen = 300
 
 -- Use which-key to add extra bindings with the leader-key prefix
 
-lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope live_grep<CR>", "Find" }
+lvim.builtin.which_key.mappings["/"] = { "<cmd>Telescope live_grep<CR>", "Grep" }
 
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
@@ -220,10 +221,10 @@ lvim.plugins = {
   },
   {
     "mcchrish/zenbones.nvim",
-    requires = "rktjmp/lush.nvim"
+    dependencies = "rktjmp/lush.nvim"
   }, {
     'TimUntersberger/neogit',
-    requires = {
+    dependencies = {
       'nvim-lua/plenary.nvim',
       "sindrets/diffview.nvim",
     },
@@ -235,7 +236,7 @@ lvim.plugins = {
       })
     end
   },
-  {"~/code/conjure"},
+  { dir = "~/code/conjure", lazy = false },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

@@ -6,3 +6,4 @@ Code/Library/Application Support/Code/
 !Code/Library/Application Support/Code/User
 
 lvim/.config/lvim/plugin
+lvim/.config/lvim/lazy-lock.json
