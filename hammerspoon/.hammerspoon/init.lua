@@ -30,8 +30,8 @@ positions = {
 
 screens = {
 	macbook = "Color LCD",
-	home_external = "DELL",
-  work_external = "LG Ultra HD",
+	ex_landscape = "DELL",
+  ex_portrait = "27GL850"
 }
 
 apps = {
@@ -149,33 +149,33 @@ end)
 -- layout hotkeys
 
 hs.hotkey.bind(layout_mod, "p", function ()
-  local ext_screen = hs.screen.find(screens.home_external) or hs.screen.find(screens.work_external)
+  local ex_l = hs.screen.find(screens.ex_landscape)
+  local ex_p= hs.screen.find(screens.ex_portrait)
   local mac_screen = hs.screen.find(screens.macbook)
 
-  two_monitor_layout = {
-    {apps.firefox.name,         nil,    ext_screen,   positions.centered,   nil,    nil},
-    {current_editor().name,     nil,    ext_screen,   positions.left55,     nil,    nil},
-    {current_terminal().name,   nil,    ext_screen,   positions.right45,    nil,    nil},
+  print(ex_p)
+  print(ex_l)
 
-    {apps.slack.name,           nil,    mac_screen,   positions.centered,  nil,    nil},
-    {apps.spotify.name,         nil,    mac_screen,   positions.centered,  nil,    nil},
+  two_monitor_layout = {
+    {apps.firefox.name,         nil,    ex_l,   positions.centered,   nil,    nil},
+    {current_editor().name,     nil,    ex_l,   positions.centered,   nil,    nil},
+
+    {current_terminal().name,   nil,    ex_p,   positions.maximized,  nil,    nil},
+    {apps.slack.name,           nil,    ex_p,   positions.maximized,  nil,    nil},
+    {apps.obsidian.name,        nil,    ex_p,   positions.maximized,  nil,    nil},
+    {apps.spotify.name,         nil,    ex_p,   positions.maximized,  nil,    nil},
   }
 
   one_monitor_layout = {
-    {current_editor().name,     nil,    mac_screen,   positions.maximized,  nil,    nil},
-    {current_terminal().name,   nil,    mac_screen,   positions.maximized,  nil,    nil},
+    {current_editor().name,     nil,    mac_screen,   positions.centered,  nil,    nil},
+    {current_terminal().name,   nil,    mac_screen,   positions.centered,  nil,    nil},
     {apps.slack.name,           nil,    mac_screen,   positions.centered,  nil,    nil},
     {apps.spotify.name,         nil,    mac_screen,   positions.centered,  nil,    nil},
   }
 
-  local layout_to_use = nil
-  if ext_screen == nil then
-    layout_to_use = one_monitor_layout
-  else
-    layout_to_use = two_monitor_layout
+  if ex_p and ex_l then
+    hs.layout.apply(two_monitor_layout)
   end
-
-  hs.layout.apply(layout_to_use)
 end)
 
 -- maximize window
@@ -204,6 +204,15 @@ end)
 
 hs.hotkey.bind(layout_mod, "down", function()
   hs.window.focusedWindow():moveOneScreenSouth(false, true)
+  hs.window.focusedWindow():maximize(0)
+end)
+
+hs.hotkey.bind(layout_mod, "right", function()
+  hs.window.focusedWindow():moveOneScreenEast(false, true)
+end)
+
+hs.hotkey.bind(layout_mod, "left", function()
+  hs.window.focusedWindow():moveOneScreenWest(false, true)
   hs.window.focusedWindow():maximize(0)
 end)
 
