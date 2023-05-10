@@ -30,9 +30,6 @@
   "files.trimTrailingWhitespace": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.advanced.externalDiffTool": "smerge",
-  "markdown-pdf.styles": [
-    "/Users/richard/Library/Application Support/MacDown/Styles/Clearness.css"
-  ],
   "tailwindCSS.includeLanguages": {
     "typescriptreact": "html",
     "phoenix-heex": "html"
@@ -65,7 +62,6 @@
   "editor.cursorStyle": "line",
   "editor.insertSpaces": true,
   "editor.lineNumbers": "on",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "editor.guides.bracketPairs": true,
   "python.defaultInterpreterPath": "/Users/richard/.asdf/shims/python3.9",
@@ -233,9 +229,8 @@
   "terminal.integrated.scrollback": 10000,
   "[phoenix-heex]": {
     "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
-},
-"[html-eex]": {
-  "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
-},
-"window.zoomLevel": 2,
+  },
+  "[html-eex]": {
+    "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
+  },
 }
