@@ -200,14 +200,24 @@ hs.hotkey.bind(layout_mod, "c", function()
   hs.window.focusedWindow():moveToUnit(positions.centered)
 end)
 
--- move window to left 2/3 of screen
+-- resize window to left 2/3 of screen
 hs.hotkey.bind(layout_mod, "h", function()
   hs.window.focusedWindow():moveToUnit(positions.left55)
 end)
 
--- move window to right 2/3 of screen
+-- resize window to right 2/3 of screen
 hs.hotkey.bind(layout_mod, "l", function()
   hs.window.focusedWindow():moveToUnit(positions.right45)
+end)
+
+-- resize window to top 1/2 of screen
+hs.hotkey.bind(layout_mod, "k", function()
+  hs.window.focusedWindow():moveToUnit(positions.upper50)
+end)
+
+-- resize window to bottom 1/2 of screen
+hs.hotkey.bind(layout_mod, "j", function()
+  hs.window.focusedWindow():moveToUnit(positions.lower50)
 end)
 
 hs.hotkey.bind(layout_mod, "up", function()
