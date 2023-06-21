@@ -95,38 +95,53 @@ end
 
 -- application hotkeys
 
+-- Given an application, open it or focus on one of its windows.
+-- If the focused window is on a different screen than the mouse cursor
+-- then move the cursor to center of the new window.
+function launchOrFocus(app)
+  current_mouse_screen = hs.mouse.getCurrentScreen()
+  hs.application.launchOrFocus(app)
+
+  new_window = hs.window.focusedWindow()
+
+  if current_mouse_screen ~= new_window:screen() then
+    new_mouse_coords = new_window:frame().center
+    hs.mouse.absolutePosition(new_mouse_coords)
+  end
+end
+
 hs.hotkey.bind(app_mod, "W", function()
-    hs.application.launchOrFocus(apps.firefox.path)
+    launchOrFocus(apps.firefox.path)
 end)
 
 hs.hotkey.bind(app_mod, "space", function()
-    hs.application.launchOrFocus(current_terminal().path)
+    launchOrFocus(current_terminal().path)
 end)
 
 hs.hotkey.bind(app_mod, "s", function()
-    if slack_shortcut_enabled then
-      hs.application.launchOrFocus(apps.slack.path)
-    end
+  if slack_shortcut_enabled then
+    launchOrFocus(apps.slack.path)
+  end
 end)
 
 hs.hotkey.bind(app_mod, "e", function()
-  hs.application.launchOrFocus(current_editor().path)
+  launchOrFocus(current_editor().path)
 end)
 
 hs.hotkey.bind(app_mod, "d", function()
-  hs.application.launchOrFocus(current_db_tool().path)
+  launchOrFocus(current_db_tool().path)
 end)
 
 hs.hotkey.bind(app_mod, "m", function()
-    hs.application.launchOrFocus(apps.spotify.path)
+    launchOrFocus(apps.spotify.path)
 end)
 
 hs.hotkey.bind(app_mod, "n", function()
-    hs.application.launchOrFocus(apps.obsidian.path)
+    launchOrFocus(apps.obsidian.path)
 end)
 
 hs.hotkey.bind(app_mod, "i", function()
-    hs.application.launchOrFocus(apps.insomnia.path)
+    launchOrFocus(apps.insomnia.path)
 end)
 
 hs.hotkey.bind(app_mod, "z", function()
@@ -153,15 +168,12 @@ hs.hotkey.bind(layout_mod, "p", function ()
   local ex_p= hs.screen.find(screens.ex_portrait)
   local mac_screen = hs.screen.find(screens.macbook)
 
-  print(ex_p)
-  print(ex_l)
-
   two_monitor_layout = {
     {apps.firefox.name,         nil,    ex_l,   positions.centered,   nil,    nil},
     {current_editor().name,     nil,    ex_l,   positions.centered,   nil,    nil},
 
-    {current_terminal().name,   nil,    ex_p,   positions.maximized,  nil,    nil},
-    {apps.slack.name,           nil,    ex_p,   positions.maximized,  nil,    nil},
+    {current_terminal().name,   nil,    ex_p,   positions.lower50,  nil,    nil},
+    {apps.slack.name,           nil,    ex_p,   positions.upper50,  nil,    nil},
     {apps.obsidian.name,        nil,    ex_p,   positions.maximized,  nil,    nil},
     {apps.spotify.name,         nil,    ex_p,   positions.maximized,  nil,    nil},
   }
