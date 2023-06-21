@@ -91,17 +91,11 @@
       "commands": [
         "workbench.action.editor.previousChange"
       ]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
+    },
     {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
-      ]
-    }
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
   ],
   "whichkey.delay": 300,
   "whichkey.bindingOverrides": [
