@@ -1,6 +1,2 @@
-require "util"
-require "options"
-require "bootstrap"
-require "plugins"
-require "config.theme"
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
