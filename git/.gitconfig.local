@@ -8,6 +8,7 @@
   dlc = diff --cached HEAD^
   dc = diff --cached
   ap = add -p
+  c = commit -v
 
 [pager]
   diff = delta
