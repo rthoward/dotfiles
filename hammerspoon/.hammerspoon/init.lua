@@ -42,7 +42,8 @@ apps = {
 		name = "neovim",
 		path = "/Users/richard/Applications/Neovim.app",
 		launchOrFocus = function()
-			hs.window.get("neovim-main"):focus()
+      local window = hs.window.get("neovim-main")
+      if window then window:focus() end
 		end,
 	},
 	xcode = { name = "xcode", path = "/Applications/Xcode.app" },
@@ -106,8 +107,6 @@ end
 -- then move the cursor to center of the new window.
 function launchOrFocus(app)
 	current_mouse_screen = hs.mouse.getCurrentScreen()
-
-	print(hs.inspect(app))
 
 	if app.launchOrFocus then
 		app.launchOrFocus()
