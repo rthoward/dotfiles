@@ -23,6 +23,10 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = function(_, opts)
+      opts.servers["elixirls"] = {
+        cmd = { "/Users/richard/.elixir_ls_bin/release/language_server.sh" },
+      }
+
       opts.servers["lua_ls"] = {
         settings = {
           Lua = {
