@@ -27,6 +27,7 @@ wk.register({
     ["p"] = { ":bp<CR>", "Previous" },
   },
   ["<leader>g"] = {
-    ["G"] = { "<cmd>Neogit kind=split<cr>", "NeoGit" },
+    ["g"] = { "<cmd>Neogit<cr>", "NeoGit" },
+    ["G"] = { "<cmd>Neogit kind=split<cr>", "NeoGit split" },
   },
 })

@@ -8,6 +8,11 @@ return {
   },
 
   {
+    "TimUntersberger/neogit",
+    dependencies = "nvim-lua/plenary.nvim",
+  },
+
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "zenbones",
