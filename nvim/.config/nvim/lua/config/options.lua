@@ -6,3 +6,4 @@ local opt = vim.opt
 
 opt.background = "light"
 vim.g.maplocalleader = ","
+opt.relativenumber = false
