@@ -4,7 +4,6 @@
 local wk = require("which-key")
 
 wk.register({
-  ["<leader>ff"] = { "lua vim.lsp.buf.format()", "Format" },
   ["<leader>w"] = {
     ["w"] = { "<C-W>p", "Other window" },
     ["d"] = { "<C-W>c", "Delete window" },
