@@ -1,6 +1,7 @@
 hs.loadSpoon("SpoonInstall")
 
 spoon.SpoonInstall:andUse("EmmyLua")
+hs.loadSpoon("EmmyLua")
 
 hs.alert.defaultStyle.radius = 5
 hs.alert.defaultStyle.atScreenEdge = 2
@@ -45,8 +46,10 @@ local apps = {
 		name = "neovim",
 		path = "/Users/richard/Applications/Neovim.app",
 		launchOrFocus = function()
-      local window = hs.window.get("neovim-main")
-      if window then window:focus() end
+			local window = hs.window.get("neovim-main")
+			if window then
+				window:focus()
+			end
 		end,
 	},
 	xcode = { name = "xcode", path = "/Applications/Xcode.app" },
@@ -186,7 +189,6 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local two_monitor_layout = {
 		{ apps.firefox.name, nil, ex_l, positions.centered, nil, nil },
 		{ current_editor().name, nil, ex_l, positions.centered, nil, nil },
-
 		{ current_terminal().name, nil, ex_p, positions.lower50, nil, nil },
 		{ apps.slack.name, nil, ex_p, positions.upper50, nil, nil },
 		{ apps.obsidian.name, nil, ex_p, positions.maximized, nil, nil },
@@ -202,9 +204,9 @@ hs.hotkey.bind(layout_mod, "p", function()
 
 	if ex_p and ex_l then
 		hs.layout.apply(two_monitor_layout)
-  else
-    hs.layout.apply(one_monitor_layout)
-  end
+	else
+		hs.layout.apply(one_monitor_layout)
+	end
 end)
 
 -- maximize window
