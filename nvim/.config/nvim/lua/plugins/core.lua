@@ -108,4 +108,7 @@ return {
       })
     end,
   },
+
+  { "Olical/aniseed" },
+  { "Olical/conjure" },
 }
