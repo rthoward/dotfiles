@@ -7,3 +7,6 @@ Code/Library/Application Support/Code/
 
 lvim/.config/lvim/plugin
 lvim/.config/lvim/lazy-lock.json
+
+hammerspoon/.hammerspoon/Spoons/*
+!hammerspoon/.hammerspoon/Spoons/SpoonInstall.spoon

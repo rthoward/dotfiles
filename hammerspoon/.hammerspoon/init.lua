@@ -1,9 +1,12 @@
--- hs config
+hs.loadSpoon("SpoonInstall")
+
+spoon.SpoonInstall:andUse("EmmyLua")
+
 hs.alert.defaultStyle.radius = 5
 hs.alert.defaultStyle.atScreenEdge = 2
 hs.alert.defaultStyle.strokeColor = { white = 1, alpha = 0 }
 
-positions = {
+local positions = {
 	maximized = hs.layout.maximized,
 	centered = { x = 0.0125, y = 0.0125, w = 0.975, h = 0.975 },
 
@@ -28,13 +31,13 @@ positions = {
 	lower50Right50 = { x = 0.5, y = 0.5, w = 0.5, h = 0.5 },
 }
 
-screens = {
+local screens = {
 	macbook = "Color LCD",
 	ex_landscape = "DELL",
 	ex_portrait = "27GL850",
 }
 
-apps = {
+local apps = {
 	sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
 	vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
 	emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
@@ -60,43 +63,43 @@ apps = {
 	insomnia = { name = "Insomnia", path = "/Applications/Insomnia.app" },
 }
 
-app_mod = { "cmd", "shift" }
-layout_mod = { "cmd", "alt", "ctrl" }
+local app_mod = { "cmd", "shift" }
+local layout_mod = { "cmd", "alt", "ctrl" }
 
-editors = { apps.neovim, apps.vscode, apps.sublime, apps.emacs, apps.xcode }
-terminals = { apps.kitty, apps.alacritty, apps.iterm2 }
-db_tools = { apps.tableplus, apps.postico }
+local editors = { apps.neovim, apps.vscode, apps.sublime, apps.emacs, apps.xcode }
+local terminals = { apps.kitty, apps.alacritty, apps.iterm2 }
+local db_tools = { apps.tableplus, apps.postico }
 
 -- state
 
-editor_index = 1
-terminal_index = 1
-db_tool_index = 1
-slack_shortcut_enabled = true
+local editor_index = 1
+local terminal_index = 1
+local db_tool_index = 1
+local slack_shortcut_enabled = true
 
 -- helpers
 
-function current_editor()
+local function current_editor()
 	return editors[editor_index]
 end
 
-function current_terminal()
+local function current_terminal()
 	return terminals[terminal_index]
 end
 
-function current_db_tool()
+local function current_db_tool()
 	return db_tools[db_tool_index]
 end
 
-function cycle_editor()
+local function cycle_editor()
 	editor_index = (editor_index % #editors) + 1
 end
 
-function cycle_terminal()
+local function cycle_terminal()
 	terminal_index = (terminal_index % #terminals) + 1
 end
 
-function cycle_db_tool()
+local function cycle_db_tool()
 	db_tool_index = (db_tool_index % #db_tools) + 1
 end
 
@@ -105,8 +108,8 @@ end
 -- Given an application, open it or focus on one of its windows.
 -- If the focused window is on a different screen than the mouse cursor
 -- then move the cursor to center of the new window.
-function launchOrFocus(app)
-	current_mouse_screen = hs.mouse.getCurrentScreen()
+local function launchOrFocus(app)
+	local current_mouse_screen = hs.mouse.getCurrentScreen()
 
 	if app.launchOrFocus then
 		app.launchOrFocus()
@@ -114,10 +117,10 @@ function launchOrFocus(app)
 		hs.application.launchOrFocus(app.path)
 	end
 
-	new_window = hs.window.focusedWindow()
+	local new_window = hs.window.focusedWindow()
 
 	if current_mouse_screen ~= new_window:screen() then
-		new_mouse_coords = new_window:frame().center
+		local new_mouse_coords = new_window:frame().center
 		hs.mouse.absolutePosition(new_mouse_coords)
 	end
 end
@@ -180,7 +183,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ex_p = hs.screen.find(screens.ex_portrait)
 	local mac_screen = hs.screen.find(screens.macbook)
 
-	two_monitor_layout = {
+	local two_monitor_layout = {
 		{ apps.firefox.name, nil, ex_l, positions.centered, nil, nil },
 		{ current_editor().name, nil, ex_l, positions.centered, nil, nil },
 
@@ -190,7 +193,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.spotify.name, nil, ex_p, positions.maximized, nil, nil },
 	}
 
-	one_monitor_layout = {
+	local one_monitor_layout = {
 		{ current_editor().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_terminal().name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.slack.name, nil, mac_screen, positions.centered, nil, nil },
@@ -199,7 +202,9 @@ hs.hotkey.bind(layout_mod, "p", function()
 
 	if ex_p and ex_l then
 		hs.layout.apply(two_monitor_layout)
-	end
+  else
+    hs.layout.apply(one_monitor_layout)
+  end
 end)
 
 -- maximize window
@@ -251,8 +256,9 @@ hs.hotkey.bind(layout_mod, "left", function()
 end)
 
 -- mode hotkeys
-meta_mode = hs.hotkey.modal.new(layout_mod, "return")
+local meta_mode = hs.hotkey.modal.new(layout_mod, "return")
 
+---@diagnostic disable-next-line
 function meta_mode:entered()
 	hs.alert("Meta mode")
 	hs.timer.doAfter(3, function()
@@ -260,6 +266,7 @@ function meta_mode:entered()
 	end)
 end
 
+---@diagnostic disable-next-line
 function meta_mode:exited()
 	hs.alert.closeAll()
 end
@@ -276,7 +283,7 @@ end)
 
 meta_mode:bind(app_mod, "s", "Toggle slack shortcut", function()
 	slack_shortcut_enabled = not slack_shortcut_enabled
-	state_text = slack_shortcut_enabled and "on" or "off"
+	local state_text = slack_shortcut_enabled and "on" or "off"
 
 	hs.alert.closeAll()
 	hs.alert("Slack shortcut is now " .. state_text)
@@ -294,7 +301,7 @@ meta_mode:bind(app_mod, "d", "Cycle database tool", function()
 	hs.alert("Database tool is now " .. current_db_tool().name)
 end)
 
-function changeVolume(diff)
+local function changeVolume(diff)
 	return function()
 		local current = hs.audiodevice.defaultOutputDevice():volume()
 		local new = math.min(100, math.max(0, math.floor(current + diff)))
@@ -309,10 +316,3 @@ end
 
 hs.hotkey.bind(app_mod, ",", changeVolume(-3))
 hs.hotkey.bind(app_mod, ".", changeVolume(3))
-hs.hotkey.bind(app_mod, "/", function()
-	if hs.sound.isPlaying() then
-		hs.sound.pause()
-	else
-		hs.sound.resume()
-	end
-end)
