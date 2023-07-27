@@ -64,12 +64,13 @@ local apps = {
 	postico = { name = "Postico", path = "/Applications/Postico.app" },
 	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
 	insomnia = { name = "Insomnia", path = "/Applications/Insomnia.app" },
+	dash = { name = "Dash", path = "/Applications/Dash.app" }
 }
 
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
-local editors = { apps.neovim, apps.vscode, apps.sublime, apps.emacs, apps.xcode }
+local editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs, apps.xcode }
 local terminals = { apps.kitty, apps.alacritty, apps.iterm2 }
 local db_tools = { apps.tableplus, apps.postico }
 
@@ -163,7 +164,7 @@ hs.hotkey.bind(app_mod, "i", function()
 end)
 
 hs.hotkey.bind(app_mod, "z", function()
-	hs.application.get("zoom.us"):activate()
+	launchOrFocus(apps.zoom)
 end)
 
 -- focus current terminal and run last command
@@ -193,6 +194,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.slack.name, nil, ex_p, positions.upper50, nil, nil },
 		{ apps.obsidian.name, nil, ex_p, positions.maximized, nil, nil },
 		{ apps.spotify.name, nil, ex_p, positions.maximized, nil, nil },
+		{ apps.dash.name, nil, ex_p, positions.maximized, nil, nil }
 	}
 
 	local one_monitor_layout = {
