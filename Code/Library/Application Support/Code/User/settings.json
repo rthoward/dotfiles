@@ -77,7 +77,7 @@
     {
       "before": [
         "]",
-        "g"
+        "h"
       ],
       "commands": [
         "workbench.action.editor.nextChange"
@@ -86,7 +86,7 @@
     {
       "before": [
         "[",
-        "g"
+        "h"
       ],
       "commands": [
         "workbench.action.editor.previousChange"
@@ -95,6 +95,10 @@
     {
       "before": ["g", "r"],
       "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.peekDefinition"]
     },
   ],
   "whichkey.delay": 300,
@@ -226,5 +230,5 @@
   },
   "[html-eex]": {
     "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
-  },
+  }
 }
