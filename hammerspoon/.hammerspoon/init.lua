@@ -1,8 +1,3 @@
-hs.loadSpoon("SpoonInstall")
-
-spoon.SpoonInstall:andUse("EmmyLua")
-hs.loadSpoon("EmmyLua")
-
 hs.alert.defaultStyle.radius = 5
 hs.alert.defaultStyle.atScreenEdge = 2
 hs.alert.defaultStyle.strokeColor = { white = 1, alpha = 0 }
