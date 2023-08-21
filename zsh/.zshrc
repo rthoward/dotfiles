@@ -52,6 +52,7 @@ function zshaddhistory() {
 alias vim=nvim
 alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias weather='curl wttr.in'
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -59,10 +60,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Open fzf file with vscode
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
 
-git-clean-branches() {
-  merge_branch="${1:-main}"
-  echo "Purging all branches that have been merged into ${merge_branch}"
-  git branch --merged $merge_branch | egrep -v "(^\*|$merge_branch)" | xargs git branch -d
+function g86 {
+  git branch --merged "${1:-master}" | egrep -v "(^\*|${1:-master})" | xargs git branch -d
 }
 
 fif() {
