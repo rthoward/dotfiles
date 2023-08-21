@@ -55,7 +55,7 @@
   },
   "files.associations": {
     "*.jbuilder": "ruby",
-    "*.heex": "html-eex"
+    "*.heex": "phoenix-heex"
   },
   "extensions.ignoreRecommendations": true,
   "workbench.editor.untitled.hint": "hidden",
@@ -226,7 +226,7 @@
   "git.mergeEditor": false,
   "terminal.integrated.scrollback": 10000,
   "[phoenix-heex]": {
-    "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
+    "editor.defaultFormatter": "RoyalMist.vscode-eex-format",
   },
   "[html-eex]": {
     "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
