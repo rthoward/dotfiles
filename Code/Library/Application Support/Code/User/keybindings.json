@@ -17,6 +17,22 @@
       "command": "workbench.action.focusAboveGroupWithoutWrap"
     },
     {
+      "key": "ctrl+shift+l",
+      "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+      "key": "ctrl+shift+h",
+      "command": "workbench.action.moveEditorToLeftGroup"
+    },
+    {
+      "key": "ctrl+shift+j",
+      "command": "workbench.action.moveEditorToBelowGroup"
+    },
+    {
+      "key": "ctrl+shift+k",
+      "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
         "key": "cmd+1",
         "command": "workbench.action.openEditorAtIndex1"
     },
