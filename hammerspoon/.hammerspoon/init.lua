@@ -182,7 +182,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ex_p = hs.screen.find(screens.ex_portrait)
 	local mac_screen = hs.screen.find(screens.macbook)
 
-	local two_monitor_layout = {
+	local two_external_layout = {
 		{ apps.firefox.name, nil, ex_l, positions.centered, nil, nil },
 		{ current_editor().name, nil, ex_l, positions.centered, nil, nil },
 		{ current_terminal().name, nil, ex_p, positions.lower50, nil, nil },
@@ -192,17 +192,32 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.dash.name, nil, ex_p, positions.maximized, nil, nil }
 	}
 
-	local one_monitor_layout = {
+	local one_external_layout = {
+		{ apps.firefox.name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_editor().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_terminal().name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.slack.name, nil, mac_screen, positions.centered, nil, nil },
+		{ apps.obsidian.name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.spotify.name, nil, mac_screen, positions.centered, nil, nil },
+		{ apps.dash.name, nil, mac_screen, positions.centered, nil, nil }
+	}
+
+	local macbook_layout = {
+		{ apps.firefox.name, nil, mac_screen, positions.maximized, nil, nil },
+		{ current_editor().name, nil, mac_screen, positions.maximized, nil, nil },
+		{ current_terminal().name, nil, mac_screen, positions.maximized, nil, nil },
+		{ apps.slack.name, nil, mac_screen, positions.maximized, nil, nil },
+		{ apps.obsidian.name, nil, mac_screen, positions.maximized, nil, nil },
+		{ apps.spotify.name, nil, mac_screen, positions.maximized, nil, nil },
+		{ apps.dash.name, nil, mac_screen, positions.maximized, nil, nil }
 	}
 
 	if ex_p and ex_l then
-		hs.layout.apply(two_monitor_layout)
+		hs.layout.apply(two_external_layout)
+	elseif ex_l then
+		hs.layout.apply(one_external_layout)
 	else
-		hs.layout.apply(one_monitor_layout)
+		hs.layout.apply(macbook_layout)
 	end
 end)
 
