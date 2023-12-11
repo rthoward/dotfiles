@@ -48,7 +48,6 @@ local apps = {
 	obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app" },
 	postico = { name = "Postico", path = "/Applications/Postico.app" },
 	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
-	insomnia = { name = "Insomnia", path = "/Applications/Insomnia.app" },
 	dash = { name = "Dash", path = "/Applications/Dash.app" }
 }
 
@@ -142,10 +141,6 @@ end)
 
 hs.hotkey.bind(app_mod, "n", function()
 	launchOrFocus(apps.obsidian)
-end)
-
-hs.hotkey.bind(app_mod, "i", function()
-	launchOrFocus(apps.insomnia)
 end)
 
 hs.hotkey.bind(app_mod, "z", function()
