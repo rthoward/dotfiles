@@ -37,16 +37,6 @@ local apps = {
 	sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
 	vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
 	emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
-	neovim = {
-		name = "neovim",
-		path = "/Users/richard/Applications/Neovim.app",
-		launchOrFocus = function()
-			local window = hs.window.get("neovim-main")
-			if window then
-				window:focus()
-			end
-		end,
-	},
 	xcode = { name = "xcode", path = "/Applications/Xcode.app" },
 	alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
 	kitty = { name = "kitty", path = "/Applications/kitty.app" },
@@ -65,7 +55,7 @@ local apps = {
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
-local editors = { apps.vscode, apps.neovim, apps.sublime, apps.emacs, apps.xcode }
+local editors = { apps.vscode, apps.sublime, apps.emacs }
 local terminals = { apps.kitty, apps.alacritty, apps.iterm2 }
 local db_tools = { apps.tableplus, apps.postico }
 
