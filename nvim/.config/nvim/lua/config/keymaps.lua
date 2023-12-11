@@ -29,4 +29,5 @@ wk.register({
     ["g"] = { "<cmd>Neogit<cr>", "NeoGit" },
     ["G"] = { "<cmd>Neogit kind=split<cr>", "NeoGit split" },
   },
+  ["<leader>t"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
 })
