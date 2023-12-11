@@ -1,9 +1,9 @@
 [alias]
   lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  lll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %cr\\ %n%Creset%s\\ %n%Cblue%cn\\ [%ce]%n" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate
+  lll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %cr\\ %n%Creset%s\\ %n%Cblue%an\\ [%ae]%n" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
   st = stash push -m
   dlc = diff --cached HEAD^
   dc = diff --cached
