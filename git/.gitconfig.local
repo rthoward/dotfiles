@@ -4,10 +4,6 @@
   lll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %cr\\ %n%Creset%s\\ %n%Cblue%an\\ [%ae]%n" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --numstat
   ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
-  st = stash push -m
-  dlc = diff --cached HEAD^
-  dc = diff --cached
-  ap = add -p
   c = commit -v
 
 [pager]
