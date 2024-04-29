@@ -11,3 +11,7 @@ lvim/.config/lvim/lazy-lock.json
 
 hammerspoon/.hammerspoon/Spoons/*
 !hammerspoon/.hammerspoon/Spoons/SpoonInstall.spoon
+
+zed/.config/zed/.tmp*
+zed/.config/zed/embeddings
+zed/.config/zed/conversations
