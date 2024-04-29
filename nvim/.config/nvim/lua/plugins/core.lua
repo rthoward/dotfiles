@@ -83,34 +83,32 @@ return {
     enabled = false,
   },
 
+  "nvim-orgmode/orgmode",
+  event = "VeryLazy",
+  ft = { "org" },
+  config = function()
+    -- Setup orgmode
+    require("orgmode").setup({
+      org_agenda_files = "~/orgfiles/**/*",
+      org_default_notes_file = "~/orgfiles/refile.org",
+    })
+
+    -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
+    -- add `org` to ignore_install
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = "all",
+      ignore_install = { "org" },
+    })
+  end,
+
   {
-    "hrsh7th/nvim-cmp",
-    version = false, -- last release is way too old
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.mapping["<CR>"] = cmp.mapping({
-        i = function(fallback)
-          if cmp.visible() and cmp.get_selected_entry() then
-            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
-          else
-            fallback()
-          end
-        end,
-        s = cmp.mapping.confirm({ select = true }),
-        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-      })
-      opts.mapping["<S-CR>"] = cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = true,
-      })
-    end,
+    "lukas-reineke/headlines.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true, -- or `opts = {}`
+  },
+
+  {
+    "akinsho/org-bullets.nvim",
   },
 
   { "Olical/aniseed" },
