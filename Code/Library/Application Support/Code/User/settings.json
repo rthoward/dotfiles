@@ -38,7 +38,7 @@
   "terminal.integrated.fontSize": 15,
   "vim.disableExtension": false,
   "vim.leader": "<space>",
-  "workbench.colorTheme": "doom-one",
+  "workbench.colorTheme": "Everforest Dark",
   "workbench.settings.editor": "json",
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -58,7 +58,6 @@
     "*.heex": "phoenix-heex"
   },
   "extensions.ignoreRecommendations": true,
-  "workbench.editor.untitled.hint": "hidden",
   "editor.cursorStyle": "line",
   "editor.insertSpaces": true,
   "editor.lineNumbers": "on",
@@ -231,4 +230,6 @@
   "[html-eex]": {
     "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
   }
+  "workbench.editor.empty.hint": "hidden",
+  "window.zoomLevel": -1
 }
