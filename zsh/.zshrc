@@ -16,7 +16,6 @@ znap prompt sindresorhus/pure
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
 znap source rupa/z
-znap source ohmyzsh/ohmyzsh plugins/asdf
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 
 
@@ -79,9 +78,9 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $HOME/.asdf/asdf.sh
-
 eval "$(direnv hook zsh)"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(/opt/homebrew/bin/mise activate zsh)"
