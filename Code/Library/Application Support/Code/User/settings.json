@@ -229,6 +229,11 @@
   },
   "[html-eex]": {
     "editor.defaultFormatter": "RoyalMist.vscode-eex-format"
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "elixirLS.suggestSpecs": false,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
   }
   "workbench.editor.empty.hint": "hidden",
   "window.zoomLevel": -1
