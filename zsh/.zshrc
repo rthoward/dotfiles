@@ -18,7 +18,6 @@ znap source zsh-users/zsh-history-substring-search
 znap source rupa/z
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 
-
 ########################
 # Options
 ########################
