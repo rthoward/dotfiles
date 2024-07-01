@@ -78,9 +78,7 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(~/.local/bin/mise activate zsh)"
 eval "$(direnv hook zsh)"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
-
-eval "$(/opt/homebrew/bin/mise activate zsh)"
