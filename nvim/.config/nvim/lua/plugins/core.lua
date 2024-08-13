@@ -1,5 +1,6 @@
 return {
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "Shatur/neovim-ayu", name = "ayu", priority = 1000 },
 
   {
     "mcchrish/zenbones.nvim",
@@ -15,7 +16,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "zenbones",
+      colorscheme = "ayu-mirage",
     },
   },
 
