@@ -27,6 +27,9 @@
 [fetch]
   prune = true
 
+[push]
+  autoSetupRemote = true
+
 [apply]
   whitespace = nowarn
 
