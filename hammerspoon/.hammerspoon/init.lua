@@ -51,6 +51,7 @@ local apps = {
 	dash = { name = "Dash", path = "/Applications/Dash.app" },
 	zed = { name = "Zed", path = "/Applications/Zed.app" },
 	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
+	linear = { name = "Linear", path = "/Applications/Linear.app" },
 }
 
 local app_mod = { "cmd", "shift" }
@@ -147,6 +148,10 @@ end)
 
 hs.hotkey.bind(app_mod, "z", function()
 	launchOrFocus(apps.zoom)
+end)
+
+hs.hotkey.bind(app_mod, "g", function()
+	launchOrFocus(apps.linear)
 end)
 
 -- focus current terminal and run last command
