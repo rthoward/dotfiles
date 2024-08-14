@@ -34,24 +34,31 @@ local screens = {
 }
 
 local apps = {
+    -- editors
+    emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
 	sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
 	vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
-	emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
 	xcode = { name = "xcode", path = "/Applications/Xcode.app" },
+	zed = { name = "Zed", path = "/Applications/Zed.app" },
+
+	-- terminal emulators
 	alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
-	kitty = { name = "kitty", path = "/Applications/kitty.app" },
 	iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
+	kitty = { name = "kitty", path = "/Applications/kitty.app" },
+	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
+
+	-- database clients
+	postico = { name = "Postico", path = "/Applications/Postico.app" },
+	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
+
+	-- other
+	dash = { name = "Dash", path = "/Applications/Dash.app" },
 	firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
+	linear = { name = "Linear", path = "/Applications/Linear.app" },
+	obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app" },
 	slack = { name = "Slack", path = "/Applications/Slack.app" },
 	spotify = { name = "Spotify", path = "/Applications/Spotify.app" },
 	zoom = { name = "Zoom", path = "/Applications/zoom.us.app" },
-	obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app" },
-	postico = { name = "Postico", path = "/Applications/Postico.app" },
-	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
-	dash = { name = "Dash", path = "/Applications/Dash.app" },
-	zed = { name = "Zed", path = "/Applications/Zed.app" },
-	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
-	linear = { name = "Linear", path = "/Applications/Linear.app" },
 }
 
 local app_mod = { "cmd", "shift" }
