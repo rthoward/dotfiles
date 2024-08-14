@@ -57,7 +57,7 @@ local apps = {
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
-local editors = { apps.vscode, apps.zed }
+local editors = { apps.zed, apps.vscode }
 local terminals = { apps.kitty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
 
