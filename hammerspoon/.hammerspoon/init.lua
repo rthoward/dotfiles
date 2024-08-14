@@ -49,14 +49,15 @@ local apps = {
 	postico = { name = "Postico", path = "/Applications/Postico.app" },
 	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
 	dash = { name = "Dash", path = "/Applications/Dash.app" },
-	zed = { name = "Zed", path = "/Applications/Zed.app" }
+	zed = { name = "Zed", path = "/Applications/Zed.app" },
+	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
 }
 
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
 local editors = { apps.vscode, apps.zed }
-local terminals = { apps.kitty, apps.alacritty, apps.iterm2 }
+local terminals = { apps.kitty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
 
 -- state
