@@ -51,9 +51,12 @@ local apps = {
 	postico = { name = "Postico", path = "/Applications/Postico.app" },
 	tableplus = { name = "TablePlus", path = "/Applications/TablePlus.app" },
 
+	-- browsers
+	firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
+	zen = { name = "Zen Browser", path = "/Applications/Zen Browser.app" },
+
 	-- other
 	dash = { name = "Dash", path = "/Applications/Dash.app" },
-	firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
 	linear = { name = "Linear", path = "/Applications/Linear.app" },
 	obsidian = { name = "Obsidian", path = "/Applications/Obsidian.app" },
 	slack = { name = "Slack", path = "/Applications/Slack.app" },
@@ -64,18 +67,24 @@ local apps = {
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
+local browsers = { apps.firefox, apps.zen }
 local editors = { apps.zed, apps.vscode }
 local terminals = { apps.kitty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
 
 -- state
 
+local browser_index = 1
 local editor_index = 1
 local terminal_index = 1
 local db_tool_index = 1
 local slack_shortcut_enabled = true
 
 -- helpers
+
+local function current_browser()
+	return browsers[browser_index]
+end
 
 local function current_editor()
 	return editors[editor_index]
@@ -87,6 +96,10 @@ end
 
 local function current_db_tool()
 	return db_tools[db_tool_index]
+end
+
+local function cycle_browser()
+	browser_index = (browser_index % #browsers) + 1
 end
 
 local function cycle_editor()
@@ -124,7 +137,7 @@ local function launchOrFocus(app)
 end
 
 hs.hotkey.bind(app_mod, "W", function()
-	launchOrFocus(apps.firefox)
+	launchOrFocus(current_browser())
 end)
 
 hs.hotkey.bind(app_mod, "space", function()
@@ -182,7 +195,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local mac_screen = hs.screen.find(screens.macbook)
 
 	local two_external_layout = {
-		{ apps.firefox.name, nil, ex_l, positions.centered, nil, nil },
+		{ current_browser().name, nil, ex_l, positions.centered, nil, nil },
 		{ current_editor().name, nil, ex_l, positions.centered, nil, nil },
 		{ current_terminal().name, nil, ex_p, positions.lower50, nil, nil },
 		{ apps.slack.name, nil, ex_p, positions.upper50, nil, nil },
@@ -192,7 +205,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	}
 
 	local one_external_layout = {
-		{ apps.firefox.name, nil, mac_screen, positions.centered, nil, nil },
+		{ current_browser().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_editor().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_terminal().name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.slack.name, nil, mac_screen, positions.centered, nil, nil },
@@ -202,7 +215,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	}
 
 	local macbook_layout = {
-		{ apps.firefox.name, nil, mac_screen, positions.maximized, nil, nil },
+		{ current_browser().name, nil, mac_screen, positions.maximized, nil, nil },
 		{ current_editor().name, nil, mac_screen, positions.maximized, nil, nil },
 		{ current_terminal().name, nil, mac_screen, positions.maximized, nil, nil },
 		{ apps.slack.name, nil, mac_screen, positions.maximized, nil, nil },
@@ -288,18 +301,24 @@ meta_mode:bind("", "escape", function()
 	meta_mode:exit()
 end)
 
-meta_mode:bind(app_mod, "e", "Cycle Editor", function()
-	hs.alert.closeAll()
-	cycle_editor()
-	hs.alert("Editor is now " .. current_editor().name)
-end)
-
 meta_mode:bind(app_mod, "s", "Toggle slack shortcut", function()
 	slack_shortcut_enabled = not slack_shortcut_enabled
 	local state_text = slack_shortcut_enabled and "on" or "off"
 
 	hs.alert.closeAll()
 	hs.alert("Slack shortcut is now " .. state_text)
+end)
+
+meta_mode:bind(app_mod, "w", "Cycle Browser", function()
+	hs.alert.closeAll()
+	cycle_browser()
+	hs.alert("Browser is now " .. current_browser().name)
+end)
+
+meta_mode:bind(app_mod, "e", "Cycle Editor", function()
+	hs.alert.closeAll()
+	cycle_editor()
+	hs.alert("Editor is now " .. current_editor().name)
 end)
 
 meta_mode:bind(app_mod, "space", "Cycle terminal", function()
