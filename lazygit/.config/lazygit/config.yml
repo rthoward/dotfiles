@@ -1,0 +1,24 @@
+showCommandLog: false
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+customCommands:
+  - key: 'G'
+    subprocess: true
+    command: 'gh {{.Form.GitHubCommand}}'
+    description: "GitHub"
+    context: 'global'
+    prompts:
+      - type: 'menu'
+        title: 'GitHub'
+        key: 'GitHubCommand'
+        options:
+          - value: 'pr view --web'
+            name: 'Pull Request - View (web)'
+          - value: 'pr create'
+            name: 'Pull Request - Create'
+          - value: 'pr create -d'
+            name: 'Pull Request - Create (Draft)'
+
+
