@@ -36,7 +36,10 @@
 
       "space g n": "editor::GoToHunk",
       "space g p": "editor::GoToPrevHunk",
-      "space g d": "editor::RevertSelectedHunks"
+      "space g d": "editor::RevertSelectedHunks",
+
+      "space t t": "task::Spawn",
+      "space t r": "task::Rerun"
     }
   }
 ]
