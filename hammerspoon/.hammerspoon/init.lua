@@ -274,11 +274,12 @@ end)
 
 hs.hotkey.bind(layout_mod, "right", function()
 	hs.window.focusedWindow():moveOneScreenEast(false, true)
+	hs.window.focusedWindow():moveToUnit(positions.lower50)
 end)
 
 hs.hotkey.bind(layout_mod, "left", function()
 	hs.window.focusedWindow():moveOneScreenWest(false, true)
-	hs.window.focusedWindow():maximize(0)
+	hs.window.focusedWindow():moveToUnit(positions.centered)
 end)
 
 -- mode hotkeys
