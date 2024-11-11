@@ -51,6 +51,7 @@ alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local"
 alias ls="eza"
 alias checks="gh pr checks --watch && say --rate=175 'bazinga'"
 alias k='kubectl'
+alias lg='lazygit'
 
 if [ "${BASE16_COLOR_SCHEME}" ]; then
   source "${BASE16_COLORS_DIR}/scripts/base16-${BASE16_COLOR_SCHEME}.sh"
