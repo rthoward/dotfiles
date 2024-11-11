@@ -282,6 +282,22 @@ hs.hotkey.bind(layout_mod, "left", function()
 	hs.window.focusedWindow():moveToUnit(positions.centered)
 end)
 
+-- toggle terminal screen
+hs.hotkey.bind(layout_mod, "space", function()
+   	local ex_l = hs.screen.find(screens.ex_landscape)
+    local ex_p = hs.screen.find(screens.ex_portrait)
+
+    launchOrFocus(current_terminal())
+
+    if hs.window.focusedWindow():screen() == ex_l then
+        hs.window.focusedWindow():moveToScreen(ex_p)
+        hs.window.focusedWindow():moveToUnit(positions.lower50)
+    else
+        hs.window.focusedWindow():moveToScreen(ex_l)
+    	hs.window.focusedWindow():moveToUnit(positions.centered)
+    end
+end)
+
 -- mode hotkeys
 local meta_mode = hs.hotkey.modal.new(layout_mod, "return")
 
