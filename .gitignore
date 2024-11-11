@@ -16,5 +16,6 @@ hammerspoon/.hammerspoon/Spoons/*
 zed/.config/zed/.tmp*
 zed/.config/zed/embeddings
 zed/.config/zed/conversations
+zed/.config/zed/themes
 
 kitty/.config/kitty/current-theme.conf
