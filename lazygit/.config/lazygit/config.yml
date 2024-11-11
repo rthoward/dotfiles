@@ -1,4 +1,10 @@
-showCommandLog: false
+gui:
+  showCommandLog: false
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 2
+  enlargedSideViewLocation: top
+  nerdFontsVersion: 3
+  border: single
 git:
   paging:
     colorArg: always
