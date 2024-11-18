@@ -29,8 +29,8 @@ local positions = {
 
 local screens = {
 	macbook = "Color LCD",
-	ex_landscape = "DELL",
-	ex_portrait = "27GL850",
+	ext_primary = "DELL",
+	ext_secondary = "27GL850",
 }
 
 local apps = {
@@ -190,21 +190,38 @@ end)
 -- layout hotkeys
 
 hs.hotkey.bind(layout_mod, "p", function()
-	local ex_l = hs.screen.find(screens.ex_landscape)
-	local ex_p = hs.screen.find(screens.ex_portrait)
+	local ext1 = hs.screen.find(screens.ext_primary)
+	local ext2 = hs.screen.find(screens.ext_secondary)
+	local ext2_orientation = nil
 	local mac_screen = hs.screen.find(screens.macbook)
 
-	local two_external_layout = {
-		{ current_browser().name, nil, ex_l, positions.centered, nil, nil },
-		{ current_editor().name, nil, ex_l, positions.centered, nil, nil },
-		{ current_terminal().name, nil, ex_p, positions.lower50, nil, nil },
-		{ apps.slack.name, nil, ex_p, positions.upper50, nil, nil },
-		{ apps.obsidian.name, nil, ex_p, positions.maximized, nil, nil },
-		{ apps.spotify.name, nil, ex_p, positions.maximized, nil, nil },
-		{ apps.dash.name, nil, ex_p, positions.maximized, nil, nil }
+	if ext2 and (ext2:currentMode().w < ext2:currentMode().h) then
+	   ext2_orientation = "portrait"
+	elseif ext2 and (ext2:currentMode().w >= ext2:currentMode().h) then
+       ext2_orientation = "landscape"
+	end
+
+	local ext_landscape_and_portrait_layout = {
+		{ current_browser().name, nil, ext1, positions.centered, nil, nil },
+		{ current_editor().name, nil, ext1, positions.centered, nil, nil },
+		{ current_terminal().name, nil, ext2, positions.lower50, nil, nil },
+		{ apps.slack.name, nil, ext2, positions.upper50, nil, nil },
+		{ apps.obsidian.name, nil, ext2, positions.maximized, nil, nil },
+		{ apps.spotify.name, nil, ext2, positions.maximized, nil, nil },
+		{ apps.dash.name, nil, ext2, positions.maximized, nil, nil }
 	}
 
-	local one_external_layout = {
+	local ext_two_landscape_layout = {
+		{ current_browser().name, nil, ext1, positions.centered, nil, nil },
+		{ current_editor().name, nil, ext1, positions.centered, nil, nil },
+		{ current_terminal().name, nil, ext2, positions.left60, nil, nil },
+		{ apps.slack.name, nil, ext2, positions.left60, nil, nil },
+		{ apps.obsidian.name, nil, ext2, positions.right40, nil, nil },
+		{ apps.spotify.name, nil, ext2, positions.right40, nil, nil },
+		{ apps.dash.name, nil, ext2, positions.right40, nil, nil }
+	}
+
+	local ext_one_landscape_layout = {
 		{ current_browser().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_editor().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_terminal().name, nil, mac_screen, positions.centered, nil, nil },
@@ -224,10 +241,12 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.dash.name, nil, mac_screen, positions.maximized, nil, nil }
 	}
 
-	if ex_p and ex_l then
-		hs.layout.apply(two_external_layout)
-	elseif ex_l then
-		hs.layout.apply(one_external_layout)
+	if ext1 and ext2 and ext2_orientation == "portrait" then
+		hs.layout.apply(ext_landscape_and_portrait_layout)
+	elseif ext1 and ext2 and ext2_orientation == "landscape" then
+		hs.layout.apply(ext_two_landscape_layout)
+	elseif ext1 then
+		hs.layout.apply(ext_one_landscape_layout)
 	else
 		hs.layout.apply(macbook_layout)
 	end
@@ -284,16 +303,16 @@ end)
 
 -- toggle terminal screen
 hs.hotkey.bind(layout_mod, "space", function()
-   	local ex_l = hs.screen.find(screens.ex_landscape)
-    local ex_p = hs.screen.find(screens.ex_portrait)
+   	local ext1 = hs.screen.find(screens.ext_primary)
+    local ext2 = hs.screen.find(screens.ext_secondary)
 
     launchOrFocus(current_terminal())
 
-    if hs.window.focusedWindow():screen() == ex_l then
-        hs.window.focusedWindow():moveToScreen(ex_p)
+    if hs.window.focusedWindow():screen() == ext1 then
+        hs.window.focusedWindow():moveToScreen(ext2)
         hs.window.focusedWindow():moveToUnit(positions.lower50)
     else
-        hs.window.focusedWindow():moveToScreen(ex_l)
+        hs.window.focusedWindow():moveToScreen(ext1)
     	hs.window.focusedWindow():moveToUnit(positions.centered)
     end
 end)
