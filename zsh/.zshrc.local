@@ -57,7 +57,9 @@ if [ "${BASE16_COLOR_SCHEME}" ]; then
   source "${BASE16_COLORS_DIR}/scripts/base16-${BASE16_COLOR_SCHEME}.sh"
 fi
 
-source "${HOME}/.gimlet/config"
+if [ -f "${HOME}/.gimlet/config" ]; then
+  source "${HOME}/.gimlet/config"
+fi
 
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
