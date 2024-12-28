@@ -53,7 +53,6 @@ local apps = {
 
 	-- browsers
 	firefox = { name = "Firefox", path = "/Applications/Firefox.app" },
-	zen = { name = "Zen Browser", path = "/Applications/Zen Browser.app" },
 
 	-- other
 	dash = { name = "Dash", path = "/Applications/Dash.app" },
@@ -67,7 +66,7 @@ local apps = {
 local app_mod = { "cmd", "shift" }
 local layout_mod = { "cmd", "alt", "ctrl" }
 
-local browsers = { apps.zen, apps.firefox }
+local browsers = { apps.firefox }
 local editors = { apps.zed, apps.vscode }
 local terminals = { apps.kitty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
