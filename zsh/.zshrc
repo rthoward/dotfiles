@@ -91,3 +91,5 @@ eval "$(direnv hook zsh)"
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+. "$HOME/.local/share/../bin/env"
