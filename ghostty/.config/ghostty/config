@@ -1,0 +1,5 @@
+font-family = JetBrains Mono NL Medium
+theme = light:catppuccin-frappe,dark:catppuccin-frappe
+font-size = 18
+
+keybind = super+r=reload_config
