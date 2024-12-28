@@ -43,6 +43,7 @@ local apps = {
 
 	-- terminal emulators
 	alacritty = { name = "Alacritty", path = "/Applications/Alacritty.app" },
+	ghostty = { name = "Ghostty", path = "/Applications/Ghostty.app" },
 	iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
 	kitty = { name = "kitty", path = "/Applications/kitty.app" },
 	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
@@ -68,7 +69,7 @@ local layout_mod = { "cmd", "alt", "ctrl" }
 
 local browsers = { apps.firefox }
 local editors = { apps.zed, apps.vscode }
-local terminals = { apps.kitty, apps.wezterm }
+local terminals = { apps.ghostty, apps.kitty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
 
 -- state
