@@ -34,8 +34,8 @@ local screens = {
 }
 
 local apps = {
-    -- editors
-    emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
+	-- editors
+	emacs = { name = "Emacs", path = "/Applications/Emacs.app" },
 	sublime = { name = "Sublime Text", path = "/Applications/Sublime Text.app" },
 	vscode = { name = "Code", path = "/Applications/Visual Studio Code.app" },
 	xcode = { name = "xcode", path = "/Applications/Xcode.app" },
@@ -196,9 +196,9 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local mac_screen = hs.screen.find(screens.macbook)
 
 	if ext2 and (ext2:currentMode().w < ext2:currentMode().h) then
-	   ext2_orientation = "portrait"
+		ext2_orientation = "portrait"
 	elseif ext2 and (ext2:currentMode().w >= ext2:currentMode().h) then
-       ext2_orientation = "landscape"
+		ext2_orientation = "landscape"
 	end
 
 	local ext_landscape_and_portrait_layout = {
@@ -208,7 +208,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.slack.name, nil, ext2, positions.upper50, nil, nil },
 		{ apps.obsidian.name, nil, ext2, positions.maximized, nil, nil },
 		{ apps.spotify.name, nil, ext2, positions.maximized, nil, nil },
-		{ apps.dash.name, nil, ext2, positions.maximized, nil, nil }
+		{ apps.dash.name, nil, ext2, positions.maximized, nil, nil },
 	}
 
 	local ext_two_landscape_layout = {
@@ -218,7 +218,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.slack.name, nil, ext2, positions.left60, nil, nil },
 		{ apps.obsidian.name, nil, ext2, positions.right40, nil, nil },
 		{ apps.spotify.name, nil, ext2, positions.right40, nil, nil },
-		{ apps.dash.name, nil, ext2, positions.right40, nil, nil }
+		{ apps.dash.name, nil, ext2, positions.right40, nil, nil },
 	}
 
 	local ext_one_landscape_layout = {
@@ -228,7 +228,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.slack.name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.obsidian.name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.spotify.name, nil, mac_screen, positions.centered, nil, nil },
-		{ apps.dash.name, nil, mac_screen, positions.centered, nil, nil }
+		{ apps.dash.name, nil, mac_screen, positions.centered, nil, nil },
 	}
 
 	local macbook_layout = {
@@ -238,7 +238,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 		{ apps.slack.name, nil, mac_screen, positions.maximized, nil, nil },
 		{ apps.obsidian.name, nil, mac_screen, positions.maximized, nil, nil },
 		{ apps.spotify.name, nil, mac_screen, positions.maximized, nil, nil },
-		{ apps.dash.name, nil, mac_screen, positions.maximized, nil, nil }
+		{ apps.dash.name, nil, mac_screen, positions.maximized, nil, nil },
 	}
 
 	if ext1 and ext2 and ext2_orientation == "portrait" then
@@ -303,18 +303,18 @@ end)
 
 -- toggle terminal screen
 hs.hotkey.bind(layout_mod, "space", function()
-   	local ext1 = hs.screen.find(screens.ext_primary)
-    local ext2 = hs.screen.find(screens.ext_secondary)
+	local ext1 = hs.screen.find(screens.ext_primary)
+	local ext2 = hs.screen.find(screens.ext_secondary)
 
-    launchOrFocus(current_terminal())
+	launchOrFocus(current_terminal())
 
-    if hs.window.focusedWindow():screen() == ext1 then
-        hs.window.focusedWindow():moveToScreen(ext2)
-        hs.window.focusedWindow():moveToUnit(positions.lower50)
-    else
-        hs.window.focusedWindow():moveToScreen(ext1)
-    	hs.window.focusedWindow():moveToUnit(positions.centered)
-    end
+	if hs.window.focusedWindow():screen() == ext1 then
+		hs.window.focusedWindow():moveToScreen(ext2)
+		hs.window.focusedWindow():moveToUnit(positions.lower50)
+	else
+		hs.window.focusedWindow():moveToScreen(ext1)
+		hs.window.focusedWindow():moveToUnit(positions.centered)
+	end
 end)
 
 -- mode hotkeys
