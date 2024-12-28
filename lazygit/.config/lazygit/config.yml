@@ -1,3 +1,5 @@
+os:
+  editPreset: 'zed'
 gui:
   showCommandLog: false
   expandFocusedSidePanel: true
