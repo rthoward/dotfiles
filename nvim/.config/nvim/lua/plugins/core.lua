@@ -17,7 +17,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu-mirage",
+      colorscheme = "zenbones",
+      background = "light",
     },
   },
 
