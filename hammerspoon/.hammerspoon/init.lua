@@ -264,12 +264,12 @@ end)
 
 -- resize window to left 2/3 of screen
 hs.hotkey.bind(layout_mod, "h", function()
-	hs.window.focusedWindow():moveToUnit(positions.left55)
+	hs.window.focusedWindow():moveToUnit(positions.left60)
 end)
 
 -- resize window to right 2/3 of screen
 hs.hotkey.bind(layout_mod, "l", function()
-	hs.window.focusedWindow():moveToUnit(positions.right45)
+	hs.window.focusedWindow():moveToUnit(positions.right40)
 end)
 
 -- resize window to top 1/2 of screen
