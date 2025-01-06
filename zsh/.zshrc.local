@@ -47,7 +47,7 @@ alias rbbe="bundle exec"
 alias dashboard="direnv exec $HOME/.config/wtf/ wtfutil"
 alias emacs="open /Applications/Emacs.app/"
 alias pr="gh pr view -c"
-alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local"
+alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local ~/.config/ghostty/config"
 alias ls="eza"
 alias checks="gh pr checks --watch && say --rate=175 'bazinga'"
 alias k='kubectl'
