@@ -35,10 +35,6 @@
     "git_status": true
   },
   "languages": {
-     "Elixir": {
-       "language_servers": ["elixir-ls", "!next-ls"]
-     }
-   },
    "indent_guides": {
      "enabled": true,
      "coloring": "indent_aware"
@@ -47,4 +43,7 @@
    "file_types": {
      "Dockerfile": ["Dockerfile*"]
    }
+    "Elixir": {
+      "language_servers": ["elixir-ls", "tailwindcss-language-server", "!next-ls"]
+    },
 }
