@@ -23,7 +23,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && (vim_operator == none || vim_operator == n) && !VimWaiting",
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && (vim_operator == none || vim_operator == n) && !VimWaiting",
     "bindings": {
       "space space": "file_finder::Toggle",
 
@@ -38,6 +38,8 @@
       "space g n": "editor::GoToHunk",
       "space g p": "editor::GoToPrevHunk",
       "space g d": "editor::RevertSelectedHunks",
+      "space g o": "editor::OpenPermalinkToLine",
+      "space g y": "editor::CopyPermalinkToLine",
 
       "space t t": "task::Spawn",
       "space t r": "task::Rerun"
