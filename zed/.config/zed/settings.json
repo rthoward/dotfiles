@@ -35,15 +35,38 @@
     "git_status": true
   },
   "languages": {
-   "indent_guides": {
-     "enabled": true,
-     "coloring": "indent_aware"
-   },
-   "seed_search_query_from_cursor": "selection",
-   "file_types": {
-     "Dockerfile": ["Dockerfile*"]
-   }
     "Elixir": {
       "language_servers": ["elixir-ls", "tailwindcss-language-server", "!next-ls"]
     },
+    "Python": {
+      "language_servers": [
+        "pyright",
+        "ruff",
+        "!pylsp"
+      ],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "seed_search_query_from_cursor": "selection",
+  "file_types": {
+    "Dockerfile": [
+      "Dockerfile*"
+    ]
+  }
 }
