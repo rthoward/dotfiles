@@ -69,7 +69,7 @@ local layout_mod = { "cmd", "alt", "ctrl" }
 
 local browsers = { apps.firefox }
 local editors = { apps.zed, apps.vscode }
-local terminals = { apps.ghostty, apps.kitty, apps.wezterm }
+local terminals = { apps.kitty, apps.ghostty, apps.wezterm }
 local db_tools = { apps.tableplus, apps.postico }
 
 -- state
