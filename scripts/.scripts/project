@@ -1,0 +1,41 @@
+#!/bin/bash
+
+create_tab() {
+    local directory="$1"
+    local title="$2"
+    local command="$3"
+
+    local tab_id
+    tab_id=$(kitty @ launch --type=tab --cwd="$directory" --allow-remote-control)
+
+    kitty @ set-tab-title --match id:"$tab_id" "$title"
+
+    if [ -n "$command" ]; then kitty @ send-text --match id:"$tab_id" "$command"$'\n'; fi
+}
+
+
+if [ -z "$KITTY_WINDOW_ID" ]; then
+    echo "This script must be run from within kitty terminal"
+    exit 1
+fi
+
+PROJECT=$1
+
+if [ -z "${PROJECT}" ]; then
+    echo "Usage: project <project_name>"
+    exit 1
+fi
+
+original_tab_id=$KITTY_WINDOW_ID
+
+case "${PROJECT}" in
+    "lego")
+        create_tab $HOME/code/lego git lazygit
+        create_tab $HOME/code/lego shell
+        create_tab $HOME/code/lego/apps/parent_web parent_web
+        kitty @ close-window --match id:"$original_tab_id"
+        ;;
+    *)
+        echo "Unknown project: ${PROJECT}"
+        ;;
+esac
