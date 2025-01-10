@@ -1,0 +1,10 @@
+#! /bin/bash
+
+HELIX_THEME=$(defaults read -g AppleInterfaceStyle 2>/dev/null && echo $HELIX_THEME_DARK || echo $HELIX_THEME_LIGHT)
+HELIX_CONFIG_FILE=${XDG_CONFIG_HOME}/helix/config.toml
+
+if [ -n "${HELIX_THEME}" ]; then
+  sed -i '' "s/theme = \"[^\"]*\"/theme = \"${HELIX_THEME}\"/g" ${HELIX_CONFIG_FILE}
+fi
+
+hx $*
