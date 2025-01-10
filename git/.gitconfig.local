@@ -9,25 +9,23 @@
   ca = commit -v --amend
   unstage = restore --staged
 
-[pager]
-  diff = delta
-  log = delta
-  reflog = delta
-  show = delta
+[init]
+  defaultBranch = main
+
+#
+# Delta
+#
+
+[core]
+  pager = delta
+  editor = hx
+
+[delta]
+  navigate = true
+  features = line-numbers decorations
+  minus-style = "syntax auto"
+  plus-style = "syntax auto"
 
 [interactive]
   diffFilter = delta --color-only --features=interactive
 
-[delta]
-  features = line-numbers decorations
-  whitespace-error-style = 22 reverse
-
-[delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
-  # plus-style = normal "#dde6cd"
-  # minus-style = normal "#e9cace"
-
-[init]
-  defaultBranch = main
