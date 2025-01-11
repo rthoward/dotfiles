@@ -62,7 +62,7 @@ if [ "${BASE16_COLOR_SCHEME}" ]; then
   source "${BASE16_COLORS_DIR}/scripts/base16-${BASE16_COLOR_SCHEME}.sh"
 fi
 
-export HELIX_THEME_LIGHT="everforest_light"
+export HELIX_THEME_LIGHT="rose_pine_dawn"
 export HELIX_THEME_DARK="kanagawa"
 
 if [ -f "${HOME}/.gimlet/config" ]; then
