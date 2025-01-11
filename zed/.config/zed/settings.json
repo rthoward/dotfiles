@@ -38,6 +38,10 @@
     "git_status": true,
     "file_icons": true
   },
+  "gutter": {
+    "folds": false,
+    "code_actions": false
+  },
   "languages": {
     "Elixir": {
       "language_servers": ["elixir-ls", "tailwindcss-language-server", "!next-ls"]
