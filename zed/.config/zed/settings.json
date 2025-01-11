@@ -35,7 +35,8 @@
     "copilot": false
   },
   "tabs": {
-    "git_status": true
+    "git_status": true,
+    "file_icons": true
   },
   "languages": {
     "Elixir": {
