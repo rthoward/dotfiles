@@ -69,6 +69,8 @@
   },
   "indent_guides": {
     "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
     "coloring": "indent_aware"
   },
   "seed_search_query_from_cursor": "selection",
