@@ -5,7 +5,7 @@ Install homebrew:
 
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Install [asdf](https://asdf-vm.com/)
+Install [mise](https://mise.jdx.dev/getting-started.html)
 
 Run the following command in whichever directory you usually keep your source code:
 
