@@ -42,7 +42,16 @@
       "space g y": "editor::CopyPermalinkToLine",
 
       "space t t": "task::Spawn",
-      "space t r": "task::Rerun"
+      "space t r": "task::Rerun",
+
+      "space a i": "assistant::InlineAssist",
+      "space a a": "assistant::ToggleFocus"
+    }
+  },
+  {
+    "context": "AssistantPanel",
+    "bindings": {
+      "space a a": "workspace::ToggleRightDock"
     }
   }
 ]
