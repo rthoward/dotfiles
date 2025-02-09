@@ -1,5 +1,7 @@
+scrollback-limit = 10000000
+
 font-family = JetBrains Mono NL Medium
-theme = light:catppuccin-frappe,dark:catppuccin-frappe
+theme = light:zenbones_light,dark:zenbones_dark
 font-size = 18
 
 keybind = super+r=reload_config
