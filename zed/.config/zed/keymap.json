@@ -48,10 +48,4 @@
       "space a a": "assistant::ToggleFocus"
     }
   },
-  {
-    "context": "AssistantPanel",
-    "bindings": {
-      "space a a": "workspace::ToggleRightDock"
-    }
-  }
 ]
