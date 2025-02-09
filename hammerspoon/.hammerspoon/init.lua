@@ -310,7 +310,7 @@ hs.hotkey.bind(layout_mod, "space", function()
 
 	if hs.window.focusedWindow():screen() == ext1 then
 		hs.window.focusedWindow():moveToScreen(ext2)
-		hs.window.focusedWindow():moveToUnit(positions.lower50)
+		hs.window.focusedWindow():moveToUnit(positions.left60)
 	else
 		hs.window.focusedWindow():moveToScreen(ext1)
 		hs.window.focusedWindow():moveToUnit(positions.centered)
