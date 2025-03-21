@@ -7,6 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "disabled_globs": ["config/*", ".envrc", "envs/*"],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
   "assistant": {
     "default_model": {
       "provider": "anthropic",
@@ -32,6 +41,7 @@
     "custom": 1.35
   },
   "features": {
+    "edit_prediction_provider": "zed",
     "copilot": false
   },
   "tabs": {
@@ -81,5 +91,6 @@
     "Shell Script": [
       ".envrc"
     ]
+  "show_edit_predictions": false,
   }
 }
