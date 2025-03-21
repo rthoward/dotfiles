@@ -51,7 +51,9 @@
       "space t r": "task::Rerun",
 
       "space a i": "assistant::InlineAssist",
-      "space a a": "assistant::ToggleFocus"
+      "space a a": "assistant::ToggleFocus",
+
+      "space b": "tab_switcher::Toggle"
     }
   },
 ]
