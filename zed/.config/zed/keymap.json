@@ -36,7 +36,11 @@
       "space w l": "workspace::ActivateNextPane",
       "space w h": "workspace::ActivatePreviousPane",
 
-      "space g g": "git_panel::ToggleFocus",
+      "space g g": "git::Diff",
+      "space g G": "git_panel::ToggleFocus",
+      "space g s": "git::ToggleStaged",
+      "space g d": "git::Restore",
+      "space g D": "git::RestoreFile",
       "space g o": "editor::OpenPermalinkToLine",
       "space g y": "editor::CopyPermalinkToLine",
       "space g n": "editor::GoToHunk",
@@ -45,7 +49,6 @@
       "space g h p": "editor::GoToPreviousHunk",
       "space g h s": "git::ToggleStaged",
       "space g h d": "git::Restore",
-      "space g d": "git::Diff",
 
       "space t t": "task::Spawn",
       "space t r": "task::Rerun",
