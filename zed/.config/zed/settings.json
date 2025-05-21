@@ -9,7 +9,7 @@
 {
   "edit_predictions": {
     "disabled_globs": ["config/*", ".envrc", "envs/*"],
-    "mode": "eager",
+    "mode": "subtle",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null
@@ -17,19 +17,20 @@
     "enabled_in_assistant": false
   },
   "assistant": {
+    "default_profile": "ask",
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
   "vim_mode": true,
   "theme": {
-    "light": "Kanagawa Lotus",
-    "dark": "Kanagawa Wave"
+    "light": "Zedokai (Filter Machine)",
+    "dark": "Everforest Dark"
   },
   "buffer_font_size": 14.0,
-  "buffer_font_family": "Iosevka Curly Slab",
+  "buffer_font_family": "JetBrains Mono",
   "ui_font_size": 16,
   "format_on_save": "off",
   "formatter": "language_server",
@@ -38,7 +39,7 @@
     "metrics": false
   },
   "buffer_line_height": {
-    "custom": 1.4
+    "custom": 1.5
   },
   "features": {
     "edit_prediction_provider": "zed",
@@ -54,7 +55,11 @@
   },
   "languages": {
     "Elixir": {
-      "language_servers": ["elixir-ls", "tailwindcss-language-server", "!next-ls"]
+      "language_servers": [
+        "elixir-ls",
+        "tailwindcss-language-server",
+        "!next-ls"
+      ]
     },
     "Python": {
       "language_servers": [
@@ -91,8 +96,11 @@
     "Shell Script": [
       ".envrc"
     ]
-  "show_edit_predictions": false,
+  },
   "git": {
     "hunk_style": "unstaged_hollow"
+  },
+  "file_finder": {
+    "modal_max_width": "large"
   }
 }

@@ -35,6 +35,8 @@
       "space w ,": "pane::SplitRight",
       "space w l": "workspace::ActivateNextPane",
       "space w h": "workspace::ActivatePreviousPane",
+      "space w w": "workspace::ToggleZoom",
+      "space w z": "workspace::ToggleZoom",
 
       "space g g": "git::Diff",
       "space g G": "git_panel::ToggleFocus",
@@ -54,9 +56,9 @@
       "space t r": "task::Rerun",
 
       "space a i": "assistant::InlineAssist",
-      "space a a": "assistant::ToggleFocus",
+      "space a a": "agent::ToggleFocus",
 
       "space b": "tab_switcher::Toggle"
     }
-  },
+  }
 ]
