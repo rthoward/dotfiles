@@ -4,4 +4,10 @@ font-family = JetBrains Mono NL Medium
 theme = light:zenbones_light,dark:zenbones_dark
 font-size = 18
 
-keybind = super+r=reload_config
+keybind = cmd+r=reload_config
+
+keybind = opt+l=goto_split:right
+keybind = opt+h=goto_split:left
+keybind = opt+k=goto_split:up
+keybind = opt+j=goto_split:down
+keybind = opt+tab=goto_split:next
