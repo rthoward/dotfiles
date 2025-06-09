@@ -101,3 +101,17 @@ notes () {
       ;;
   esac
 }
+
+function u() {
+    local app=$1
+    shift
+
+    # Rewrite args to remove any leading `apps/APP/` from paths.
+    rewritten_args=()
+    for arg in "$@"; do
+      rewritten_arg=$(echo "${arg}" | sed 's|^apps/'${app}'/||')
+      rewritten_args+=("${rewritten_arg}")
+    done
+
+    (cd "apps/$app" && "${rewritten_args[@]}")
+}
