@@ -39,6 +39,7 @@
       "space w z": "workspace::ToggleZoom",
 
       "space g g": "git::Diff",
+      "space g c c": "git::Commit",
       "space g G": "git_panel::ToggleFocus",
       "space g s": "git::ToggleStaged",
       "space g d": "git::Restore",
@@ -51,14 +52,16 @@
       "space g h p": "editor::GoToPreviousHunk",
       "space g h s": "git::ToggleStaged",
       "space g h d": "git::Restore",
+      "space g b c": "editor::OpenGitBlameCommit",
 
       "space t t": "task::Spawn",
       "space t r": "task::Rerun",
 
       "space a i": "assistant::InlineAssist",
-      "space a a": "agent::ToggleFocus",
+      "space a a": "agent::NewTextThread",
 
-      "space b": "tab_switcher::Toggle"
+      "space b b": "tab_switcher::Toggle",
+      "space b m": "editor::ToggleMinimap"
     }
   }
 ]
