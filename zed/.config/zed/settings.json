@@ -7,31 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "edit_predictions": {
-    "disabled_globs": ["config/*", ".envrc", "envs/*"],
-    "mode": "subtle",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    },
-    "enabled_in_text_threads": false
-  },
-  "agent": {
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "version": "2"
-  },
   "vim_mode": true,
   "theme": {
-    "light": "Zedokai (Filter Machine)",
+    "light": "One Dark",
     "dark": "Everforest Dark"
   },
   "buffer_font_size": 14.0,
   "buffer_font_family": "JetBrains Mono",
-  "ui_font_size": 16,
+  "ui_font_size": 15,
   "format_on_save": "off",
   "formatter": "language_server",
   "telemetry": {
@@ -52,6 +35,36 @@
   "gutter": {
     "folds": false,
     "code_actions": false
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "indent_aware"
+  },
+  "seed_search_query_from_cursor": "selection",
+  "git": {
+    "hunk_style": "unstaged_hollow"
+  },
+  "file_finder": {
+    "modal_max_width": "xlarge"
+  },
+  "edit_predictions": {
+    "disabled_globs": [
+      "config/*",
+      ".envrc",
+      "envs/*"
+    ],
+    "mode": "subtle",
+    "enabled_in_text_threads": false
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
   },
   "languages": {
     "Elixir": {
@@ -82,13 +95,6 @@
       ]
     }
   },
-  "indent_guides": {
-    "enabled": true,
-    "line_width": 1,
-    "active_line_width": 2,
-    "coloring": "indent_aware"
-  },
-  "seed_search_query_from_cursor": "selection",
   "file_types": {
     "Dockerfile": [
       "Dockerfile*"
@@ -96,11 +102,5 @@
     "Shell Script": [
       ".envrc"
     ]
-  },
-  "git": {
-    "hunk_style": "unstaged_hollow"
-  },
-  "file_finder": {
-    "modal_max_width": "large"
   }
 }
