@@ -17,6 +17,7 @@ zed/.config/zed/.tmp*
 zed/.config/zed/embeddings
 zed/.config/zed/conversations
 zed/.config/zed/themes
+zed/.config/zed/prompts/
 
 kitty/.config/kitty/current-theme.conf
 kitty/.config/kitty/*.auto.conf
