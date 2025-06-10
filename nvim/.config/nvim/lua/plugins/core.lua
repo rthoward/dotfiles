@@ -2,6 +2,7 @@ return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "Shatur/neovim-ayu", name = "ayu", priority = 1000 },
   { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
+  { "loctvl842/monokai-pro.nvim", name = "monokai-pro", priority = 1000 },
 
   {
     "mcchrish/zenbones.nvim",
@@ -60,17 +61,6 @@ return {
       end,
       open_mapping = [[<c-\>]],
       insert_mappings = false,
-    },
-  },
-
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
     },
   },
 
