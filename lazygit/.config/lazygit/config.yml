@@ -13,7 +13,6 @@ git:
     pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--light")
 customCommands:
   - key: 'G'
-    subprocess: true
     command: 'gh {{.Form.GitHubCommand}}'
     description: "GitHub"
     context: 'global'
@@ -30,6 +29,7 @@ customCommands:
             name: 'Pull Request - Create (Draft)'
           - value: 'pr list'
             name: 'Pull Request - List'
+    output: terminal
   - key: "R"
     context: "localBranches"
     loadingText: "Checking out GitHub Pull Request..."
@@ -39,8 +39,7 @@ customCommands:
         title: "Which PR do you want to check out?"
         key: "PullRequestNumber"
         command: >-
-          gh pr list --json number,title,headRefName,updatedAt
-          --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
+          gh pr list --json number,title,headRefName,updatedAt --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
         filter: '#(?P<number>[0-9]+): (?P<title>.+) - (?P<ref_name>[^ ]+).*'
         valueFormat: '{{.number}}'
         labelFormat: '{{"#" | black | bold}}{{.number | white | bold}} {{.title | yellow | bold}}{{" [" | black | bold}}{{.ref_name | green}}{{"]" | black | bold}}'
