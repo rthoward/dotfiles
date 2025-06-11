@@ -77,7 +77,7 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg -n --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg -n --ignore-case --pretty --context 10 '$1' {}"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 eval "$(mise activate zsh)"
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
@@ -91,5 +91,3 @@ eval "$(direnv hook zsh)"
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
-
-. "$HOME/.local/share/../bin/env"
