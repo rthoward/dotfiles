@@ -158,6 +158,22 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
+
+        bind "Super c" { Copy; }
+        bind "Super Alt Left" { GoToPreviousTab; }
+        bind "Super Alt Right" { GoToNextTab; }
+        bind "Super w" { CloseTab; }
+        bind "Super n" { NewTab; }
+        bind "Super t" { NewTab; }
+        bind "Super 1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "Super 2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "Super 3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "Super 4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "Super 5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "Super 6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "Super 7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "Super 8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "Super 9" { GoToTab 9; SwitchToMode "locked"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
