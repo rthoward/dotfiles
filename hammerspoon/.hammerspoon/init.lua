@@ -214,7 +214,7 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ext_two_landscape_layout = {
 		{ current_browser().name, nil, ext1, positions.centered, nil, nil },
 		{ current_editor().name, nil, ext1, positions.centered, nil, nil },
-		{ current_terminal().name, nil, ext2, positions.left60, nil, nil },
+		{ current_terminal().name, nil, ext2, positions.maximized, nil, nil },
 		{ apps.slack.name, nil, ext2, positions.left60, nil, nil },
 		{ apps.obsidian.name, nil, ext2, positions.right40, nil, nil },
 		{ apps.spotify.name, nil, ext2, positions.right40, nil, nil },
