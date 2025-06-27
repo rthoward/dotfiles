@@ -1,0 +1,52 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="home" split_direction="vertical" cwd="~/code/ws-common" {
+        pane name="git" size="60%" command="lazygit"
+        pane stacked=true name="shell" {
+            pane focus=true
+        }
+        floating_panes {
+            pane {
+                x "10%"
+                y "10%"
+                width "80%"
+                height "80%"
+            }
+        }
+    }
+
+    tab name="nova" cwd="~/code/ws-common/apps/nova" {
+        pane name="server" command="iex" {
+            args "-S" "mix" "phx.server"
+        }
+    }
+
+    tab name="apps" stacked=true {
+        pane stacked=true {
+            pane name="auth-api" cwd="~/code/ws-common" command="yarn" {
+                args "serve:auth-api"
+            }
+            pane name="moxit-web" cwd="~/code/moxit-wonderschool-web" command="yarn" {
+                args "dev"
+            }
+            pane name="moxit-accounts" cwd="~/code/moxit-wonderschool-accounts" command="yarn" {
+                args "dev"
+            }
+        }
+    }
+
+    tab name="docker" cwd="~/code/ws-common" {
+        pane command="docker" {
+            args "compose" "up" "chrome" "elasticsearch" "redis"
+        }
+    }
+}
