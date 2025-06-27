@@ -59,6 +59,10 @@ if [ -f "${HOME}/.gimlet/config" ]; then
   source "${HOME}/.gimlet/config"
 fi
 
+if [ -f "${HOME}/.config/broot/launcher/bash/br" ]; then
+  source "${HOME}/.config/broot/launcher/bash/br"
+fi
+
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 gc() {
