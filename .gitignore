@@ -22,3 +22,6 @@ zed/.config/zed/prompts/
 kitty/.config/kitty/current-theme.conf
 kitty/.config/kitty/*.auto.conf
 kitty/.config/kitty/kitty.conf.bak
+
+broot/.config/broot/*
+!broot/.config/broot/*.hjson
