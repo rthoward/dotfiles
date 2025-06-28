@@ -1,6 +1,6 @@
 scrollback-limit = 10000000
 
-font-family = JetBrains Mono NL Medium
+font-family = JetBrains Mono Medium
 theme = light:zenbones_light,dark:zenbones_dark
 font-size = 18
 
