@@ -25,17 +25,16 @@
     "custom": 1.5
   },
   "features": {
-    "edit_prediction_provider": "zed",
-    "copilot": false
+    "edit_prediction_provider": "zed"
   },
   "tabs": {
     "git_status": true,
     "file_icons": true
   },
   "gutter": {
-    "folds": false,
-    "code_actions": false
+    "folds": false
   },
+  "double_click_in_multibuffer": "open",
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -63,8 +62,7 @@
     "default_model": {
       "provider": "anthropic",
       "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
+    }
   },
   "languages": {
     "Elixir": {
