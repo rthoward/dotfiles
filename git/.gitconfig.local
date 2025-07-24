@@ -20,7 +20,7 @@
 #
 
 [core]
-  pager = delta
+  pager = delta $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--light")
   editor = nvim
 
 [delta]
@@ -30,5 +30,5 @@
   plus-style = "syntax auto"
 
 [interactive]
-  diffFilter = delta --color-only --features=interactive
+  diffFilter = delta --color-only --features=interactive $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--light")
 
