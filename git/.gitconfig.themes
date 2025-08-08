@@ -1,0 +1,38 @@
+[delta "zenbones-dark"]
+    dark = true
+    commit-decoration-style = bold box ul
+    file-decoration-style = none
+    hunk-header-decoration-style = "#b279a7" box ul
+    hunk-header-file-style = "#888f94"
+    hunk-header-line-number-style = bold "#6099c0"
+    line-numbers = true
+    line-numbers-left-style = "#888f94"
+    line-numbers-right-style = "#888f94"
+    line-numbers-minus-style = "#de6e7c"
+    line-numbers-plus-style = "#819b69"
+    line-numbers-zero-style = "#999999"
+    minus-style = syntax "#5c2e32"
+    minus-emph-style = syntax "#8f474d"
+    plus-style = syntax "#475c32"
+    plus-emph-style = syntax "#5a753f"
+    syntax-theme = gruvbox-dark
+
+[delta "zenbones-light"]
+    dark = false
+    commit-decoration-style = "#a4968f" bold box ul
+    file-decoration-style = none
+    hunk-header-decoration-style = "#b279a7" box
+    hunk-header-file-style = "#888f94"
+    hunk-header-line-number-style = "#5e6f7b"
+    line-numbers = true
+    line-numbers-left-style = "#a4968f"
+    line-numbers-right-style = "#a4968f"
+    line-numbers-minus-style = "#de6e7c"
+    line-numbers-plus-style = "#819b69"
+    line-numbers-zero-style = "#a4968f"
+    minus-style = syntax "#ebd8da"
+    minus-emph-style = syntax "#efa9b1"
+    plus-style = syntax "#cbe5b8"
+    plus-emph-style = syntax "#cbe5b8"
+    syntax-theme = GitHub
+
