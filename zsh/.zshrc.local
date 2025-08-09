@@ -42,7 +42,6 @@ alias ls="eza"
 alias checks="gh pr checks --watch && say --rate=175 'bazinga'"
 alias k='kubectl'
 alias lg='lazygit'
-alias hx='$HOME/.scripts/helix_themed'
 
 #
 # Colors
