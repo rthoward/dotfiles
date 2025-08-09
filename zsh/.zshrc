@@ -53,6 +53,10 @@ function zshaddhistory() {
 	echo "${1%%$'\n'}|${PWD}   " >> ~/.zsh_history_ext
 }
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
+
 ########################
 # Aliases
 ########################
@@ -61,12 +65,6 @@ alias vim=nvim
 alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias weather='curl wttr.in'
-
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# Open fzf file with vscode
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
 
 function g86 {
   git branch --merged "${1:-master}" | egrep -v "(^\*|${1:-master})" | xargs git branch -d
