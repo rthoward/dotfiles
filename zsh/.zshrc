@@ -76,10 +76,7 @@ fif() {
 }
 
 source <(fzf --zsh)
-
-eval "$(mise activate zsh)"
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
-
 eval "$(direnv hook zsh)"
 
 ########################
