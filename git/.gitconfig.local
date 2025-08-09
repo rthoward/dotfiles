@@ -20,7 +20,7 @@
 #
 
 [core]
-  pager = delta $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark --features=zenbones-dark" || echo "--light --features=zenbones-light")
+  pager = delta $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--features=zenbones-dark" || echo "--features=zenbones-light")
   editor = nvim
 
 [delta]
@@ -28,7 +28,7 @@
   features = line-numbers decorations
 
 [interactive]
-  diffFilter = delta --color-only $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark --features=interactive,zenbones-dark" || echo "--light --features=interactive,zenbones-light")
+  diffFilter = delta --color-only $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--features=interactive,zenbones-dark" || echo "--features=interactive,zenbones-light")
 
 [include]
   path = .gitconfig.themes
