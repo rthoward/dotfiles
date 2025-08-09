@@ -5,12 +5,13 @@ gui:
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 2
   enlargedSideViewLocation: top
-  nerdFontsVersion: 3
   border: single
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark --features=zenbones-dark" || echo "--light --features=zenbones-light")
+    pager: |
+      delta --paging=never --line-numbers --hyperlinks \
+      --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 customCommands:
   - key: 'G'
     command: 'gh {{.Form.GitHubCommand}}'
