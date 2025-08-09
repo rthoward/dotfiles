@@ -67,7 +67,7 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias weather='curl wttr.in'
 
 function g86 {
-  git branch --merged "${1:-master}" | egrep -v "(^\*|${1:-master})" | xargs git branch -d
+  git branch --merged "${1:-main}" | egrep -v "(^\*|${1:-main})" | xargs git branch -d
 }
 
 fif() {
