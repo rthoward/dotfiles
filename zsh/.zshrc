@@ -57,6 +57,14 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
 
+if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+    export THEME_DARK="true"
+    export DELTA_FEATURES="+zenbones-dark"
+else
+    export THEME_LIGHT="true"
+    export DELTA_FEATURES="+zenbones-light"
+fi
+
 ########################
 # Aliases
 ########################
