@@ -64,6 +64,8 @@
   name = Richard Howard
   email = richard.howard@wonderschool.com
 
-# NEEDS TO BE LAST LINE IN THIS FILE
+# Must be at the end of the file
+
 [include]
   path = .gitconfig.local
+  path = .gitconfig.themes
