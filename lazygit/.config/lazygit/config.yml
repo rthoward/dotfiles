@@ -12,7 +12,7 @@ git:
     pager: |
       delta --paging=never --line-numbers --hyperlinks \
       --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" \
-      $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--features=zenbones-dark" || echo "--features=zenbones-light")
+      $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--features=zenbones-light")
 customCommands:
   - key: 'G'
     command: 'gh {{.Form.GitHubCommand}}'
