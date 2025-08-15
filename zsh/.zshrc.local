@@ -47,14 +47,6 @@ alias lg='lazygit'
 #
 # Colors
 #
-
-if [ "${BASE16_COLOR_SCHEME}" ]; then
-  source "${BASE16_COLORS_DIR}/scripts/base16-${BASE16_COLOR_SCHEME}.sh"
-fi
-
-export HELIX_THEME_LIGHT="rose_pine_dawn"
-export HELIX_THEME_DARK="kanagawa"
-
 if [ -f "${HOME}/.gimlet/config" ]; then
   source "${HOME}/.gimlet/config"
 fi
@@ -94,18 +86,4 @@ notes () {
       echo "Unknown invocation: notes ${*}"
       ;;
   esac
-}
-
-function u() {
-    local app=$1
-    shift
-
-    # Rewrite args to remove any leading `apps/APP/` from paths.
-    rewritten_args=()
-    for arg in "$@"; do
-      rewritten_arg=$(echo "${arg}" | sed 's|^apps/'${app}'/||')
-      rewritten_args+=("${rewritten_arg}")
-    done
-
-    (cd "apps/$app" && "${rewritten_args[@]}")
 }
