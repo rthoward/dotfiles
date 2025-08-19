@@ -10,6 +10,7 @@ keybind = ctrl+a>,=new_split:right
 keybind = cmd+,=new_split:right
 keybind = ctrl+a>.=new_split:down
 keybind = cmd+.=new_split:down
+keybind = shift+enter=text:\n
 
 # unbind these keys so they'll be handled by zellij
 keybind = cmd+t=unbind
