@@ -8,10 +8,6 @@ fi
 
 source ~/.zsh/znap/znap.zsh
 
-########################
-# Packages
-########################
-
 znap prompt sindresorhus/pure
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
@@ -58,13 +54,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
 
 ########################
-# Aliases
+# Functions
 ########################
-
-alias vim=nvim
-alias cat=bat
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias weather='curl wttr.in'
 
 function g86 {
   git branch --merged "${1:-main}" | egrep -v "(^\*|${1:-main})" | xargs git branch -d
@@ -75,14 +66,35 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg -n --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg -n --ignore-case --pretty --context 10 '$1' {}"
 }
 
+########################
+# Aliases
+########################
+
+alias vim=nvim
+alias cat=bat
+alias ls=eza
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias weather='curl wttr.in/19147'
+alias gits="git status"
+alias checks="gh pr checks --watch && say --rate=175 'bazinga'"
+alias pr="gh pr view -c"
+alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local ~/.config/ghostty/config"
+alias k="kubectl"
+
+########################
+# Utils
+########################
+
 source <(fzf --zsh)
 eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 
-########################
-# Customization
-########################
-
-if [ -e ~/.zshrc.local ]; then
-  source ~/.zshrc.local
+if [ -f "${HOME}/.gimlet/config" ]; then
+  source "${HOME}/.gimlet/config"
 fi
+
+if [ -f "${HOME}/.config/broot/launcher/bash/br" ]; then
+  source "${HOME}/.config/broot/launcher/bash/br"
+fi
+
+export PATH="$PATH:/Users/richard/.lmstudio/bin"
