@@ -9,11 +9,8 @@ layout {
         }
     }
 
-    tab name="home" split_direction="vertical" cwd="~/code/ws-common" {
-        pane name="git" size="60%" command="lazygit"
-        pane stacked=true name="shell" {
-            pane focus=true
-        }
+    tab name="git" split_direction="vertical" cwd="~/code/ws-common" {
+        pane name="git" command="lazygit"
         floating_panes {
             pane {
                 x "10%"
@@ -24,29 +21,29 @@ layout {
         }
     }
 
-    tab name="nova" cwd="~/code/ws-common/apps/nova" {
+    tab name="shell" cwd="~/code/ws-common/apps/nova" {
+        pane name="shell"
+    }
+
+    tab name="server" cwd="~/code/ws-common/apps/nova" {
         pane name="server" command="iex" {
             args "-S" "mix" "phx.server"
         }
     }
 
+    tab name="ai" cwd="~/code/ws-common/apps/nova" {
+        pane name="ai"
+    }
+
     tab name="apps" stacked=true {
         pane stacked=true {
-            pane name="auth-api" cwd="~/code/ws-common" command="yarn" {
-                args "serve:auth-api"
-            }
-            pane name="moxit-web" cwd="~/code/moxit-wonderschool-web" command="yarn" {
-                args "dev"
-            }
-            pane name="moxit-accounts" cwd="~/code/moxit-wonderschool-accounts" command="yarn" {
-                args "dev"
-            }
+            pane name="auth-api" cwd="~/code/ws-common"
+            pane name="moxit-web" cwd="~/code/moxit-wonderschool-web"
+            pane name="moxit-accounts" cwd="~/code/moxit-wonderschool-accounts"
         }
     }
 
     tab name="docker" cwd="~/code/ws-common" {
-        pane command="docker" {
-            args "compose" "up" "chrome" "elasticsearch" "redis"
-        }
+        pane command="lazydocker"
     }
 }
