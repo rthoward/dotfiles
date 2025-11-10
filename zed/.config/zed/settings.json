@@ -7,11 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
-  "theme": {
-    "light": "One Dark",
-    "dark": "Everforest Dark"
+  "icon_theme": "Catppuccin Frappé",
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits"
+    }
   },
+  "vim_mode": true,
+  "theme": "One Dark",
   "buffer_font_size": 14.0,
   "buffer_font_family": "JetBrains Mono",
   "ui_font_size": 15,
@@ -34,7 +37,7 @@
   "gutter": {
     "folds": false
   },
-  "double_click_in_multibuffer": "open",
+  "double_click_in_multibuffer": "select",
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -58,17 +61,19 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "always_allow_tool_actions": true,
+    "use_modifier_to_send": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4"
     }
   },
   "languages": {
     "Elixir": {
       "language_servers": [
-        "elixir-ls",
         "tailwindcss-language-server",
+        "elixir-ls",
         "!next-ls"
       ]
     },
@@ -79,12 +84,8 @@
         "!pylsp"
       ],
       "formatter": [
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
-        },
+        { "code_action": "source.organizeImports.ruff" },
+        { "code_action": "source.fixAll.ruff" },
         {
           "language_server": {
             "name": "ruff"
