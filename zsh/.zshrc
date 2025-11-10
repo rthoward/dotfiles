@@ -1,7 +1,6 @@
 ########################
 # Package Manager
 ########################
-
 if [ ! -f ~/.zsh/znap/znap.zsh ]; then
   git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsh/znap
 fi
@@ -52,16 +51,21 @@ function zshaddhistory() {
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute($FZF_EDITOR {})+abort'"
+export EDITOR="nvim"
 
 ########################
 # Functions
 ########################
 
-function g86 {
+function g86() {
   git branch --merged "${1:-main}" | egrep -v "(^\*|${1:-main})" | xargs git branch -d
 }
 
-fif() {
+function gc() {
+  git checkout $(git branch | fzf | tr -d "[:space:]*")
+}
+
+function fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg -n --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg -n --ignore-case --pretty --context 10 '$1' {}"
 }
