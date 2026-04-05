@@ -86,7 +86,7 @@ alias weather='curl wttr.in/19147'
 alias gits="git status"
 alias checks="gh pr checks --watch && say --rate=175 'bazinga'"
 alias pr="gh pr view -c"
-alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local ~/.config/ghostty/config"
+alias theme="vim ~/.config/nvim/lua/plugins/core.lua ~/.gitconfig.local ~/.config/ghostty/config ~/.config/lazygit/config.yml"
 alias k="kubectl"
 
 ########################
