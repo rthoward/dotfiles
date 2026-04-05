@@ -70,6 +70,10 @@ function fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg -n --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg -n --ignore-case --pretty --context 10 '$1' {}"
 }
 
+function wks() {
+  cmux new-workspace --name "$1" --cwd ".claude/workspaces/$1" --command "claude --worktree $1"
+}
+
 ########################
 # Aliases
 ########################
