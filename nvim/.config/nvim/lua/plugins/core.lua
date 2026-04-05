@@ -29,6 +29,14 @@ return {
   },
 
   {
+    "saghen/blink.cmp",
+    opts = {
+      enabled = function()
+        return not vim.tbl_contains({ "gitcommit", "lua", "markdown" }, vim.bo.filetype)
+      end,
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = function(_, opts)
