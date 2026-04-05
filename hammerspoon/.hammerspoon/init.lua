@@ -47,6 +47,7 @@ local apps = {
 	iterm2 = { name = "iTerm2", path = "/Applications/iTerm.app" },
 	kitty = { name = "kitty", path = "/Applications/kitty.app" },
 	wezterm = { name = "WezTerm", path = "/Applications/WezTerm.app" },
+	cmux = { name = "cmux", path = "/Applications/cmux.app" },
 
 	-- database clients
 	postico = { name = "Postico", path = "/Applications/Postico.app" },
@@ -69,7 +70,7 @@ local layout_mod = { "cmd", "alt", "ctrl" }
 
 local browsers = { apps.firefox }
 local editors = { apps.zed, apps.vscode }
-local terminals = { apps.ghostty, apps.kitty, apps.wezterm }
+local terminals = { apps.ghostty, apps.kitty }
 local db_tools = { apps.tableplus, apps.postico }
 
 -- state
@@ -172,6 +173,10 @@ end)
 
 hs.hotkey.bind(app_mod, "g", function()
 	launchOrFocus(apps.linear)
+end)
+
+hs.hotkey.bind(app_mod, "c", function()
+	launchOrFocus(apps.cmux)
 end)
 
 -- focus current terminal and run last command
