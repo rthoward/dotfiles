@@ -105,4 +105,6 @@ if [ -f "${HOME}/.config/broot/launcher/bash/br" ]; then
   source "${HOME}/.config/broot/launcher/bash/br"
 fi
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 export PATH="$PATH:/Users/richard/.lmstudio/bin"
