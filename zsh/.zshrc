@@ -105,6 +105,12 @@ if [ -f "${HOME}/.config/broot/launcher/bash/br" ]; then
   source "${HOME}/.config/broot/launcher/bash/br"
 fi
 
+export PATH="$PATH:$HOME/.lmstudio/bin"
+export PATH="$HOME/.local/bin:$PATH"
+
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/richard/.lmstudio/bin"
+# End of LM Studio CLI section
+
