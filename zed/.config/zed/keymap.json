@@ -53,6 +53,7 @@
       "space g h s": "git::ToggleStaged",
       "space g h d": "git::Restore",
       "space g b c": "editor::OpenGitBlameCommit",
+      "space g m": "git::OpenModifiedFiles",
 
       "space t t": "task::Spawn",
       "space t r": "task::Rerun",
