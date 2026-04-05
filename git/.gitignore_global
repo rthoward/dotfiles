@@ -18,3 +18,7 @@ pyrightconfig.json
 nohup.out
 
 .zed/
+
+.claude/my_plans/
+.claude/worktrees
+.worktreeinclude
