@@ -14,7 +14,7 @@ git:
       --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" \
       $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--features=zenbones-light")
 customCommands:
-  - key: 'G'
+  - key: '<c-g>'
     command: 'gh {{.Form.GitHubCommand}}'
     description: "GitHub"
     context: 'global'
@@ -32,7 +32,7 @@ customCommands:
           - value: 'pr list'
             name: 'Pull Request - List'
     output: terminal
-  - key: "R"
+  - key: "<c-r>"
     context: "localBranches"
     loadingText: "Checking out GitHub Pull Request..."
     command: "gh pr checkout {{.Form.PullRequestNumber}}"
