@@ -7,5 +7,7 @@ wk.add({
   { "<leader>gg", "<cmd>Neogit<cr>", desc = "NeoGit" },
   { "<leader>gG", "<cmd>Neogit kind=split<cr>", desc = "NeoGit split" },
 
+  { "<leader>wz", "<cmd>ZenMode<cr>", desc = "Zen mode" },
+
   { "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
 })
