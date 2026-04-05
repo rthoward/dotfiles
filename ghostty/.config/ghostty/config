@@ -1,7 +1,7 @@
 scrollback-limit = 10000000
 
 font-family = JetBrains Mono Medium
-theme = light:zenbones_light,dark:zenbones_dark
+theme = light:Zenbones Light,dark:Zenbones Dark
 font-size = 18
 
 keybind = cmd+r=reload_config
