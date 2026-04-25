@@ -59,9 +59,8 @@
       "space t r": "task::Rerun",
 
       "space a i": "assistant::InlineAssist",
-      "space a a": "agent::NewThread",
-      "space a t": "agent::NewTextThread",
-
+      "space a a": "agent::ToggleFocus",
+      "space a t": "agents_sidebar::ToggleThreadHistory",
       "space b b": "tab_switcher::Toggle",
       "space b m": "editor::ToggleMinimap"
     }

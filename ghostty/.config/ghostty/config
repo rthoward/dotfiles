@@ -11,33 +11,6 @@ keybind = cmd+,=new_split:right
 keybind = ctrl+a>.=new_split:down
 keybind = cmd+.=new_split:down
 keybind = shift+enter=text:\n
+keybind = ctrl+a>r=prompt_tab_title
 
-# unbind these keys so they'll be handled by zellij
-keybind = super+t=unbind
-keybind = super+n=unbind
-keybind = super+c=unbind
-keybind = super+w=unbind
-keybind = super+opt+left=unbind
-keybind = super+opt+right=unbind
-
-keybind = super+digit_1=unbind
-keybind = super+digit_1=unbind
-keybind = super+digit_2=unbind
-keybind = super+digit_3=unbind
-keybind = super+digit_4=unbind
-keybind = super+digit_5=unbind
-keybind = super+digit_6=unbind
-keybind = super+digit_7=unbind
-keybind = super+digit_8=unbind
-keybind = super+digit_9=unbind
-keybind = super+digit_0=unbind
-keybind = super+1=unbind
-keybind = super+2=unbind
-keybind = super+3=unbind
-keybind = super+4=unbind
-keybind = super+5=unbind
-keybind = super+6=unbind
-keybind = super+7=unbind
-keybind = super+8=unbind
-keybind = super+9=unbind
-keybind = super+0=unbind
+config-file = ?auto/theme.ghostty

@@ -20,11 +20,11 @@
 #
 
 [core]
-  pager = delta $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--features zenbones-light")
+  pager = delta
   editor = nvim
 
 [interactive]
-  diffFilter = delta --color-only $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--features zenbones-light")
+  diffFilter = delta --color-only
 
 [delta]
   navigate = true

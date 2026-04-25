@@ -7,12 +7,11 @@ gui:
   enlargedSideViewLocation: top
   border: single
 git:
-  paging:
-    colorArg: always
-    pager: |
-      delta --paging=never --line-numbers --hyperlinks \
-      --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" \
-      $(defaults read -g AppleInterfaceStyle 2>/dev/null && echo "--dark" || echo "--features=zenbones-light")
+  pagers:
+    - colorArg: always
+      pager: |
+        delta --paging=never --line-numbers --hyperlinks \
+        --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 customCommands:
   - key: '<c-g>'
     command: 'gh {{.Form.GitHubCommand}}'
