@@ -47,7 +47,9 @@ customCommands:
         command: 'gh pr create'
         description: 'pr | create'
         context: global
+        output: terminal
       - key: C
         command: 'gh pr create --draft'
         description: 'pr | create | draft'
         context: global
+        output: terminal
