@@ -53,3 +53,8 @@ customCommands:
         description: 'pr | create | draft'
         context: global
         output: terminal
+
+      - key: R
+        command: 'gh pr ready'
+        description: 'pr | update | mark ready'
+        context: global
