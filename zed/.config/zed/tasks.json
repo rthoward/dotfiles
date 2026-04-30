@@ -1,2 +1,11 @@
 [
+  {
+    "label": "Search with Television",
+    "command": "zed \"$(tv text)\"",
+    "hide": "always",
+    "allow_concurrent_runs": true,
+    "use_new_terminal": false,
+    "env": {"EDITOR": "zed"},
+    "shell": {"program": "sh"}
+  }
 ]
