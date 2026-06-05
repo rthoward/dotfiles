@@ -25,3 +25,5 @@ kitty/.config/kitty/kitty.conf.bak
 
 broot/.config/broot/*
 !broot/.config/broot/*.hjson
+
+zsh/.zshrc.local
