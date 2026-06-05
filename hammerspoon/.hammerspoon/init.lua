@@ -209,6 +209,8 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ext_landscape_and_portrait_layout = {
 		{ current_browser().name, nil, ext1, positions.centered, nil, nil },
 		{ current_editor().name, nil, ext1, positions.centered, nil, nil },
+		{ apps.cmux.name, nil, ext1, positions.centered, nil, nil },
+
 		{ current_terminal().name, nil, ext2, positions.lower50, nil, nil },
 		{ apps.slack.name, nil, ext2, positions.upper50, nil, nil },
 		{ apps.obsidian.name, nil, ext2, positions.maximized, nil, nil },
@@ -219,6 +221,8 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ext_two_landscape_layout = {
 		{ current_browser().name, nil, ext1, positions.centered, nil, nil },
 		{ current_editor().name, nil, ext1, positions.centered, nil, nil },
+		{ apps.cmux.name, nil, ext1, positions.centered, nil, nil },
+
 		{ current_terminal().name, nil, ext2, positions.maximized, nil, nil },
 		{ apps.slack.name, nil, ext2, positions.left60, nil, nil },
 		{ apps.obsidian.name, nil, ext2, positions.right40, nil, nil },
@@ -229,6 +233,8 @@ hs.hotkey.bind(layout_mod, "p", function()
 	local ext_one_landscape_layout = {
 		{ current_browser().name, nil, mac_screen, positions.centered, nil, nil },
 		{ current_editor().name, nil, mac_screen, positions.centered, nil, nil },
+		{ apps.cmux.name, nil, ext1, positions.centered, nil, nil },
+
 		{ current_terminal().name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.slack.name, nil, mac_screen, positions.centered, nil, nil },
 		{ apps.obsidian.name, nil, mac_screen, positions.centered, nil, nil },
